@@ -20,6 +20,9 @@ class CreateProductsTable extends Migration
             $table->string('link');
             $table->text('description');
             $table->text('characteristics');
+            $table->string('home_image');
+            $table->string('header_image')->nullable();
+            $table->string('description_image')->nullable();
             $table->timestamps();
         });
     }

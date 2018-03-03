@@ -18,6 +18,7 @@ class CreateHomePicturesTable extends Migration
             $table->string('title');
             $table->string('subtitle')->nullable();
             $table->string('image');
+            $table->string('location');
             $table->timestamps();
         });
     }
