@@ -14,7 +14,7 @@ import VueUploadComponent from 'vue-upload-component';
 import VueMaterial from 'vue-material';
 import PulseLoader from 'vue-spinner/src/PulseLoader.vue';
 import 'vue-material/dist/vue-material.min.css';
-import 'vue-material/dist/theme/default-dark.css';
+// import 'vue-material/dist/theme/default-dark.css';
 
 window.Vue = require('vue');
 Vue.use(VueRouter);
