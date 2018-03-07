@@ -14,6 +14,8 @@
     </head>
     <body>
         <div id='app'>
+            <site-menu></site-menu>
+            <file-upload></file-upload>
             <layout></layout>
             <router-view></router-view>
             
