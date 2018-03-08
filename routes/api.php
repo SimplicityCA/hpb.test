@@ -18,3 +18,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('homepictures', 'HomePictureController@index');
+Route::get('aboutus', 'SiteTextController@aboutus');

@@ -35,6 +35,7 @@ Vue.component('site-menu', require('./components/Site_menu.vue'));
 Vue.component('file-upload', VueUploadComponent);
 Vue.component('pulse-loader', PulseLoader);
 Vue.component('carousel', require('./components/Carousel.vue'));
+Vue.component('aboutus', require('./components/Aboutus.vue'));
 
 //Routes Components
 const home = Vue.component('home', require('./routes_components/Home/Home.vue'));
