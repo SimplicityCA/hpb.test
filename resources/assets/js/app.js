@@ -34,6 +34,7 @@ Vue.component('layout', require('./components/Layout.vue'));
 Vue.component('site-menu', require('./components/Site_menu.vue'));
 Vue.component('file-upload', VueUploadComponent);
 Vue.component('pulse-loader', PulseLoader);
+Vue.component('carousel', require('./components/Carousel.vue'));
 
 //Routes Components
 const home = Vue.component('home', require('./routes_components/Home/Home.vue'));
@@ -44,7 +45,7 @@ const tips = Vue.component('tips', require('./routes_components/Tips/Tips.vue'))
 
 const routes = [
   {
-    path: '/home',
+    path: '/',
     component: home
   },
   {

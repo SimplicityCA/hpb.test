@@ -1,23 +1,28 @@
 <template>
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Home</div>
-
-                    <div class="panel-body">
-                        ruta del home
-                    </div>
-                </div>
-            </div>
+            <carousel :images="images"></carousel>
+            
         </div>
     </div>
 </template>
 
 <script>
     export default {
-        mounted() {
-            console.log('Home mounted.')
+        data () {
+          return {
+            images: [],
+          }
+        },
+        created(){
+          const vm = this;
+          axios.get('api/homepictures')
+          .then(function (response) {
+            vm.images = response.data;
+          })
+          .catch(function (error) {
+            console.log(error);
+          });    
         }
     }
 </script>
