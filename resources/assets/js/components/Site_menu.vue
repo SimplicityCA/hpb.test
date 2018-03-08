@@ -8,28 +8,28 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">High Power Brake Logo</a>
+        <a class="navbar-brand" href="#home">High Power Brake Logo</a>
       </div>
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
-          <li class="active"><a href="#">Home</a></li>
+          <li class=""><router-link to="/home">Home</router-link></li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Productos<span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <li><a href="#">Carbon Performance</a></li>
-              <li><a href="#">Ceramic Organic</a></li>
-              <li><a href="#">Brake Shoe</a></li>
+              <li><router-link to="/products/carbon-performance">Carbon Performance</router-link></li>
+              <li><router-link to="/products/ceramic-organic">Ceramic Organic</router-link></li>
+              <li><router-link to="/products/brake-shoe">Brake Shoe</router-link></li>
             </ul>
           </li>
-          <li><a href="#">Cont&aacute;ctanos</a></li>
+          <li><router-link to="/contact">Cont&aacute;ctanos</router-link></li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Descargas<span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <li><a href="#">Cat&aacute;logo de Productos</a></li>
-              <li><a href="#">Manual T&eacute;cnico</a></li>
+              <li><router-link to="/downloads/products-catalog">Cat&aacute;logo de Productos</router-link></li>
+              <li><router-link to="/downloads/technical-manual">Manual T&eacute;cnico</router-link></li>
             </ul>
           </li>
-          <li><a href="#">Tips de Instalaci&oacute;n</a></li>
+          <li><router-link to="/installation-tips">Tips de Instalaci&oacute;n</router-link></li>
         </ul>
       </div><!--/.nav-collapse -->
     </div><!--/.container-fluid -->
