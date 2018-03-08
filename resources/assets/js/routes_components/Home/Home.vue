@@ -1,8 +1,10 @@
 <template>
     <div class="container-fluid">
         <div class="row">
-            <carousel :images="images"></carousel>
-            <aboutus :image="aboutusImage" :text="aboutusText"></aboutus>
+            <home-carousel :images="images"></home-carousel>
+            <aboutus :imageAbout="aboutusImage" :text="aboutusText"></aboutus>
+            <certification :title="certificationTitle" :text="certificationText" :certifications="certifications"></certification>
+            <home-products></home-products>
         </div>
     </div>
 </template>
@@ -14,6 +16,9 @@
             images: [],
             aboutusImage: '',
             aboutusText: '',
+            certificationTitle: '',
+            certificationText: '',
+            certifications: []
           }
         },
         created(){
@@ -29,6 +34,21 @@
           .then(function (response) {
             vm.aboutusImage = response.data.image;
             vm.aboutusText = response.data.description;
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+          axios.get('api/certification')
+          .then(function (response) {
+            vm.certificationTitle = response.data.title;
+            vm.certificationText = response.data.description;
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+          axios.get('api/certificationsList')
+          .then(function (response) {
+            vm.certifications = response.data;
           })
           .catch(function (error) {
             console.log(error);

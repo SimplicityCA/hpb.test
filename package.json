@@ -22,6 +22,7 @@
         "@xkeshi/image-compressor": "^0.5.2",
         "bootstrap": "^3.3.7",
         "vee-validate": "^2.0.0-rc.21",
+        "vue-carousel": "^0.6.9",
         "vue-material": "^1.0.0-beta-7",
         "vue-material-datepicker": "^2.0.1",
         "vue-resource": "^1.3.4",

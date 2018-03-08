@@ -1,7 +1,7 @@
 <template>
-	<div>
+	<div class="block-container">
 		<div class="col-sm-6">
-			<img :src="'/img/'+image" class="img-responsive" >
+			<img :src="'/img/'+imageAbout" >
 		</div>
 		<div class="col-sm-6">
 			<h2>QUIÉNES SOMOS</h2>
@@ -12,12 +12,6 @@
 <script>
 export default {
     name: 'aboutus',
-    props: ['image','text'],
-    data(){
-    	return{
-    		data () {
-			  },
-    	}
-    }
+    props: ['imageAbout','text'],
   }
 </script>

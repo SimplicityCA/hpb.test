@@ -27,16 +27,7 @@
 </template>
 <script>
 export default {
-    name: 'carousel',
+    name: 'home-carousel',
     props: ['images'],
-    data(){
-    	return{
-    		data () {
-			    return {
-			      quantity: 0,
-			    }
-			  },
-    	}
-    }
   }
 </script>

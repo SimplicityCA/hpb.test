@@ -8,7 +8,12 @@ use App\SiteText;
 class SiteTextController extends Controller
 {
     public function aboutus(){
-    	$about = SiteText::where('title','QUIÉNES SOMOS')->first();
+    	$about = SiteText::find(1);
     	return $about;
+    }
+
+    public function certification(){
+    	$certificationText = SiteText::find(2);
+    	return $certificationText;
     }
 }

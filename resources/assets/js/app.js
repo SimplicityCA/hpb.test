@@ -15,6 +15,7 @@ import VueMaterial from 'vue-material';
 import PulseLoader from 'vue-spinner/src/PulseLoader.vue';
 import 'vue-material/dist/vue-material.min.css';
 // import 'vue-material/dist/theme/default-dark.css';
+import VueCarousel from 'vue-carousel';
 
 window.Vue = require('vue');
 Vue.use(VueRouter);
@@ -23,6 +24,7 @@ Vue.use(VueSweetalert2);
 Vue.use(VueMaterial);
 Vue.use(VueResource);
 Vue.use(PulseLoader);
+Vue.use(VueCarousel);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -34,8 +36,10 @@ Vue.component('layout', require('./components/Layout.vue'));
 Vue.component('site-menu', require('./components/Site_menu.vue'));
 Vue.component('file-upload', VueUploadComponent);
 Vue.component('pulse-loader', PulseLoader);
-Vue.component('carousel', require('./components/Carousel.vue'));
+Vue.component('home-carousel', require('./components/Carousel.vue'));
 Vue.component('aboutus', require('./components/Aboutus.vue'));
+Vue.component('certification', require('./components/Certification.vue'));
+Vue.component('home-products', require('./components/Home_Products.vue'));
 
 //Routes Components
 const home = Vue.component('home', require('./routes_components/Home/Home.vue'));
