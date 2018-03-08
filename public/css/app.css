@@ -8350,8 +8350,26 @@ button.close {
   }
 }
 
-body {
-  color: #ee482d;
-  font-size: 30px;
+.navbar.navbar-default {
+  background-color: #000;
+  color: #FFF;
+  padding-top: 25px;
+  padding-bottom: 20px;
+}
+
+.navbar.navbar-default .nav.navbar-nav {
+  color: #FFF !important;
+}
+
+.navbar.navbar-default .nav.navbar-nav li,
+.navbar.navbar-default .nav.navbar-nav a {
+  color: #FFF !important;
+}
+
+.navbar-brand {
+  background-image: url("/img/logo.svg");
+  background-repeat: no-repeat;
+  color: transparent !important;
+  margin-left: 30px !important;
 }
 

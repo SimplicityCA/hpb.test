@@ -1,5 +1,22 @@
+.navbar.navbar-default {
+	background-color: #000;
+  color: #FFF;
+  padding-top: 25px;
+  padding-bottom: 20px;
 
-body {
-	color: $brand-orange;
-  font-size: 30px;
+  .nav.navbar-nav {
+    color: #FFF !important;
+
+    li,
+    a {
+      color: #FFF !important;
+    }
+  }
+}
+
+.navbar-brand {
+  background-image: url('/img/logo.svg');
+  background-repeat: no-repeat;
+  color: transparent !important;
+  margin-left: 30px !important;
 }
