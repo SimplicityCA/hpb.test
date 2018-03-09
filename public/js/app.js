@@ -90626,17 +90626,26 @@ var render = function() {
           }
         },
         _vm._l(_vm.products, function(product, index) {
-          return _c("slide", { key: index }, [
-            _c("a", { attrs: { href: product.link } }, [
-              _c("img", { attrs: { src: "/img/" + product.home_image } }),
-              _vm._v(" "),
-              _c("div", { staticClass: "product-title-block" }, [
-                _c("p", [_vm._v(_vm._s(product.title))]),
-                _vm._v(" "),
-                _c("p", [_vm._v(_vm._s(product.subtitle))])
-              ])
-            ])
-          ])
+          return _c(
+            "slide",
+            { key: index },
+            [
+              _c(
+                "router-link",
+                { attrs: { to: "/products/" + product.link } },
+                [
+                  _c("img", { attrs: { src: "/img/" + product.home_image } }),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "product-title-block" }, [
+                    _c("p", [_vm._v(_vm._s(product.title))]),
+                    _vm._v(" "),
+                    _c("p", [_vm._v(_vm._s(product.subtitle))])
+                  ])
+                ]
+              )
+            ],
+            1
+          )
         })
       )
     ],
