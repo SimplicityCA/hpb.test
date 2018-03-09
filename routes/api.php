@@ -23,3 +23,4 @@ Route::get('certification', 'SiteTextController@certification');
 Route::get('certificationsList', 'CertificationController@index');
 Route::get('products', 'ProductController@index');
 Route::post('contact', 'ContactController@store');
+Route::get('product/{link}', 'ProductController@show');

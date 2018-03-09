@@ -12408,7 +12408,7 @@ var routes = [{
   path: '/',
   component: home
 }, {
-  path: '/product/:product_id',
+  path: '/products/:product_id',
   component: product
 }, {
   path: '/tips',
@@ -90379,7 +90379,9 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "block-container" }, [
     _c("div", { staticClass: "col-sm-6" }, [
-      _c("img", { attrs: { src: "/img/" + _vm.imageAbout } })
+      _vm.imageAbout
+        ? _c("img", { attrs: { src: "/img/" + _vm.imageAbout } })
+        : _vm._e()
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "col-sm-6" }, [
@@ -91280,18 +91282,22 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    mounted: function mounted() {
-        console.log('Product mounted id:.', this.$route.params.product_id);
-    },
-    data: function data() {
-        return {
-            id: this.$route.params.product_id
-        };
-    }
+  data: function data() {
+    return {
+      id: this.$route.params.product_id,
+      product: []
+    };
+  },
+  created: function created() {
+    var vm = this;
+    axios.get('api/product/' + this.id).then(function (response) {
+      vm.product = response.data;
+    }).catch(function (error) {
+      console.log(error);
+    });
+  }
 });
 
 /***/ }),
@@ -91302,19 +91308,29 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container" }, [
+  return _c("div", { staticClass: "container-fluid" }, [
     _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-8 col-md-offset-2" }, [
-        _c("div", { staticClass: "panel panel-default" }, [
-          _c("div", { staticClass: "panel-heading" }, [
-            _vm._v("Producto " + _vm._s(this.$route.params.product_id))
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "panel-body" }, [
-            _vm._v("\n                    ruta del producto\n                ")
-          ])
-        ])
-      ])
+      _vm.product.header_image
+        ? _c("img", { attrs: { src: "/img/" + _vm.product.header_image } })
+        : _vm._e(),
+      _vm._v(
+        "\n        " +
+          _vm._s(_vm.product.title) +
+          "\n        " +
+          _vm._s(_vm.product.subtitle) +
+          "\n        "
+      ),
+      _c("div", [_vm._v(" ANIMACIÓN ")]),
+      _vm._v(" "),
+      _c("a", [_vm._v("Descargar Catálogo")]),
+      _vm._v(" "),
+      _vm.product.description_image
+        ? _c("img", { attrs: { src: "/img/" + _vm.product.description_image } })
+        : _vm._e(),
+      _vm._v(" "),
+      _c("div", {
+        domProps: { innerHTML: _vm._s(_vm.product.characteristics) }
+      })
     ])
   ])
 }

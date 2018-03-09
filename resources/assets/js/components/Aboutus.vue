@@ -1,7 +1,7 @@
 <template>
 	<div class="block-container">
 		<div class="col-sm-6">
-			<img :src="'/img/'+imageAbout" >
+			<img v-if="imageAbout" :src="'/img/'+imageAbout" >
 		</div>
 		<div class="col-sm-6">
 			<h2>QUIÉNES SOMOS</h2>

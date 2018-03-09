@@ -15,7 +15,7 @@ class SiteTextTableSeeder extends Seeder
         $text1 = new SiteText();
         $text1->title = 'QUIÉNES SOMOS';
         $text1->description = 'La vejez de una empresa se mide en su capacidad para renovarse ante las exigencias del nuevo mercado, es por eso que la empresa IMPORTADORA DÁVILA está renovando e innovando su marca de frenos HIGH POWER BRAKE, queremos que nuestra marca se especialice en todo el sistema de frenado, aquí recibirás la mejor asesoría para adquirir nuestros productos de acuerdo a tus necesidades de manejo. Nosotros te explicaremos a detalle todo lo que quieras conocer de nuestros productos, sus características, certificaciones y especificaciones técnicas.';
-        $text1->image = 'Quienes_somos-01.svg';
+        $text1->image = 'quienes_somos_01.svg';
         $text1->location = 'HOME';
         $text1->save();
 
