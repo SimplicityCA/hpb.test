@@ -38,3 +38,10 @@ $input-color-placeholder: lighten($text-color, 30%);
 
 // Panels
 $panel-default-heading-bg: #fff;
+
+// Typography (Do not use this for styling, use the mixins on typography.scss instead)
+$font-roboto-black: "Roboto-Black";
+$font-roboto-medium: "Roboto-Medium";
+$font-roboto-light: "Roboto-Light";
+$font-roboto-bold: "Roboto-Bold";
+$font-roboto-regular: "Roboto-Regular";

@@ -10,6 +10,8 @@
     li,
     a {
       color: #FFF !important;
+      @include font-stack-roboto-black;
+      text-transform: uppercase;
     }
   }
 }
