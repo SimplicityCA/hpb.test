@@ -12400,7 +12400,7 @@ Vue.component('contact-form', __webpack_require__(80));
 //Routes Components
 var home = Vue.component('home', __webpack_require__(83));
 var product = Vue.component('product', __webpack_require__(86));
-var contact = Vue.component('contact', __webpack_require__(89));
+var client = Vue.component('client', __webpack_require__(89));
 var downloads = Vue.component('downloads', __webpack_require__(92));
 var tips = Vue.component('tips', __webpack_require__(95));
 
@@ -12414,8 +12414,8 @@ var routes = [{
   path: '/tips',
   component: tips
 }, {
-  path: '/contact',
-  component: contact
+  path: '/client',
+  component: client
 }, {
   path: '/downloads',
   component: downloads
@@ -89974,7 +89974,7 @@ var render = function() {
             _c(
               "li",
               {},
-              [_c("router-link", { attrs: { to: "/home" } }, [_vm._v("Home")])],
+              [_c("router-link", { attrs: { to: "/" } }, [_vm._v("Home")])],
               1
             ),
             _vm._v(" "),
@@ -90023,8 +90023,8 @@ var render = function() {
             _c(
               "li",
               [
-                _c("router-link", { attrs: { to: "/contact" } }, [
-                  _vm._v("Contáctanos")
+                _c("router-link", { attrs: { to: "/client" } }, [
+                  _vm._v("Conviértete en Cliente")
                 ])
               ],
               1
@@ -90104,7 +90104,7 @@ var staticRenderFns = [
         ]
       ),
       _vm._v(" "),
-      _c("a", { staticClass: "navbar-brand", attrs: { href: "#home" } }, [
+      _c("a", { staticClass: "navbar-brand", attrs: { href: "/" } }, [
         _vm._v("High Power Brake Logo")
       ])
     ])
@@ -91370,7 +91370,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/js/routes_components/Contact/Contact.vue"
+Component.options.__file = "resources/assets/js/routes_components/Client/Client.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -91379,9 +91379,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-b246b86a", Component.options)
+    hotAPI.createRecord("data-v-3c7b2a2e", Component.options)
   } else {
-    hotAPI.reload("data-v-b246b86a", Component.options)
+    hotAPI.reload("data-v-3c7b2a2e", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -91457,7 +91457,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-b246b86a", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-3c7b2a2e", module.exports)
   }
 }
 

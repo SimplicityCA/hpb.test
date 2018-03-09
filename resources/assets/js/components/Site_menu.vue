@@ -8,11 +8,11 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#home">High Power Brake Logo</a>
+        <a class="navbar-brand" href="/">High Power Brake Logo</a>
       </div>
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
-          <li class=""><router-link to="/home">Home</router-link></li>
+          <li class=""><router-link to="/">Home</router-link></li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Productos<span class="caret"></span></a>
             <ul class="dropdown-menu">
@@ -21,7 +21,7 @@
               <li><router-link to="/products/brake-shoe">Brake Shoe</router-link></li>
             </ul>
           </li>
-          <li><router-link to="/contact">Cont&aacute;ctanos</router-link></li>
+          <li><router-link to="/client">Convi&eacute;rtete en Cliente</router-link></li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Descargas<span class="caret"></span></a>
             <ul class="dropdown-menu">

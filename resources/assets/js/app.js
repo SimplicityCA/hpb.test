@@ -45,7 +45,7 @@ Vue.component('contact-form', require('./components/Contact.vue'));
 //Routes Components
 const home = Vue.component('home', require('./routes_components/Home/Home.vue'));
 const product = Vue.component('product', require('./routes_components/Product/Product.vue'));
-const contact = Vue.component('contact', require('./routes_components/Contact/Contact.vue'));
+const client = Vue.component('client', require('./routes_components/Client/Client.vue'));
 const downloads = Vue.component('downloads', require('./routes_components/Downloads/Downloads.vue'));
 const tips = Vue.component('tips', require('./routes_components/Tips/Tips.vue'));
 
@@ -63,8 +63,8 @@ const routes = [
     component: tips
   },
   {
-    path: '/contact',
-    component: contact
+    path: '/client',
+    component: client
   },
   {
     path: '/downloads',
