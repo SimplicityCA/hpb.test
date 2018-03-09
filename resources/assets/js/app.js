@@ -41,6 +41,7 @@ Vue.component('aboutus', require('./components/Aboutus.vue'));
 Vue.component('certification', require('./components/Certification.vue'));
 Vue.component('home-products', require('./components/Home_Products.vue'));
 Vue.component('contact-form', require('./components/Contact.vue'));
+Vue.component('client-form', require('./components/Client_form.vue'));
 
 //Routes Components
 const home = Vue.component('home', require('./routes_components/Home/Home.vue'));
