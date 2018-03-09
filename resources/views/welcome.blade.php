@@ -18,7 +18,7 @@
             <file-upload></file-upload>
             <layout></layout>
             <router-view></router-view>
-            
+            <contact-form></contact-form>
         </div>
     </body>
     <script type="text/javascript" src="{{ URL::asset('js/app.js') }}"></script>

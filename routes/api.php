@@ -21,3 +21,5 @@ Route::get('homepictures', 'HomePictureController@index');
 Route::get('aboutus', 'SiteTextController@aboutus');
 Route::get('certification', 'SiteTextController@certification');
 Route::get('certificationsList', 'CertificationController@index');
+Route::get('products', 'ProductController@index');
+Route::post('contact', 'ContactController@store');

@@ -4,7 +4,7 @@
             <home-carousel :images="images"></home-carousel>
             <aboutus :imageAbout="aboutusImage" :text="aboutusText"></aboutus>
             <certification :title="certificationTitle" :text="certificationText" :certifications="certifications"></certification>
-            <home-products></home-products>
+            <home-products :products="products"></home-products>
         </div>
     </div>
 </template>
@@ -18,7 +18,8 @@
             aboutusText: '',
             certificationTitle: '',
             certificationText: '',
-            certifications: []
+            certifications: [],
+            products: []
           }
         },
         created(){
@@ -49,6 +50,13 @@
           axios.get('api/certificationsList')
           .then(function (response) {
             vm.certifications = response.data;
+          })
+          .catch(function (error) {
+            console.log(error);
+          }); 
+          axios.get('api/products')
+          .then(function (response) {
+            vm.products = response.data;
           })
           .catch(function (error) {
             console.log(error);

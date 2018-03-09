@@ -1,14 +1,15 @@
 <template>
 	<div class="block-container">
-		<carousel>
-		  <slide>
-		    Slide 1 Content
-		  </slide>
-		  <slide>
-		    Slide 2 Content
-		  </slide>
-		  <slide>
-		    Slide 3 Content
+		<h2>NUESTROS <b>PRODUCTOS</b></h2>
+		<carousel :perPage="2" :navigationEnabled="true" :paginationEnabled="false" :perPageCustom="[[420, 2],[768, 2], [1024, 3]]">
+		  <slide v-for="(product, index) in products" :key="index">
+		  	<a :href="product.link">
+		  		<img :src="'/img/'+product.home_image"> 
+			    <div class="product-title-block">
+				    <p>{{product.title}}</p>
+				    <p>{{product.subtitle}}</p>
+				  </div>
+			  </a>
 		  </slide>
 		</carousel>
 	</div>
@@ -16,6 +17,6 @@
 <script>
 export default {
     name: 'home-products',
-    props: ['imageAbout','text'],
+    props: ['products'],
   }
 </script>
