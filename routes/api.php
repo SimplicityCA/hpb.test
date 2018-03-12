@@ -24,3 +24,7 @@ Route::get('certificationsList', 'CertificationController@index');
 Route::get('products', 'ProductController@index');
 Route::post('contact', 'ContactController@store');
 Route::get('product/{link}', 'ProductController@show');
+Route::get('clientbanner', 'ClientController@banner');
+Route::get('clientdescription', 'ClientController@description');
+Route::post('client', 'ClientController@store');
+Route::get('tips', 'siteTextController@tips');

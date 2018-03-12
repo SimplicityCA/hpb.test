@@ -51,7 +51,7 @@ export default {
     		email: '',
     		phone: '',
     		message: '',
-    		formErrors: []	
+    		formErrors: [],
     	}
     },
     methods:{
@@ -72,6 +72,9 @@ export default {
 			    vm.email = '';
 			    vm.phone = '';
 			    vm.message = '';
+			    vm.$swal('¡Gracias por contactarte!',
+					  'Pronto nos pondremos en contacto contigo',
+					  'success');
 			  })
 			  .catch(function (error) {
 			    vm.formErrors = error.response.data.errors;

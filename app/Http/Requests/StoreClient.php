@@ -24,9 +24,14 @@ class StoreClient extends FormRequest
     public function rules()
     {
         return [
+            'ruc' => 'required|numeric',
             'name' => 'required',
-            'email' => 'required|email|unique:users,email,'.$this->id,
-            'password' => 'required_if:update,0',
+            'lastName' => 'required',
+            'city' => 'required',
+            'address' => 'required',
+            'phone' => 'required|numeric',
+            'email' => 'required|email',
+            'message' => 'required'
 
         ];
     }
@@ -34,11 +39,17 @@ class StoreClient extends FormRequest
     public function messages()
     {
         return [
-            'name.required' => 'El nombre del administrador es requerido',
-            'email.required' => 'El email del administrador es requerido',
+            'ruc.required' => 'El ruc o cédula es requerido',
+            'ruc.numeric' => 'El campo debe ser numérico ',
+            'name.required' => 'El nombre es requerido',
+            'lastName.required' => 'El apellido es requerido',
+            'city.required' => 'La ciudad es requerida',
+            'address.required' => 'La dirección es requerida',
+            'phone.required' => 'El teléfono es requerido',
+            'phone.numeric' => 'El teléfono debe ser numérico',
+            'email.required' => 'El email es requerido',
             'email.email' => 'El email ingresado no es válido',
-            'email.unique' => 'El email ingresado ya esta siendo usado por otro administrador',
-            'password.required_if' => 'La contraseña es requerida si se va a crear el usuario'
+            'message.required' => 'El mensaje es requerido',
         ];
     }
 }

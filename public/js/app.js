@@ -90064,7 +90064,7 @@ var render = function() {
             _c(
               "li",
               [
-                _c("router-link", { attrs: { to: "/installation-tips" } }, [
+                _c("router-link", { attrs: { to: "/tips" } }, [
                   _vm._v("Tips de Instalación")
                 ])
               ],
@@ -90769,41 +90769,42 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    name: 'contact-form',
-    data: function data() {
-        return {
-            name: '',
-            lastName: '',
-            city: '',
-            email: '',
-            phone: '',
-            message: '',
-            formErrors: []
-        };
-    },
+		name: 'contact-form',
+		data: function data() {
+				return {
+						name: '',
+						lastName: '',
+						city: '',
+						email: '',
+						phone: '',
+						message: '',
+						formErrors: []
+				};
+		},
 
-    methods: {
-        onSubmit: function onSubmit() {
-            var vm = this;
-            axios.post('api/contact', {
-                name: vm.name,
-                lastName: vm.lastName,
-                city: vm.city,
-                email: vm.email,
-                phone: vm.phone,
-                message: vm.message
-            }).then(function (response) {
-                vm.name = '';
-                vm.lastName = '';
-                vm.city = '';
-                vm.email = '';
-                vm.phone = '';
-                vm.message = '';
-            }).catch(function (error) {
-                vm.formErrors = error.response.data.errors;
-            });
-        }
-    }
+		methods: {
+				onSubmit: function onSubmit() {
+						var vm = this;
+						axios.post('api/contact', {
+								name: vm.name,
+								lastName: vm.lastName,
+								city: vm.city,
+								email: vm.email,
+								phone: vm.phone,
+								message: vm.message
+						}).then(function (response) {
+								vm.name = '';
+								vm.lastName = '';
+								vm.city = '';
+								vm.email = '';
+								vm.phone = '';
+								vm.message = '';
+								vm.$swal('¡Gracias por contactarte!', 'Pronto nos pondremos en contacto contigo', 'success');
+						}).catch(function (error) {
+								vm.formErrors = error.response.data.errors;
+						});
+				}
+		}
 });
 
 /***/ }),
@@ -91122,9 +91123,94 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    name: 'client-form'
+		name: 'client-form',
+		data: function data() {
+				return {
+						ruc: '',
+						storeName: '',
+						name: '',
+						lastName: '',
+						city: '',
+						address: '',
+						email: '',
+						phone: '',
+						message: '',
+						formErrors: []
+				};
+		},
+
+		methods: {
+				onSubmit: function onSubmit() {
+						var vm = this;
+						axios.post('api/client', {
+								ruc: vm.ruc,
+								storeName: vm.storeName,
+								name: vm.name,
+								lastName: vm.lastName,
+								city: vm.city,
+								address: vm.address,
+								email: vm.email,
+								phone: vm.phone,
+								message: vm.message
+						}).then(function (response) {
+								vm.ruc = '';
+								vm.storeName = '';
+								vm.name = '';
+								vm.lastName = '';
+								vm.city = '';
+								vm.address = '';
+								vm.email = '';
+								vm.phone = '';
+								vm.message = '';
+								vm.$swal('¡Gracias por contactarte!', 'Pronto nos pondremos en contacto contigo', 'success');
+						}).catch(function (error) {
+								vm.formErrors = error.response.data.errors;
+						});
+				}
+		}
 });
 
 /***/ }),
@@ -91135,9 +91221,344 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_vm._v("\n\tForm\n")])
+  return _c("div", [
+    _c(
+      "form",
+      {
+        on: {
+          submit: function($event) {
+            $event.preventDefault()
+            _vm.onSubmit($event)
+          }
+        }
+      },
+      [
+        _c("div", { staticClass: "form-group" }, [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.ruc,
+                expression: "ruc"
+              }
+            ],
+            staticClass: "form-control",
+            class: { error: _vm.formErrors.name },
+            attrs: { type: "text", placeholder: "CI o Ruc" },
+            domProps: { value: _vm.ruc },
+            on: {
+              keyup: function($event) {
+                _vm.formErrors.ruc = ""
+              },
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.ruc = $event.target.value
+              }
+            }
+          }),
+          _vm._v(" "),
+          _vm.formErrors.ruc
+            ? _c("span", { staticClass: "text-danger" }, [
+                _vm._v(_vm._s(_vm.formErrors.ruc[0]))
+              ])
+            : _vm._e()
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "form-group" }, [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.storeName,
+                expression: "storeName"
+              }
+            ],
+            staticClass: "form-control",
+            class: { error: _vm.formErrors.storeName },
+            attrs: {
+              type: "text",
+              placeholder: "Nombre del Almacén (Opcional)"
+            },
+            domProps: { value: _vm.storeName },
+            on: {
+              keyup: function($event) {
+                _vm.formErrors.storeName = ""
+              },
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.storeName = $event.target.value
+              }
+            }
+          }),
+          _vm._v(" "),
+          _vm.formErrors.storeName
+            ? _c("span", { staticClass: "text-danger" }, [
+                _vm._v(_vm._s(_vm.formErrors.storeName[0]))
+              ])
+            : _vm._e()
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "form-group" }, [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.name,
+                expression: "name"
+              }
+            ],
+            staticClass: "form-control",
+            class: { error: _vm.formErrors.name },
+            attrs: { type: "text", placeholder: "Nombre" },
+            domProps: { value: _vm.name },
+            on: {
+              keyup: function($event) {
+                _vm.formErrors.name = ""
+              },
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.name = $event.target.value
+              }
+            }
+          }),
+          _vm._v(" "),
+          _vm.formErrors.name
+            ? _c("span", { staticClass: "text-danger" }, [
+                _vm._v(_vm._s(_vm.formErrors.name[0]))
+              ])
+            : _vm._e()
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "form-group" }, [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.lastName,
+                expression: "lastName"
+              }
+            ],
+            staticClass: "form-control",
+            class: { error: _vm.formErrors.lastName },
+            attrs: { type: "text", placeholder: "Apellido" },
+            domProps: { value: _vm.lastName },
+            on: {
+              keyup: function($event) {
+                _vm.formErrors.lastName = ""
+              },
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.lastName = $event.target.value
+              }
+            }
+          }),
+          _vm._v(" "),
+          _vm.formErrors.lastName
+            ? _c("span", { staticClass: "text-danger" }, [
+                _vm._v(_vm._s(_vm.formErrors.lastName[0]))
+              ])
+            : _vm._e()
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "form-group" }, [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.city,
+                expression: "city"
+              }
+            ],
+            staticClass: "form-control",
+            class: { error: _vm.formErrors.city },
+            attrs: { type: "text", placeholder: "Ciudad" },
+            domProps: { value: _vm.city },
+            on: {
+              keyup: function($event) {
+                _vm.formErrors.city = ""
+              },
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.city = $event.target.value
+              }
+            }
+          }),
+          _vm._v(" "),
+          _vm.formErrors.city
+            ? _c("span", { staticClass: "text-danger" }, [
+                _vm._v(_vm._s(_vm.formErrors.city[0]))
+              ])
+            : _vm._e()
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "form-group" }, [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.address,
+                expression: "address"
+              }
+            ],
+            staticClass: "form-control",
+            class: { error: _vm.formErrors.address },
+            attrs: { type: "text", placeholder: "Dirección" },
+            domProps: { value: _vm.address },
+            on: {
+              keyup: function($event) {
+                _vm.formErrors.address = ""
+              },
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.address = $event.target.value
+              }
+            }
+          }),
+          _vm._v(" "),
+          _vm.formErrors.address
+            ? _c("span", { staticClass: "text-danger" }, [
+                _vm._v(_vm._s(_vm.formErrors.address[0]))
+              ])
+            : _vm._e()
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "form-group" }, [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.phone,
+                expression: "phone"
+              }
+            ],
+            staticClass: "form-control",
+            class: { error: _vm.formErrors.phone },
+            attrs: { type: "text", placeholder: "Teléfono o Celular" },
+            domProps: { value: _vm.phone },
+            on: {
+              keyup: function($event) {
+                _vm.formErrors.phone = ""
+              },
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.phone = $event.target.value
+              }
+            }
+          }),
+          _vm._v(" "),
+          _vm.formErrors.phone
+            ? _c("span", { staticClass: "text-danger" }, [
+                _vm._v(_vm._s(_vm.formErrors.phone[0]))
+              ])
+            : _vm._e()
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "form-group" }, [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.email,
+                expression: "email"
+              }
+            ],
+            staticClass: "form-control",
+            class: { error: _vm.formErrors.email },
+            attrs: { type: "text", placeholder: "Mail" },
+            domProps: { value: _vm.email },
+            on: {
+              keyup: function($event) {
+                _vm.formErrors.email = ""
+              },
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.email = $event.target.value
+              }
+            }
+          }),
+          _vm._v(" "),
+          _vm.formErrors.email
+            ? _c("span", { staticClass: "text-danger" }, [
+                _vm._v(_vm._s(_vm.formErrors.email[0]))
+              ])
+            : _vm._e()
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "form-group" }, [
+          _c("textarea", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.message,
+                expression: "message"
+              }
+            ],
+            staticClass: "form-control",
+            class: { error: _vm.formErrors.message },
+            attrs: { placeholder: "Mensaje" },
+            domProps: { value: _vm.message },
+            on: {
+              keyup: function($event) {
+                _vm.formErrors.message = ""
+              },
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.message = $event.target.value
+              }
+            }
+          }),
+          _vm._v(" "),
+          _vm.formErrors.message
+            ? _c("span", { staticClass: "text-danger" }, [
+                _vm._v(_vm._s(_vm.formErrors.message[0]))
+              ])
+            : _vm._e()
+        ]),
+        _vm._v(" "),
+        _vm._m(0)
+      ]
+    )
+  ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("button", { staticClass: "btn btn-primary" }, [_vm._v("Enviar")]),
+      _vm._v(" "),
+      _c("a", { attrs: { href: "#" } }, [_vm._v("Descargar catálogo ")])
+    ])
+  }
+]
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -91489,11 +91910,38 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    mounted: function mounted() {
-        console.log('Contact mounted.');
-    }
+  data: function data() {
+    return {
+      header: [],
+      description: []
+    };
+  },
+  created: function created() {
+    var vm = this;
+    axios.get('api/clientbanner').then(function (response) {
+      vm.header = response.data;
+    }).catch(function (error) {
+      console.log(error);
+    });
+    axios.get('api/clientdescription').then(function (response) {
+      vm.description = response.data;
+    }).catch(function (error) {
+      console.log(error);
+    });
+  }
 });
 
 /***/ }),
@@ -91505,7 +91953,34 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container-fluid" }, [
-    _c("div", { staticClass: "row" }, [_c("client-form")], 1)
+    _c("div", { staticClass: "row" }, [
+      _vm.header.image
+        ? _c("img", { attrs: { src: "/img/" + _vm.header.image } })
+        : _vm._e(),
+      _vm._v(" "),
+      _c("p", [_vm._v(_vm._s(_vm.header.title))]),
+      _vm._v(" "),
+      _c("p", [_vm._v(_vm._s(_vm.header.subtitle))]),
+      _vm._v(" "),
+      _c("h2", [_vm._v("CONVIÉRTETE EN DISTRIBUIDOR")]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-sm-6" }, [
+        _vm.description.image
+          ? _c("img", { attrs: { src: "/img/" + _vm.description.image } })
+          : _vm._e()
+      ]),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "col-sm-6" },
+        [
+          _c("p", [_vm._v(_vm._s(_vm.description.description))]),
+          _vm._v(" "),
+          _c("client-form")
+        ],
+        1
+      )
+    ])
   ])
 }
 var staticRenderFns = []
@@ -91706,11 +92181,29 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    mounted: function mounted() {
-        console.log('tips mounted.');
-    }
+  data: function data() {
+    return {
+      header: [],
+      tips: []
+    };
+  },
+  created: function created() {
+    var vm = this;
+    axios.get('api/clientbanner').then(function (response) {
+      vm.header = response.data;
+    }).catch(function (error) {
+      console.log(error);
+    });
+    axios.get('api/tips').then(function (response) {
+      vm.tips = response.data;
+    }).catch(function (error) {
+      console.log(error);
+    });
+  }
 });
 
 /***/ }),
@@ -91721,28 +92214,35 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-md-8 col-md-offset-2" }, [
-          _c("div", { staticClass: "panel panel-default" }, [
-            _c("div", { staticClass: "panel-heading" }, [_vm._v("tips")]),
+  return _c("div", { staticClass: "container-fluid" }, [
+    _c("div", { staticClass: "row" }, [
+      _vm.header.image
+        ? _c("img", { attrs: { src: "/img/" + _vm.header.image } })
+        : _vm._e(),
+      _vm._v(" "),
+      _c("p", [_vm._v(_vm._s(_vm.header.title))]),
+      _vm._v(" "),
+      _c("p", [_vm._v(_vm._s(_vm.header.subtitle))]),
+      _vm._v(" "),
+      _c("h2", [_vm._v("TIPS DE INSTALACIÓN")]),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "container" },
+        _vm._l(_vm.tips, function(tip, index) {
+          return _c("div", { staticClass: "col-sm-4 col-xs-6" }, [
+            _c("h4", [_vm._v(_vm._s(tip.title))]),
             _vm._v(" "),
-            _c("div", { staticClass: "panel-body" }, [
-              _vm._v("\n                    ruta tips\n                ")
-            ])
+            _c("img", { attrs: { src: "/img/" + tip.image } }),
+            _vm._v(" "),
+            _c("p", [_vm._v(_vm._s(tip.description))])
           ])
-        ])
-      ])
+        })
+      )
     ])
-  }
-]
+  ])
+}
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {

@@ -16,4 +16,9 @@ class SiteTextController extends Controller
     	$certificationText = SiteText::find(2);
     	return $certificationText;
     }
+
+    public function tips(){
+    	$tips = SiteText::where('location', 'TIPS')->get();
+    	return $tips;
+    }
 }
