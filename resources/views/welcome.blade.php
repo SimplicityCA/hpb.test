@@ -19,6 +19,7 @@
             <!-- <layout></layout> -->
             <router-view></router-view>
             <contact-form></contact-form>
+            <site-footer></site-footer>
         </div>
     </body>
     <script type="text/javascript" src="{{ URL::asset('js/app.js') }}"></script>

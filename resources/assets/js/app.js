@@ -34,6 +34,7 @@ Vue.use(VueCarousel);
 //Global Components
 Vue.component('layout', require('./components/Layout.vue'));
 Vue.component('site-menu', require('./components/Site_menu.vue'));
+Vue.component('site-footer', require('./components/Site_footer.vue'));
 Vue.component('file-upload', VueUploadComponent);
 Vue.component('pulse-loader', PulseLoader);
 Vue.component('home-carousel', require('./components/Carousel.vue'));
