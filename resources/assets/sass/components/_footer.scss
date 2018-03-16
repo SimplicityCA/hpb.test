@@ -1,0 +1,20 @@
+footer {
+  .footer-rows-container {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: black;
+
+    &__row {
+      width: 16.66%;
+      background-color: $brand-orange;
+    }
+  }
+
+  .footer-bottom-copy {
+    background-color: $brand-orange;
+    color: #FFF;
+    text-align: center;
+    padding: 5px 30px;
+    border-top: 2px solid #FFF;
+  }
+}
