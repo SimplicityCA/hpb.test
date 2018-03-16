@@ -8587,3 +8587,25 @@ button.close {
   width: 100%;
 }
 
+footer .footer-rows-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  background-color: black;
+}
+
+footer .footer-rows-container__row {
+  width: 16.66%;
+  background-color: #ee482d;
+}
+
+footer .footer-bottom-copy {
+  background-color: #ee482d;
+  color: #FFF;
+  text-align: center;
+  padding: 5px 30px;
+  border-top: 2px solid #FFF;
+}
+
