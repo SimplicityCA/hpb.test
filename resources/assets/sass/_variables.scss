@@ -17,6 +17,7 @@ $brand-warning: #cbb956;
 $brand-danger: #bf5329;
 $brand-orange: #ee482d;
 $brand-grey-text: #404040;
+$brand-light-grey: #cecccd;
 
 // Typography
 $icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
@@ -45,5 +46,8 @@ $font-roboto-medium: "Roboto-Medium";
 $font-roboto-light: "Roboto-Light";
 $font-roboto-bold: "Roboto-Bold";
 $font-roboto-regular: "Roboto-Regular";
+
+//Extra Breakpoint auxiliars
+$screen-mid-sm-bm: 830px;
 
 @grid-float-breakpoint: @screen-md-min;
