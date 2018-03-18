@@ -90250,9 +90250,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'site-menu'
@@ -90266,94 +90263,109 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("footer", [
+    _c("div", { staticClass: "container-fluid" }, [
+      _c("div", { staticClass: "footer-container" }, [
+        _c("div", { staticClass: "footer-rows-container" }, [
+          _c("div", { staticClass: "footer-rows-container__row" }, [
+            _c(
+              "div",
+              { staticClass: "footer-rows-container__row-title" },
+              [_c("router-link", { attrs: { to: "/" } }, [_vm._v("Home")])],
+              1
+            )
+          ]),
+          _vm._v(" "),
+          _vm._m(0),
+          _vm._v(" "),
+          _c("div", { staticClass: "footer-rows-container__row" }, [
+            _c(
+              "div",
+              { staticClass: "footer-rows-container__row-title" },
+              [
+                _c("router-link", { attrs: { to: "/client" } }, [
+                  _vm._v("Conviértete en Cliente")
+                ])
+              ],
+              1
+            )
+          ]),
+          _vm._v(" "),
+          _vm._m(1),
+          _vm._v(" "),
+          _c("div", { staticClass: "footer-rows-container__row" }, [
+            _c(
+              "div",
+              { staticClass: "footer-rows-container__row-title" },
+              [
+                _c("router-link", { attrs: { to: "/tips" } }, [
+                  _vm._v("Tips de Instalación")
+                ])
+              ],
+              1
+            )
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "footer-bottom-copy" }, [
+          _vm._v(
+            "\n          © 2018 High Power Brake - Un producto de Importadora Dávila. Todos los derechos reservados.\n        "
+          )
+        ])
+      ])
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("footer", [
-      _c("div", { staticClass: "container-fluid" }, [
-        _c("div", { staticClass: "footer-container" }, [
-          _c("div", { staticClass: "footer-rows-container" }, [
-            _c("div", { staticClass: "footer-rows-container__row" }, [
-              _c("div", { staticClass: "footer-rows-container__row-title" }, [
-                _vm._v("Home")
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "footer-rows-container__row" }, [
-              _c("div", { staticClass: "footer-rows-container__row-title" }, [
-                _vm._v("Productos")
-              ]),
-              _vm._v(" "),
-              _c("ul", { staticClass: "footer-rows-container_row-list" }, [
-                _c("li", [
-                  _c(
-                    "a",
-                    { attrs: { href: "#/products/carbon-performance" } },
-                    [_vm._v("Carbon Performance")]
-                  )
-                ]),
-                _vm._v(" "),
-                _c("li", [
-                  _c("a", { attrs: { href: "#/products/ceramic-organic" } }, [
-                    _vm._v("Ceramic Organic")
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("li", [
-                  _c("a", { attrs: { href: "#/products/brake-shoe" } }, [
-                    _vm._v("Brake Shoe")
-                  ])
-                ])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "footer-rows-container__row" }, [
-              _c("div", { staticClass: "footer-rows-container__row-title" }, [
-                _vm._v("Contáctanos")
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "footer-rows-container__row" }, [
-              _c("div", { staticClass: "footer-rows-container__row-title" }, [
-                _vm._v("Descargas")
-              ]),
-              _vm._v(" "),
-              _c("ul", { staticClass: "footer-rows-container_row-list" }, [
-                _c("li", [
-                  _c("a", { attrs: { href: "#/downloads/products-catalog" } }, [
-                    _vm._v("Catálogo de Productos")
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("li", [
-                  _c("a", { attrs: { href: "#/downloads/technical-manual" } }, [
-                    _vm._v("Manual Técnico")
-                  ])
-                ])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "footer-rows-container__row" }, [
-              _c("div", { staticClass: "footer-rows-container__row-title" }, [
-                _vm._v("Clientes")
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "footer-rows-container__row" }, [
-              _c("div", { staticClass: "footer-rows-container__row-title" }, [
-                _vm._v("Tips de Instalación")
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "footer-bottom-copy" }, [
-            _vm._v(
-              "\n          © 2018 High Power Brake - Un producto de Importadora Dávila. Todos los derechos reservados.\n        "
-            )
+    return _c("div", { staticClass: "footer-rows-container__row" }, [
+      _c("div", { staticClass: "footer-rows-container__row-title" }, [
+        _vm._v("Productos")
+      ]),
+      _vm._v(" "),
+      _c("ul", { staticClass: "footer-rows-container__row-list" }, [
+        _c("li", [
+          _c("a", { attrs: { href: "#/products/carbon-performance" } }, [
+            _vm._v("Carbon Performance")
+          ])
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c("a", { attrs: { href: "#/products/ceramic-organic" } }, [
+            _vm._v("Ceramic Organic")
+          ])
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c("a", { attrs: { href: "#/products/brake-shoe" } }, [
+            _vm._v("Brake Shoe")
+          ])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "footer-rows-container__row" }, [
+      _c("div", { staticClass: "footer-rows-container__row-title" }, [
+        _vm._v("Descargas")
+      ]),
+      _vm._v(" "),
+      _c("ul", { staticClass: "footer-rows-container__row-list" }, [
+        _c("li", [
+          _c("a", { attrs: { href: "#/downloads/products-catalog" } }, [
+            _vm._v("Catálogo de Productos")
+          ])
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c("a", { attrs: { href: "#/downloads/technical-manual" } }, [
+            _vm._v("Manual Técnico")
           ])
         ])
       ])

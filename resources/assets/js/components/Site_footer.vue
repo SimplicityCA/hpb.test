@@ -4,31 +4,28 @@
       <div class="footer-container">
         <div class="footer-rows-container">
           <div class="footer-rows-container__row">
-            <div class="footer-rows-container__row-title">Home</div>
+            <div class="footer-rows-container__row-title"><router-link to="/">Home</router-link></div>
           </div>
           <div class="footer-rows-container__row">
             <div class="footer-rows-container__row-title">Productos</div>
-            <ul class="footer-rows-container_row-list">
+            <ul class="footer-rows-container__row-list">
               <li><a href="#/products/carbon-performance" class="">Carbon Performance</a></li>
               <li><a href="#/products/ceramic-organic" class="">Ceramic Organic</a></li>
               <li><a href="#/products/brake-shoe" class="">Brake Shoe</a></li>
             </ul>
           </div>
           <div class="footer-rows-container__row">
-            <div class="footer-rows-container__row-title">Cont&aacute;ctanos</div>
+            <div class="footer-rows-container__row-title"><router-link to="/client">Convi&eacute;rtete en Cliente</router-link></div>
           </div>
           <div class="footer-rows-container__row">
             <div class="footer-rows-container__row-title">Descargas</div>
-            <ul class="footer-rows-container_row-list">
+            <ul class="footer-rows-container__row-list">
               <li><a href="#/downloads/products-catalog" class="">Catálogo de Productos</a></li>
               <li><a href="#/downloads/technical-manual" class="">Manual Técnico</a></li>
             </ul>
           </div>
           <div class="footer-rows-container__row">
-            <div class="footer-rows-container__row-title">Clientes</div>
-          </div>
-          <div class="footer-rows-container__row">
-            <div class="footer-rows-container__row-title">Tips de Instalaci&oacute;n</div>
+            <div class="footer-rows-container__row-title"><router-link to="/tips">Tips de Instalaci&oacute;n</router-link></div>
           </div>
         </div>
         <div class="footer-bottom-copy">
