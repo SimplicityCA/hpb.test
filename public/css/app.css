@@ -8408,6 +8408,10 @@ button.close {
   }
 }
 
+#app strong {
+  font-family: "Roboto-Bold", "Arial", serif;
+}
+
 .navbar.navbar-default {
   background-color: #000;
   color: #FFF;
@@ -8587,6 +8591,10 @@ button.close {
   width: 100%;
 }
 
+.carousel-container {
+  overflow: hidden;
+}
+
 footer {
   color: #cecccd;
 }
@@ -8742,5 +8750,43 @@ footer .footer-bottom-copy {
   border-top: 1px solid #FFF;
   background-color: #ee482d;
   font-size: 12px;
+}
+
+.contact-form {
+  background-color: #f1f2f2;
+}
+
+.contact-form > div.container {
+  text-align: center;
+  padding: 40px 30px;
+}
+
+.contact-form h2 {
+  color: #ee482d;
+  margin-bottom: 35px;
+}
+
+.contact-form h2 strong {
+  color: #404040;
+}
+
+.contact-form form .form-group input,
+.contact-form form .form-group textarea {
+  border-radius: 0;
+}
+
+.contact-form form .form-group button.btn-primary {
+  margin-top: 25px;
+  background-color: #ee482d;
+  min-width: 140px;
+  border-radius: 10px;
+  border-color: #ee482d;
+  -webkit-transition: background-color .4s ease, border-color .4s ease;
+  transition: background-color .4s ease, border-color .4s ease;
+}
+
+.contact-form form .form-group button.btn-primary:hover {
+  background-color: #404040;
+  border-color: #404040;
 }
 

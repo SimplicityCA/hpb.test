@@ -1,0 +1,40 @@
+.contact-form {
+  background-color: $brand-grey-contact-bg;
+
+  > div.container {
+    text-align: center;
+    padding: 40px 30px;
+  }
+
+  h2 {
+    color: $brand-orange;
+    margin-bottom: 35px;
+
+    strong {
+      color: $brand-grey-text;
+    }
+  }
+
+  form {
+    .form-group {
+      input,
+      textarea {
+        border-radius: 0;
+      }
+
+      button.btn-primary {
+        margin-top: 25px;
+        background-color: $brand-orange;
+        min-width: 140px;
+        border-radius: 10px;
+        border-color: $brand-orange;
+        transition: background-color .4s ease, border-color .4s ease;
+
+        &:hover {
+          background-color: $brand-grey-text;
+          border-color: $brand-grey-text;
+        }
+      }
+    }
+  }
+}

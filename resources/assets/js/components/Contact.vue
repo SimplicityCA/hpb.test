@@ -1,7 +1,7 @@
 <template>
-	<div class="block-content">
+	<div class="block-content contact-form">
 		<div class="container">
-			<h2>MÁS INFORMACIÓN</h2>
+			<h2>MÁS <strong>INFORMACIÓN</strong></h2>
 			<form @submit.prevent="onSubmit">
 				<div class="col-sm-5 col-sm-offset-1">
 					<div class="form-group">

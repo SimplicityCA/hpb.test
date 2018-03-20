@@ -90837,7 +90837,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "block-container" },
+    { staticClass: "block-container carousel-container" },
     [
       _vm._m(0),
       _vm._v(" "),
@@ -91038,9 +91038,9 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "block-content" }, [
+  return _c("div", { staticClass: "block-content contact-form" }, [
     _c("div", { staticClass: "container" }, [
-      _c("h2", [_vm._v("MÁS INFORMACIÓN")]),
+      _vm._m(0),
       _vm._v(" "),
       _c(
         "form",
@@ -91261,13 +91261,19 @@ var render = function() {
             ])
           ]),
           _vm._v(" "),
-          _vm._m(0)
+          _vm._m(1)
         ]
       )
     ])
   ])
 }
 var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h2", [_vm._v("MÁS "), _c("strong", [_vm._v("INFORMACIÓN")])])
+  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
