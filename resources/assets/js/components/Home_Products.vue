@@ -1,5 +1,5 @@
 <template>
-	<div class="block-container">
+	<div class="block-container carousel-container">
 		<h2>NUESTROS <b>PRODUCTOS</b></h2>
 		<carousel :perPage="2" :navigationEnabled="true" :paginationEnabled="false" :perPageCustom="[[420, 2],[768, 2], [1024, 3]]">
 		  <slide v-for="(product, index) in products" :key="index">
