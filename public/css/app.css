@@ -8764,6 +8764,7 @@ footer .footer-bottom-copy {
 .contact-form h2 {
   color: #ee482d;
   margin-bottom: 35px;
+  margin-top: 0;
 }
 
 .contact-form h2 strong {
@@ -8773,6 +8774,13 @@ footer .footer-bottom-copy {
 .contact-form form .form-group input,
 .contact-form form .form-group textarea {
   border-radius: 0;
+  color: black;
+  border-color: black;
+}
+
+.contact-form form .form-group textarea {
+  min-height: 240px;
+  resize: none;
 }
 
 .contact-form form .form-group button.btn-primary {
