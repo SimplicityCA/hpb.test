@@ -90837,7 +90837,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "block-container carousel-container" },
+    { staticClass: "block-container products-carousel-container" },
     [
       _vm._m(0),
       _vm._v(" "),
@@ -90863,7 +90863,7 @@ var render = function() {
                   _c("img", { attrs: { src: "/img/" + product.home_image } }),
                   _vm._v(" "),
                   _c("div", { staticClass: "product-title-block" }, [
-                    _c("p", [_vm._v(_vm._s(product.title))]),
+                    _c("p", [_c("strong", [_vm._v(_vm._s(product.title))])]),
                     _vm._v(" "),
                     _c("p", [_vm._v(_vm._s(product.subtitle))])
                   ])
@@ -90883,7 +90883,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("h2", [_vm._v("NUESTROS "), _c("b", [_vm._v("PRODUCTOS")])])
+    return _c("h2", [_vm._v("NUESTROS "), _c("strong", [_vm._v("PRODUCTOS")])])
   }
 ]
 render._withStripped = true
