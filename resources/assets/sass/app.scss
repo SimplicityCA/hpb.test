@@ -11,6 +11,9 @@
 // Bootstrap
 @import "~bootstrap-sass/assets/stylesheets/bootstrap";
 
+//Mixins
+@import "mixins";
+
 //Base
 @import "base";
 
@@ -19,3 +22,4 @@
 @import "components/home";
 @import "components/footer";
 @import "components/contact";
+@import "components/our-products";

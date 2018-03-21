@@ -9,6 +9,7 @@
   h2 {
     color: $brand-orange;
     margin-bottom: 35px;
+    margin-top: 0;
 
     strong {
       color: $brand-grey-text;
@@ -20,6 +21,13 @@
       input,
       textarea {
         border-radius: 0;
+        color: black;
+        border-color: black;
+      }
+
+      textarea {
+        min-height: 240px;
+        resize: none;
       }
 
       button.btn-primary {

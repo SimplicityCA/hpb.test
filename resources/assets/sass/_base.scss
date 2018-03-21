@@ -12,7 +12,12 @@
     }
   }
 
-  strong {
-    @include font-stack-roboto-bold;
+  strong,
+  b {
+    @include font-stack-roboto-black;
+  }
+
+  p {
+    @include font-stack-roboto-light;
   }
 }

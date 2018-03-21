@@ -1,0 +1,9 @@
+@mixin section-name-text {
+  text-align: center;
+	margin-top: 25px;
+	padding: 10px 30px;
+  background-color: $brand-orange;
+  color: #FFF;
+  margin-bottom: 0;
+  border: none;
+}
