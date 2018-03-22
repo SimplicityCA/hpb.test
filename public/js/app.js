@@ -90821,6 +90821,23 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     name: 'home-products',
@@ -90852,27 +90869,41 @@ var render = function() {
           }
         },
         _vm._l(_vm.products, function(product, index) {
-          return _c(
-            "slide",
-            { key: index },
-            [
-              _c(
-                "router-link",
-                { attrs: { to: "/products/" + product.link } },
-                [
-                  _c("img", { attrs: { src: "/img/" + product.home_image } }),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "product-title-block" }, [
-                    _c("p", [_c("strong", [_vm._v(_vm._s(product.title))])]),
-                    _vm._v(" "),
-                    _c("p", [_vm._v(_vm._s(product.subtitle))])
-                  ])
-                ]
-              )
-            ],
-            1
-          )
+          return _c("slide", { key: index }, [
+            _c("img", { attrs: { src: "/img/" + product.home_image } }),
+            _vm._v(" "),
+            _c("div", { staticClass: "product-title-block-container" }, [
+              _c("div", { staticClass: "product-title-block" }, [
+                _c("p", [_c("strong", [_vm._v(_vm._s(product.title))])]),
+                _vm._v(" "),
+                _c("p", [_vm._v(_vm._s(product.subtitle))])
+              ])
+            ])
+          ])
         })
+      ),
+      _vm._v(" "),
+      _c("div", { staticClass: "separator" }, [_vm._v("separator")]),
+      _vm._v(" "),
+      _c(
+        "carousel",
+        {
+          attrs: {
+            perPageCustom: [[768, 2], [1024, 3]],
+            paginationEnabled: false,
+            navigationEnabled: true
+          }
+        },
+        [
+          _c("slide", [_vm._v("\n        Slide 1 Content\n      ")]),
+          _vm._v(" "),
+          _c("slide", [_vm._v("\n        Slide 2 Content\n      ")]),
+          _vm._v(" "),
+          _c("slide", [_vm._v("\n        Slide 3 Content\n      ")]),
+          _vm._v(" "),
+          _c("slide", [_vm._v("\n        Slide 4 Content\n      ")])
+        ],
+        1
       )
     ],
     1
