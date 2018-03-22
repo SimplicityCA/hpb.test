@@ -8834,7 +8834,7 @@ footer .footer-bottom-copy {
 }
 
 .products-carousel-container .VueCarousel-slide {
-  background-color: #FFF;
+  background-color: #262324;
 }
 
 .products-carousel-container .VueCarousel-slide a {
@@ -8858,6 +8858,11 @@ footer .footer-bottom-copy {
 
 .products-carousel-container .VueCarousel-slide:last-child .product-title-block {
   border-right: none;
+}
+
+.products-carousel-container .product-title-block-container {
+  overflow: hidden;
+  background-color: #FFF;
 }
 
 .products-carousel-container .product-title-block {

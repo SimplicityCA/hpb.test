@@ -26,7 +26,7 @@
   }
 
   .VueCarousel-slide {
-    background-color: #FFF;
+    background-color: #262324;
 
     a {
       test-decoration: none !important;
@@ -51,6 +51,11 @@
         border-right: none;
       }
     }
+  }
+
+  .product-title-block-container {
+    overflow: hidden;
+    background-color: #FFF;
   }
 
   .product-title-block {
