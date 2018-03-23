@@ -1,8 +1,8 @@
 <template>
 	<div>
-		<div class="block-container">
+		<div class="block-container certifications-box">
 			<div class="col-sm-4">
-				<h2>{{title}}</h2>
+				<h2 v-html="title"></h2>
 			</div>
 			<div class="col-sm-8">
 				<p>{{text}}</p>

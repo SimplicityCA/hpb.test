@@ -90601,21 +90601,28 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "block-container" }, [
-    _c("div", { staticClass: "col-sm-6" }, [
+  return _c("div", { staticClass: "block-container about-us" }, [
+    _c("div", { staticClass: "col-sm-6 image-container" }, [
       _vm.imageAbout
         ? _c("img", { attrs: { src: "/img/" + _vm.imageAbout } })
         : _vm._e()
     ]),
     _vm._v(" "),
-    _c("div", { staticClass: "col-sm-6" }, [
-      _c("h2", [_vm._v("QUIÉNES SOMOS")]),
+    _c("div", { staticClass: "col-sm-6 text-container" }, [
+      _vm._m(0),
       _vm._v(" "),
-      _c("p", [_vm._v(_vm._s(_vm.text))])
+      _c("p", { domProps: { innerHTML: _vm._s(_vm.text) } })
     ])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h2", [_vm._v("QUIÉNES "), _c("strong", [_vm._v("SOMOS")])])
+  }
+]
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -90717,9 +90724,9 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("div", { staticClass: "block-container" }, [
+    _c("div", { staticClass: "block-container certifications-box" }, [
       _c("div", { staticClass: "col-sm-4" }, [
-        _c("h2", [_vm._v(_vm._s(_vm.title))])
+        _c("h2", { domProps: { innerHTML: _vm._s(_vm.title) } })
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "col-sm-8" }, [

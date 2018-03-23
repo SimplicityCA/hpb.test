@@ -14,13 +14,13 @@ class SiteTextTableSeeder extends Seeder
     {
         $text1 = new SiteText();
         $text1->title = 'QUIÉNES SOMOS';
-        $text1->description = 'La vejez de una empresa se mide en su capacidad para renovarse ante las exigencias del nuevo mercado, es por eso que la empresa IMPORTADORA DÁVILA está renovando e innovando su marca de frenos HIGH POWER BRAKE, queremos que nuestra marca se especialice en todo el sistema de frenado, aquí recibirás la mejor asesoría para adquirir nuestros productos de acuerdo a tus necesidades de manejo. Nosotros te explicaremos a detalle todo lo que quieras conocer de nuestros productos, sus características, certificaciones y especificaciones técnicas.';
+        $text1->description = 'La vejez de una empresa se mide en su capacidad para renovarse ante las exigencias del nuevo mercado, es por eso que la empresa <strong>IMPORTADORA DÁVILA</strong> está renovando e innovando su marca de frenos <strong>HIGH POWER BRAKE</strong>, queremos que nuestra marca se especialice en todo el sistema de frenado, aquí recibirás la mejor asesoría para adquirir nuestros productos de acuerdo a tus necesidades de manejo. Nosotros te explicaremos a detalle todo lo que quieras conocer de nuestros productos, sus características, certificaciones y especificaciones técnicas.';
         $text1->image = 'quienes_somos_01.svg';
         $text1->location = 'HOME';
         $text1->save();
 
         $text2 = new SiteText();
-        $text2->title = 'CERTIFICACIONES DE NUESTROS PRODUCTOS';
+        $text2->title = 'CERTIFICACIONES DE <strong>NUESTROS PRODUCTOS</strong>';
         $text2->description = 'Para asegurar que nuestros productos brinden lo último en seguridad y confianza, aplicamos nuestros productos en las pruebas y ensayos más rigurosos, sin comprometer la calidad y la seguridad. Nuestros productos HIGH POWER BRAKE ofrecen un rendimiento privilegiado para que la experiencia de frenado sea más segura en todo tipo de condiciones de manejo y clima. La marca HIGH POWER BRAKE posee varias certificaciones para sus productos, a continuación explicamos cada una de ellas:';
         $text2->image = '';
         $text2->location = 'HOME';
