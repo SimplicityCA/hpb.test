@@ -1,0 +1,65 @@
+#myCarousel {
+  .carousel-caption {
+    @include font-stack-roboto-regular;
+
+    h1 {
+      @include font-stack-roboto-regular;
+      font-size: 32px;
+
+      @media screen and (min-width: $screen-sm-min) {
+        font-size: 42px;
+      }
+
+      @media screen and (min-width: $screen-md-min) {
+        font-size: 48px; 
+      }
+    }
+
+    p {
+      @include font-stack-roboto-regular;
+      font-size: 15px;
+
+      @media screen and (min-width: $screen-sm-min) {
+        font-size: 20px;
+      }
+
+      @media screen and (min-width: $screen-md-min) {
+        font-size: 26px;
+      }
+    }
+  }
+
+  .carousel-inner {
+    .item {
+      &:first-child {
+        .carousel-caption {
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          height: 100%;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          align-items: center;
+          -webkit-box-pack: center;
+          -ms-flex-pack: center;
+          justify-content: center;
+          flex-wrap: wrap;
+        }
+      }
+    }
+  }
+
+  .carousel-indicators {
+    > li {
+      margin-right: 10px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    @media screen and (max-width: $screen-xs-max) {
+      bottom: 0;
+    }
+  }
+}

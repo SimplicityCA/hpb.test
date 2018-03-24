@@ -14,7 +14,7 @@ class CertificationTableSeeder extends Seeder
     {
       $certification1 = new Certification();
       $certification1->name = 'AMECA';
-      $certification1->description = 'Automotive Manufactures Equipment Compliance Agency, Inc. Es la agencia de cumplimiento de equipos de fabricación de automóviles. Nuestros productos están certificados por AMECA, la certificación AMECA es un requerimiento para las compañías que quieren importar materiales de fricción hacia los Estados Unidos.';
+      $certification1->description = 'Automotive Manufactures Equipment Compliance Agency, Inc. Es la agencia de cumplimiento de equipos de fabricación de automóviles. Nuestros productos están certificados por <strong>AMECA</strong>, la certificación <strong>AMECA</strong> es un requerimiento para las compañías que quieren importar materiales de fricción hacia los Estados Unidos.';
       $certification1->image = 'Ameca-01.svg';
       $certification1->save();
 
@@ -32,7 +32,7 @@ class CertificationTableSeeder extends Seeder
       
       $certification4 = new Certification();
       $certification4->name = 'LINK TEST';
-      $certification4->description = 'Las pruebas de fricción efectuadas por LINK garantizan a los conductores la más alta seguridad y resistencia. Es un laboratorio de acreditación mundial para pruebas en coeficiente de fricción en pastillas de freno y zapatas de freno.';
+      $certification4->description = 'Las pruebas de fricción efectuadas por <strong>LINK</strong> garantizan a los conductores la más alta seguridad y resistencia. Es un laboratorio de acreditación mundial para pruebas en coeficiente de fricción en pastillas de freno y zapatas de freno.';
       $certification4->image = 'LINK-01.svg';
       $certification4->save();
 
@@ -44,7 +44,7 @@ class CertificationTableSeeder extends Seeder
 
       $certification6 = new Certification();
       $certification6->name = 'ECE-R90 by VCA';
-      $certification6->description = 'La certificación ECE R90 es un requisito para todos los productos de freno que se comercializan en la Unión Europea y otros países que han adoptado las regulaciones ECE.';
+      $certification6->description = 'La certificación <strong>ECE R90</strong> es un requisito para todos los productos de freno que se comercializan en la Unión Europea y otros países que han adoptado las regulaciones <strong>ECE</strong>.';
       $certification6->image = 'VCA-01.svg';
       $certification6->save();
 

@@ -10,7 +10,7 @@ footer {
     flex-wrap: wrap;
     background-image: url("/img/bg_footer.svg");
     padding: 30px 30px 45px;
-    background-size: cover;
+    background-size: contain;
 
     @media screen and (max-width: $screen-xs-max) {
       padding: 0 15px;
