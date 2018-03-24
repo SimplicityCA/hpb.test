@@ -8616,7 +8616,7 @@ footer .footer-rows-container {
       flex-wrap: wrap;
   background-image: url("/img/bg_footer.svg");
   padding: 30px 30px 45px;
-  background-size: cover;
+  background-size: contain;
 }
 
 @media screen and (max-width: 767px) {
@@ -8911,12 +8911,26 @@ footer .footer-bottom-copy {
 
 @media screen and (min-width: 768px) {
   .about-us .text-container {
-    padding: 20px 10px;
+    padding: 20px 25px;
+  }
+
+  .about-us .text-container p,
+  .about-us .text-container h2 {
+    max-width: 530px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
 .about-us .text-container p {
   color: #555555;
+  font-size: 16px;
+}
+
+@media screen and (max-width: 767px) {
+  .about-us .text-container p {
+    font-size: 13px;
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -8946,13 +8960,210 @@ footer .footer-bottom-copy {
   color: #404040;
 }
 
+.certifications-box {
+  float: left;
+  margin-top: 30px;
+  width: 100%;
+  position: relative;
+}
+
+@media screen and (min-width: 768px) {
+  .certifications-box__header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 100%;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .certifications-box__header {
+    padding: 0 120px;
+  }
+}
+
+@media screen and (max-width: 1399px) and (min-width: 1150px) {
+  .certifications-box__header {
+    padding: 0 60px;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .certifications-box__header {
+    padding: 0 30px;
+  }
+}
+
+.certifications-box__header p {
+  font-size: 16px;
+  color: #404040;
+}
+
+@media screen and (max-width: 767px) {
+  .certifications-box__header p {
+    font-size: 13px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .certifications-box__header > div:first-child {
+    width: 33.32%;
+    text-align: right;
+    padding-right: 35px;
+  }
+}
+
+@media screen and (max-width: 900px) and (min-width: 768px) {
+  .certifications-box__header > div:first-child {
+    width: 40%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .certifications-box__header > div:nth-child(2) {
+    width: 66.67%;
+    text-align: justify;
+    padding-left: 35px;
+    border-left: 1px solid #ee482d;
+  }
+
+  .certifications-box__header > div:nth-child(2) > p {
+    padding-top: 15px;
+  }
+}
+
+@media screen and (max-width: 900px) and (min-width: 768px) {
+  .certifications-box__header > div:nth-child(2) {
+    width: 60%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .certifications-box__content > div {
+    padding-top: 30px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .certifications-box__content > div:nth-child(3n + 4) {
+    clear: left;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .certifications-box__content > div {
+    padding-top: 15px;
+    text-align: center;
+  }
+
+  .certifications-box__content > div:nth-child(2n + 3) {
+    clear: left;
+  }
+
+  .certifications-box__content > div img {
+    max-width: 150px;
+  }
+}
+
+.certifications-box__content > div h4 {
+  color: #ee482d;
+  font-family: "Roboto-Bold", "Arial", serif;
+  text-align: left;
+}
+
+.certifications-box__content > div p {
+  text-align: left;
+  color: #404040;
+}
+
 .certifications-box h2 {
   color: #ee482d;
-  margin-bottom: 35px;
+  margin-bottom: 0;
   margin-top: 0;
+}
+
+@media screen and (max-width: 767px) {
+  .certifications-box h2 {
+    margin-bottom: 20px;
+  }
 }
 
 .certifications-box h2 strong {
   color: #404040;
+}
+
+#myCarousel .carousel-caption {
+  font-family: "Roboto-Regular", "Arial", serif;
+}
+
+#myCarousel .carousel-caption h1 {
+  font-family: "Roboto-Regular", "Arial", serif;
+  font-size: 32px;
+}
+
+@media screen and (min-width: 768px) {
+  #myCarousel .carousel-caption h1 {
+    font-size: 42px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  #myCarousel .carousel-caption h1 {
+    font-size: 48px;
+  }
+}
+
+#myCarousel .carousel-caption p {
+  font-family: "Roboto-Regular", "Arial", serif;
+  font-size: 15px;
+}
+
+@media screen and (min-width: 768px) {
+  #myCarousel .carousel-caption p {
+    font-size: 20px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  #myCarousel .carousel-caption p {
+    font-size: 26px;
+  }
+}
+
+#myCarousel .carousel-inner .item:first-child .carousel-caption {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+#myCarousel .carousel-indicators > li {
+  margin-right: 10px;
+}
+
+#myCarousel .carousel-indicators > li:last-child {
+  margin-right: 0;
+}
+
+@media screen and (max-width: 767px) {
+  #myCarousel .carousel-indicators {
+    bottom: 0;
+  }
 }
 

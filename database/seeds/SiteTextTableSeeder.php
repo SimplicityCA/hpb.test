@@ -21,7 +21,7 @@ class SiteTextTableSeeder extends Seeder
 
         $text2 = new SiteText();
         $text2->title = 'CERTIFICACIONES DE <strong>NUESTROS PRODUCTOS</strong>';
-        $text2->description = 'Para asegurar que nuestros productos brinden lo último en seguridad y confianza, aplicamos nuestros productos en las pruebas y ensayos más rigurosos, sin comprometer la calidad y la seguridad. Nuestros productos HIGH POWER BRAKE ofrecen un rendimiento privilegiado para que la experiencia de frenado sea más segura en todo tipo de condiciones de manejo y clima. La marca HIGH POWER BRAKE posee varias certificaciones para sus productos, a continuación explicamos cada una de ellas:';
+        $text2->description = 'Para asegurar que nuestros productos brinden lo último en seguridad y confianza, aplicamos nuestros productos en las pruebas y ensayos más rigurosos, sin comprometer la calidad y la seguridad. Nuestros productos <strong>HIGH POWER BRAKE</strong> ofrecen un rendimiento privilegiado para que la experiencia de frenado sea más segura en todo tipo de condiciones de manejo y clima. La marca <strong>HIGH POWER BRAKE</strong> posee varias certificaciones para sus productos, a continuación explicamos cada una de ellas:';
         $text2->image = '';
         $text2->location = 'HOME';
         $text2->save();

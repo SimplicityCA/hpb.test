@@ -9,8 +9,10 @@
           <img class="first-slide" :src="'/img/'+image.image" :alt="image.title">
           <div class="container">
             <div class="carousel-caption">
-              <h1>{{image.title}}</h1>
-              <p>{{image.subtitle}}</p>
+              <div class="carousel-caption__container">
+                <h1 v-html="image.title"></h1>
+                <p>{{image.subtitle}}</p>
+              </div>
             </div>
           </div>
         </div>

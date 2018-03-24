@@ -90453,6 +90453,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     name: 'home-carousel',
@@ -90501,9 +90503,11 @@ var render = function() {
               _vm._v(" "),
               _c("div", { staticClass: "container" }, [
                 _c("div", { staticClass: "carousel-caption" }, [
-                  _c("h1", [_vm._v(_vm._s(image.title))]),
-                  _vm._v(" "),
-                  _c("p", [_vm._v(_vm._s(image.subtitle))])
+                  _c("div", { staticClass: "carousel-caption__container" }, [
+                    _c("h1", { domProps: { innerHTML: _vm._s(image.title) } }),
+                    _vm._v(" "),
+                    _c("p", [_vm._v(_vm._s(image.subtitle))])
+                  ])
                 ])
               ])
             ]
@@ -90723,27 +90727,25 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("div", { staticClass: "block-container certifications-box" }, [
-      _c("div", { staticClass: "col-sm-4" }, [
-        _c("h2", { domProps: { innerHTML: _vm._s(_vm.title) } })
-      ]),
+  return _c("div", { staticClass: "certifications-box" }, [
+    _c("div", { staticClass: "block-container certifications-box__header" }, [
+      _c("div", {}, [_c("h2", { domProps: { innerHTML: _vm._s(_vm.title) } })]),
       _vm._v(" "),
-      _c("div", { staticClass: "col-sm-8" }, [
-        _c("p", [_vm._v(_vm._s(_vm.text))])
-      ])
+      _c("div", {}, [_c("p", { domProps: { innerHTML: _vm._s(_vm.text) } })])
     ]),
     _vm._v(" "),
     _c(
       "div",
-      { staticClass: "block-container" },
+      { staticClass: "container certifications-box__content" },
       _vm._l(_vm.certifications, function(certification, index) {
         return _c("div", { staticClass: "col-md-2 col-sm-4 col-xs-6" }, [
           _c("img", { attrs: { src: "/img/" + certification.image } }),
           _vm._v(" "),
           _c("h4", [_vm._v(_vm._s(certification.name))]),
           _vm._v(" "),
-          _c("p", [_vm._v(_vm._s(certification.description))])
+          _c("p", {
+            domProps: { innerHTML: _vm._s(certification.description) }
+          })
         ])
       })
     )
