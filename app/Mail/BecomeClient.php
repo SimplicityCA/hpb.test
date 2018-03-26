@@ -31,7 +31,7 @@ class BecomeClient extends Mailable
     public function build()
     {
         return $this->markdown('mails.client')
-            ->subject('Contacto Sitio Web Importadora Dávila')
+            ->subject('Conviértete en Cliente High Power Brake')
             ->with([
                 'request' => $this->request
             ]);;

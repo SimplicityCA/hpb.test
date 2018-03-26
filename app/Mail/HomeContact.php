@@ -31,7 +31,7 @@ class HomeContact extends Mailable
     public function build()
     {
         return $this->markdown('mails.contact')
-            ->subject('Contacto Sitio Web Importadora Dávila')
+            ->subject('Contacto Sitio Web High Power Brake')
             ->with([
                 'request' => $this->request
             ]);;
