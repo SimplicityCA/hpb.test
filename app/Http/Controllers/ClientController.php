@@ -7,6 +7,8 @@ use App\HomePicture;
 use App\SiteText;
 use App\Http\Requests\StoreClient;
 use App\Client;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\BecomeClient;
 
 class ClientController extends Controller
 {
@@ -31,20 +33,27 @@ class ClientController extends Controller
     public function store(StoreClient $request)
     {
 
-    	$client = new Client();
-    	$client->ruc = $request->ruc;
-    	$client->store_name = $request->storeName;
-    	$client->name = $request->name;
-    	$client->last_name = $request->lastName;
-    	$client->city = $request->city;
-    	$client->address = $request->address;
-    	$client->phone = $request->phone;
-    	$client->email = $request->email;
-    	$client->message = $request->message;
+      try{
+        $client = new Client();
+        $client->ruc = $request->ruc;
+        $client->store_name = $request->storeName;
+        $client->name = $request->name;
+        $client->last_name = $request->lastName;
+        $client->city = $request->city;
+        $client->address = $request->address;
+        $client->phone = $request->phone;
+        $client->email = $request->email;
+        $client->message = $request->message;
 
-    	$client->save();
-
-    	return $client;
+        if($client->save())
+        {
+          Mail::to('joserhond@gmail.com')->send(new BecomeClient($request));
+        }   
+      }     
+      catch(\Exception $e){
+          return $e;
+          }
+      return $request;
 
     }
 }

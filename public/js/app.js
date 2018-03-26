@@ -91030,44 +91030,58 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-		name: 'contact-form',
-		data: function data() {
-				return {
-						name: '',
-						lastName: '',
-						city: '',
-						email: '',
-						phone: '',
-						message: '',
-						formErrors: []
-				};
-		},
+			name: 'contact-form',
+			data: function data() {
+						return {
+									name: '',
+									lastName: '',
+									city: '',
+									email: '',
+									phone: '',
+									message: '',
+									formErrors: [],
+									loading: false,
+									color: '#ee482d'
+						};
+			},
 
-		methods: {
-				onSubmit: function onSubmit() {
-						var vm = this;
-						axios.post('api/contact', {
-								name: vm.name,
-								lastName: vm.lastName,
-								city: vm.city,
-								email: vm.email,
-								phone: vm.phone,
-								message: vm.message
-						}).then(function (response) {
-								vm.name = '';
-								vm.lastName = '';
-								vm.city = '';
-								vm.email = '';
-								vm.phone = '';
-								vm.message = '';
-								vm.$swal('¡Gracias por contactarte!', 'Pronto nos pondremos en contacto contigo', 'success');
-						}).catch(function (error) {
-								vm.formErrors = error.response.data.errors;
-						});
-				}
-		}
+			methods: {
+						onSubmit: function onSubmit() {
+									var vm = this;
+									this.loading = true;
+									axios.post('api/contact', {
+												name: vm.name,
+												lastName: vm.lastName,
+												city: vm.city,
+												email: vm.email,
+												phone: vm.phone,
+												message: vm.message
+									}).then(function (response) {
+												vm.loading = false;
+												if (response.data.name == undefined) {
+															vm.$swal({
+																		type: 'error',
+																		title: 'Lo sentimos...',
+																		text: 'Ha ocurrido un error. Por favor intenta nuevamente más tarde o comunícate al (02)2416161'
+															});
+												} else {
+															vm.name = '';
+															vm.lastName = '';
+															vm.city = '';
+															vm.email = '';
+															vm.phone = '';
+															vm.message = '';
+															vm.$swal('¡Gracias por contactarte!', 'Pronto nos pondremos en contacto contigo', 'success');
+												}
+									}).catch(function (error) {
+												vm.loading = false;
+												vm.formErrors = error.response.data.errors;
+									});
+						}
+			}
 });
 
 /***/ }),
@@ -91301,7 +91315,22 @@ var render = function() {
             ])
           ]),
           _vm._v(" "),
-          _vm._m(1)
+          _c("div", { staticClass: "col-sm-10 col-sm-offset-1" }, [
+            _c(
+              "div",
+              { staticClass: "form-group" },
+              [
+                _c("button", { staticClass: "btn btn-primary" }, [
+                  _vm._v("Enviar")
+                ]),
+                _vm._v(" "),
+                _c("pulse-loader", {
+                  attrs: { loading: _vm.loading, color: _vm.color }
+                })
+              ],
+              1
+            )
+          ])
         ]
       )
     ])
@@ -91313,16 +91342,6 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("h2", [_vm._v("MÁS "), _c("strong", [_vm._v("INFORMACIÓN")])])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-sm-10 col-sm-offset-1" }, [
-      _c("div", { staticClass: "form-group" }, [
-        _c("button", { staticClass: "btn btn-primary" }, [_vm._v("Enviar")])
-      ])
-    ])
   }
 ]
 render._withStripped = true
@@ -91433,53 +91452,68 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-		name: 'client-form',
-		data: function data() {
-				return {
-						ruc: '',
-						storeName: '',
-						name: '',
-						lastName: '',
-						city: '',
-						address: '',
-						email: '',
-						phone: '',
-						message: '',
-						formErrors: []
-				};
-		},
+			name: 'client-form',
+			data: function data() {
+						return {
+									ruc: '',
+									storeName: '',
+									name: '',
+									lastName: '',
+									city: '',
+									address: '',
+									email: '',
+									phone: '',
+									message: '',
+									formErrors: [],
+									loading: false,
+									color: '#ee482d'
+						};
+			},
 
-		methods: {
-				onSubmit: function onSubmit() {
-						var vm = this;
-						axios.post('api/client', {
-								ruc: vm.ruc,
-								storeName: vm.storeName,
-								name: vm.name,
-								lastName: vm.lastName,
-								city: vm.city,
-								address: vm.address,
-								email: vm.email,
-								phone: vm.phone,
-								message: vm.message
-						}).then(function (response) {
-								vm.ruc = '';
-								vm.storeName = '';
-								vm.name = '';
-								vm.lastName = '';
-								vm.city = '';
-								vm.address = '';
-								vm.email = '';
-								vm.phone = '';
-								vm.message = '';
-								vm.$swal('¡Gracias por contactarte!', 'Pronto nos pondremos en contacto contigo', 'success');
-						}).catch(function (error) {
-								vm.formErrors = error.response.data.errors;
-						});
-				}
-		}
+			methods: {
+						onSubmit: function onSubmit() {
+									var vm = this;
+									this.loading = true;
+									axios.post('api/client', {
+												ruc: vm.ruc,
+												storeName: vm.storeName,
+												name: vm.name,
+												lastName: vm.lastName,
+												city: vm.city,
+												address: vm.address,
+												email: vm.email,
+												phone: vm.phone,
+												message: vm.message
+									}).then(function (response) {
+												vm.loading = false;
+
+												if (response.data.name == undefined) {
+															vm.$swal({
+																		type: 'error',
+																		title: 'Lo sentimos...',
+																		text: 'Ha ocurrido un error. Por favor intenta nuevamente más tarde o comunícate al (02)2416161'
+															});
+												} else {
+															vm.ruc = '';
+															vm.storeName = '';
+															vm.name = '';
+															vm.lastName = '';
+															vm.city = '';
+															vm.address = '';
+															vm.email = '';
+															vm.phone = '';
+															vm.message = '';
+															vm.$swal('¡Gracias por contactarte!', 'Pronto nos pondremos en contacto contigo', 'success');
+												}
+									}).catch(function (error) {
+												vm.loading = false;
+												vm.formErrors = error.response.data.errors;
+									});
+						}
+			}
 });
 
 /***/ }),
@@ -91811,23 +91845,27 @@ var render = function() {
             : _vm._e()
         ]),
         _vm._v(" "),
-        _vm._m(0)
+        _c(
+          "div",
+          { staticClass: "form-group" },
+          [
+            _c("button", { staticClass: "btn btn-primary" }, [
+              _vm._v("Enviar")
+            ]),
+            _vm._v(" "),
+            _c("a", { attrs: { href: "#" } }, [_vm._v("Descargar catálogo ")]),
+            _vm._v(" "),
+            _c("pulse-loader", {
+              attrs: { loading: _vm.loading, color: _vm.color }
+            })
+          ],
+          1
+        )
       ]
     )
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "form-group" }, [
-      _c("button", { staticClass: "btn btn-primary" }, [_vm._v("Enviar")]),
-      _vm._v(" "),
-      _c("a", { attrs: { href: "#" } }, [_vm._v("Descargar catálogo ")])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {

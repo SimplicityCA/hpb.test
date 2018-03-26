@@ -40,6 +40,7 @@
 				<div class="form-group">
 					<button class="btn btn-primary">Enviar</button>
 					<a href="#">Descargar catálogo </a>
+					<pulse-loader :loading="loading" :color="color" ></pulse-loader>
 				</div>
 		</form>
 	</div>
@@ -59,11 +60,14 @@ export default {
     		phone: '',
     		message: '',
     		formErrors: [],
+    		loading: false,
+    		color: '#ee482d'
     	}
     },
     methods:{
     	onSubmit(){
     		const vm = this;
+    		this.loading = true;
     		axios.post('api/client', {
     			ruc: vm.ruc,
     			storeName: vm.storeName,
@@ -76,20 +80,32 @@ export default {
 			    message: vm.message,
 			  })
 			  .then(function (response) {
-			  	vm.ruc = '';
-			  	vm.storeName = '';
-			    vm.name = '';
-			    vm.lastName = '';
-			    vm.city = '';
-			    vm.address = '';
-			    vm.email = '';
-			    vm.phone = '';
-			    vm.message = '';
-			    vm.$swal('¡Gracias por contactarte!',
-					  'Pronto nos pondremos en contacto contigo',
-					  'success');
+			  	vm.loading = false;
+
+			  	if(response.data.name == undefined){
+			    	vm.$swal({
+						  type: 'error',
+						  title: 'Lo sentimos...',
+						  text: 'Ha ocurrido un error. Por favor intenta nuevamente más tarde o comunícate al (02)2416161',
+						});
+			    }
+			    else{
+			    	vm.ruc = '';
+				  	vm.storeName = '';
+				    vm.name = '';
+				    vm.lastName = '';
+				    vm.city = '';
+				    vm.address = '';
+				    vm.email = '';
+				    vm.phone = '';
+				    vm.message = '';
+				    vm.$swal('¡Gracias por contactarte!',
+						  'Pronto nos pondremos en contacto contigo',
+						  'success');
+			    }
 			  })
 			  .catch(function (error) {
+			  	vm.loading = false;
 			    vm.formErrors = error.response.data.errors;
 			  });
     	}

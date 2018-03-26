@@ -34,6 +34,7 @@
 				<div class="col-sm-10 col-sm-offset-1">
 					<div class="form-group">
 						<button class="btn btn-primary">Enviar</button>
+						<pulse-loader :loading="loading" :color="color" ></pulse-loader>
 					</div>
 				</div>
 			</form>
@@ -52,11 +53,14 @@ export default {
     		phone: '',
     		message: '',
     		formErrors: [],
+    		loading: false,
+    		color: '#ee482d'
     	}
     },
     methods:{
     	onSubmit(){
     		const vm = this;
+    		this.loading = true;
     		axios.post('api/contact', {
 			    name: vm.name,
 			    lastName: vm.lastName,
@@ -66,17 +70,28 @@ export default {
 			    message: vm.message,
 			  })
 			  .then(function (response) {
-			    vm.name = '';
-			    vm.lastName = '';
-			    vm.city = '';
-			    vm.email = '';
-			    vm.phone = '';
-			    vm.message = '';
-			    vm.$swal('¡Gracias por contactarte!',
-					  'Pronto nos pondremos en contacto contigo',
-					  'success');
+			  	vm.loading = false;
+			  	if(response.data.name == undefined){
+			    	vm.$swal({
+						  type: 'error',
+						  title: 'Lo sentimos...',
+						  text: 'Ha ocurrido un error. Por favor intenta nuevamente más tarde o comunícate al (02)2416161',
+						});
+			    }
+			    else{
+			    	vm.name = '';
+				    vm.lastName = '';
+				    vm.city = '';
+				    vm.email = '';
+				    vm.phone = '';
+				    vm.message = '';
+				    vm.$swal('¡Gracias por contactarte!',
+						  'Pronto nos pondremos en contacto contigo',
+						  'success');
+			    }
 			  })
 			  .catch(function (error) {
+			  	vm.loading = false;
 			    vm.formErrors = error.response.data.errors;
 			  });
     	}
