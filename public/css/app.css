@@ -9153,6 +9153,59 @@ footer .footer-bottom-copy {
       flex-wrap: wrap;
 }
 
+#myCarousel .carousel-inner .item:nth-child(2) .carousel-caption {
+  top: 10%;
+}
+
+@media screen and (max-width: 540px) {
+  #myCarousel .carousel-inner .item:nth-child(2) .carousel-caption {
+    top: -20px;
+  }
+}
+
+@media screen and (max-width: 440px) {
+  #myCarousel .carousel-inner .item:nth-child(2) .carousel-caption {
+    font-size: 25px;
+  }
+
+  #myCarousel .carousel-inner .item:nth-child(2) .carousel-caption h1 {
+    font-size: 25px;
+  }
+}
+
+#myCarousel .carousel-inner .item:nth-child(3) .carousel-caption {
+  left: 0px;
+  max-width: 41%;
+  top: 20%;
+  padding-left: 15px;
+}
+
+@media screen and (max-width: 767px) {
+  #myCarousel .carousel-inner .item:nth-child(3) .carousel-caption {
+    top: 15px;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  #myCarousel .carousel-inner .item:nth-child(3) .carousel-caption {
+    top: 0;
+    font-size: 25px;
+  }
+
+  #myCarousel .carousel-inner .item:nth-child(3) .carousel-caption h1 {
+    font-size: 25px;
+  }
+}
+
+@media screen and (max-width: 440px) {
+  #myCarousel .carousel-inner .item:nth-child(3) .carousel-caption {
+    top: 0;
+    padding-top: 0;
+    max-width: none;
+    width: 100%;
+  }
+}
+
 #myCarousel .carousel-indicators > li {
   margin-right: 10px;
 }
@@ -9165,5 +9218,64 @@ footer .footer-bottom-copy {
   #myCarousel .carousel-indicators {
     bottom: 0;
   }
+}
+
+.client-form-page {
+  color: #555555;
+}
+
+.client-form-page h2 {
+  text-align: center;
+  margin-top: 25px;
+  padding: 10px 30px;
+  background-color: #ee482d;
+  color: #FFF;
+  margin-bottom: 0;
+  border: none;
+}
+
+.client-form-page .form-container {
+  padding-top: 35px;
+  color: #555555;
+}
+
+.client-form-page .form-container p {
+  font-size: 16px;
+}
+
+.client-form-page form {
+  margin-top: 40px;
+}
+
+.client-form-page form button.btn-primary {
+  margin-top: 25px;
+  background-color: #ee482d;
+  min-width: 140px;
+  border-radius: 10px;
+  border-color: #ee482d;
+  -webkit-transition: background-color .4s ease, border-color .4s ease;
+  transition: background-color .4s ease, border-color .4s ease;
+}
+
+.client-form-page form button.btn-primary:hover {
+  background-color: #404040;
+  border-color: #404040;
+}
+
+.client-form-page .form-group input,
+.client-form-page .form-group textarea {
+  border-radius: 0;
+  border-color: #555555;
+  color: #555555;
+}
+
+.client-form-page .form-group textarea {
+  resize: none;
+  width: 100%;
+  min-height: 130px;
+}
+
+.client-form-page .form-group:last-child {
+  text-align: center;
 }
 

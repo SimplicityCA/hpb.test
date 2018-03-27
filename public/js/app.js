@@ -90878,17 +90878,24 @@ var render = function() {
           }
         },
         _vm._l(_vm.products, function(product, index) {
-          return _c("slide", { key: index }, [
-            _c("img", { attrs: { src: "/img/" + product.home_image } }),
-            _vm._v(" "),
-            _c("div", { staticClass: "product-title-block-container" }, [
-              _c("div", { staticClass: "product-title-block" }, [
-                _c("p", [_c("strong", [_vm._v(_vm._s(product.title))])]),
+          return _c(
+            "slide",
+            { key: index },
+            [
+              _c("router-link", { attrs: { to: "/products" + product.link } }, [
+                _c("img", { attrs: { src: "/img/" + product.home_image } }),
                 _vm._v(" "),
-                _c("p", [_vm._v(_vm._s(product.subtitle))])
+                _c("div", { staticClass: "product-title-block-container" }, [
+                  _c("div", { staticClass: "product-title-block" }, [
+                    _c("p", [_c("strong", [_vm._v(_vm._s(product.title))])]),
+                    _vm._v(" "),
+                    _c("p", [_vm._v(_vm._s(product.subtitle))])
+                  ])
+                ])
               ])
-            ])
-          ])
+            ],
+            1
+          )
         })
       ),
       _vm._v(" "),
@@ -92259,7 +92266,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container-fluid" }, [
+  return _c("div", { staticClass: "container-fluid client-form-page" }, [
     _c("div", { staticClass: "row" }, [
       _vm.header.image
         ? _c("img", { attrs: { src: "/img/" + _vm.header.image } })
@@ -92269,9 +92276,9 @@ var render = function() {
       _vm._v(" "),
       _c("p", [_vm._v(_vm._s(_vm.header.subtitle))]),
       _vm._v(" "),
-      _c("h2", [_vm._v("CONVIÉRTETE EN DISTRIBUIDOR")]),
+      _vm._m(0),
       _vm._v(" "),
-      _c("div", { staticClass: "col-sm-6" }, [
+      _c("div", { staticClass: "col-sm-6 image-container" }, [
         _vm.description.image
           ? _c("img", { attrs: { src: "/img/" + _vm.description.image } })
           : _vm._e()
@@ -92279,7 +92286,7 @@ var render = function() {
       _vm._v(" "),
       _c(
         "div",
-        { staticClass: "col-sm-6" },
+        { staticClass: "col-sm-6 form-container" },
         [
           _c("p", [_vm._v(_vm._s(_vm.description.description))]),
           _vm._v(" "),
@@ -92290,7 +92297,17 @@ var render = function() {
     ])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h2", [
+      _vm._v("CONVIÉRTETE EN "),
+      _c("strong", [_vm._v("DISTRIBUIDOR")])
+    ])
+  }
+]
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
