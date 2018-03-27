@@ -1,0 +1,53 @@
+.client-form-page {
+  color: $brand-dark-gray;
+
+  h2 {
+    @include section-name-text;
+  }
+
+  .form-container {
+    padding-top: 35px;
+    color: $brand-dark-gray;
+
+    p {
+      font-size: 16px;
+    }
+  }
+
+  form {
+    margin-top: 40px;
+
+    button.btn-primary {
+      margin-top: 25px;
+      background-color: $brand-orange;
+      min-width: 140px;
+      border-radius: 10px;
+      border-color: $brand-orange;
+      transition: background-color .4s ease, border-color .4s ease;
+
+      &:hover {
+        background-color: $brand-grey-text;
+        border-color: $brand-grey-text;
+      }
+    }
+  }
+
+  .form-group {
+    input,
+    textarea {
+      border-radius: 0;
+      border-color: $brand-dark-gray;
+      color: $brand-dark-gray;
+    }
+
+    textarea {
+      resize: none;
+      width: 100%;
+      min-height: 130px;
+    }
+
+    &:last-child {
+      text-align: center;
+    }
+  }
+}

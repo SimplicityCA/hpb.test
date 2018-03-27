@@ -1,14 +1,14 @@
 <template>
-    <div class="container-fluid">
+    <div class="container-fluid client-form-page">
         <div class="row">
             <img v-if="header.image" v-bind:src="`/img/${header.image}`" />
             <p>{{header.title}}</p>
             <p>{{header.subtitle}}</p>
-            <h2>CONVIÉRTETE EN DISTRIBUIDOR</h2>
-            <div class="col-sm-6">
+            <h2>CONVIÉRTETE EN <strong>DISTRIBUIDOR</strong></h2>
+            <div class="col-sm-6 image-container">
               <img v-if="description.image" v-bind:src="`/img/${description.image}`" />
             </div>
-            <div class="col-sm-6">
+            <div class="col-sm-6 form-container">
               <p>{{description.description}}</p>
               
               <client-form></client-form>
