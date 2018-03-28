@@ -20,7 +20,7 @@
     button.btn-primary {
       margin-top: 25px;
       background-color: $brand-orange;
-      min-width: 140px;
+      min-width: 125px;
       border-radius: 10px;
       border-color: $brand-orange;
       transition: background-color .4s ease, border-color .4s ease;
@@ -48,6 +48,57 @@
 
     &:last-child {
       text-align: center;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around
+    }
+
+    .download-file-container {
+      position: relative;
+      top: 31px;
+    }
+
+    .download-file {
+      position: relative;
+      color: $brand-grey-text;
+      text-decoration: none;
+      top: -4px;
+      @include font-stack-roboto-bold;
+
+      &:hover {
+        text-decoration: none;
+        color: $brand-grey-text;
+
+        small {
+          color: $brand-orange;
+        }
+
+        svg {
+          path {
+            fill: $brand-grey-text;
+          }
+        }
+      }
+
+      small {
+        display: block;
+        color: $brand-orange;
+        transition: color .4s ease;
+        text-align: left;
+        top: -2px;
+        position: relative;
+      }
+
+      svg {
+        position: absolute;
+        left: -58px;
+        top: -11px;
+
+        path {
+          fill: $brand-orange;
+          transition: fill .4s ease;
+        }
+      }
     }
   }
 }
