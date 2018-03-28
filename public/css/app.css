@@ -9250,7 +9250,7 @@ footer .footer-bottom-copy {
 .client-form-page form button.btn-primary {
   margin-top: 25px;
   background-color: #ee482d;
-  min-width: 140px;
+  min-width: 125px;
   border-radius: 10px;
   border-color: #ee482d;
   -webkit-transition: background-color .4s ease, border-color .4s ease;
@@ -9277,5 +9277,60 @@ footer .footer-bottom-copy {
 
 .client-form-page .form-group:last-child {
   text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.client-form-page .form-group .download-file-container {
+  position: relative;
+  top: 31px;
+}
+
+.client-form-page .form-group .download-file {
+  position: relative;
+  color: #404040;
+  text-decoration: none;
+  top: -4px;
+  font-family: "Roboto-Bold", "Arial", serif;
+}
+
+.client-form-page .form-group .download-file:hover {
+  text-decoration: none;
+  color: #404040;
+}
+
+.client-form-page .form-group .download-file:hover small {
+  color: #ee482d;
+}
+
+.client-form-page .form-group .download-file:hover svg path {
+  fill: #404040;
+}
+
+.client-form-page .form-group .download-file small {
+  display: block;
+  color: #ee482d;
+  -webkit-transition: color .4s ease;
+  transition: color .4s ease;
+  text-align: left;
+  top: -2px;
+  position: relative;
+}
+
+.client-form-page .form-group .download-file svg {
+  position: absolute;
+  left: -58px;
+  top: -11px;
+}
+
+.client-form-page .form-group .download-file svg path {
+  fill: #ee482d;
+  -webkit-transition: fill .4s ease;
+  transition: fill .4s ease;
 }
 
