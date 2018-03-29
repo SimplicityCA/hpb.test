@@ -1,13 +1,15 @@
 <template>
-    <div class="container-fluid">
+    <div class="container-fluid tips-page">
         <div class="row">
             <img v-if="header.image" v-bind:src="`/img/${header.image}`" />
-            <p>{{header.title}}</p>
-            <p>{{header.subtitle}}</p>
-            <h2>TIPS DE INSTALACIÓN</h2>
-            <div class="container">
-              <div v-for="(tip, index) in tips" class="col-sm-4 col-xs-6">
-                <h4>{{tip.title}}</h4>
+            <div class="header-text-container">
+              <p class="header-title">{{header.title}}</p>
+              <p class="header-subtitle">{{header.subtitle}}</p>
+            </div>
+            <h2>TIPS DE <strong>INSTALACIÓN</strong></h2>
+            <div class="container tips-container">
+              <div v-for="(tip, index) in tips" class="tip-container col-sm-4 col-xs-6">
+                <h4><strong>{{tip.title}}</strong></h4>
                 <img :src="'/img/'+tip.image" >
                 <p>{{tip.description}}</p>
               </div>

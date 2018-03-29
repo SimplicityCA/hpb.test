@@ -1,8 +1,12 @@
 .client-form-page {
   color: $brand-dark-gray;
+  position: relative;
+
+  @include tips-clients-header-styles;
 
   h2 {
     @include section-name-text;
+    margin-top: 0;
   }
 
   .form-container {
@@ -29,6 +33,16 @@
         background-color: $brand-grey-text;
         border-color: $brand-grey-text;
       }
+
+      @media screen and (max-width: $screen-sm-max) {
+        margin-bottom: 45px;
+      }
+    }
+  }
+
+  .image-container {
+    @media screen and (max-width: $screen-xs-max) {
+      display: none;;
     }
   }
 
@@ -50,12 +64,28 @@
       text-align: center;
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-around
+      justify-content: space-around;
+
+      @media screen and (max-width: $screen-sm-max) {
+        display: block;
+      }
     }
 
     .download-file-container {
       position: relative;
       top: 31px;
+
+      @media screen and (max-width: $screen-sm-max) {
+        display: inline-block;
+        width: 100%;
+        position: static;
+        margin-bottom: 30px;
+
+        > a {
+          position: relative;
+          padding-left: 60px;
+        }
+      }
     }
 
     .download-file {
@@ -64,6 +94,21 @@
       text-decoration: none;
       top: -4px;
       @include font-stack-roboto-bold;
+
+      @media screen and (max-width: $screen-sm-max) {
+        position: relative;
+        padding-left: 60px;
+
+        svg {
+          left: 0 !important;
+        }
+
+        small {
+          position: absolute !important;
+          left: 60px;
+          top: 18px !important;
+        }
+      }
 
       &:hover {
         text-decoration: none;
