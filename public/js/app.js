@@ -92273,6 +92273,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -92310,9 +92312,15 @@ var render = function() {
         ? _c("img", { attrs: { src: "/img/" + _vm.header.image } })
         : _vm._e(),
       _vm._v(" "),
-      _c("p", [_vm._v(_vm._s(_vm.header.title))]),
-      _vm._v(" "),
-      _c("p", [_vm._v(_vm._s(_vm.header.subtitle))]),
+      _c("div", { staticClass: "header-text-container" }, [
+        _c("p", { staticClass: "header-title" }, [
+          _vm._v(_vm._s(_vm.header.title))
+        ]),
+        _vm._v(" "),
+        _c("p", { staticClass: "header-subtitle" }, [
+          _vm._v(_vm._s(_vm.header.subtitle))
+        ])
+      ]),
       _vm._v(" "),
       _vm._m(0),
       _vm._v(" "),
@@ -92545,6 +92553,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -92576,24 +92586,30 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container-fluid" }, [
+  return _c("div", { staticClass: "container-fluid tips-page" }, [
     _c("div", { staticClass: "row" }, [
       _vm.header.image
         ? _c("img", { attrs: { src: "/img/" + _vm.header.image } })
         : _vm._e(),
       _vm._v(" "),
-      _c("p", [_vm._v(_vm._s(_vm.header.title))]),
+      _c("div", { staticClass: "header-text-container" }, [
+        _c("p", { staticClass: "header-title" }, [
+          _vm._v(_vm._s(_vm.header.title))
+        ]),
+        _vm._v(" "),
+        _c("p", { staticClass: "header-subtitle" }, [
+          _vm._v(_vm._s(_vm.header.subtitle))
+        ])
+      ]),
       _vm._v(" "),
-      _c("p", [_vm._v(_vm._s(_vm.header.subtitle))]),
-      _vm._v(" "),
-      _c("h2", [_vm._v("TIPS DE INSTALACIÓN")]),
+      _vm._m(0),
       _vm._v(" "),
       _c(
         "div",
-        { staticClass: "container" },
+        { staticClass: "container tips-container" },
         _vm._l(_vm.tips, function(tip, index) {
-          return _c("div", { staticClass: "col-sm-4 col-xs-6" }, [
-            _c("h4", [_vm._v(_vm._s(tip.title))]),
+          return _c("div", { staticClass: "tip-container col-sm-4 col-xs-6" }, [
+            _c("h4", [_c("strong", [_vm._v(_vm._s(tip.title))])]),
             _vm._v(" "),
             _c("img", { attrs: { src: "/img/" + tip.image } }),
             _vm._v(" "),
@@ -92604,7 +92620,14 @@ var render = function() {
     ])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h2", [_vm._v("TIPS DE "), _c("strong", [_vm._v("INSTALACIÓN")])])
+  }
+]
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {

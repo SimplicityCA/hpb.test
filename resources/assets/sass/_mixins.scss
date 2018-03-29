@@ -7,3 +7,32 @@
   margin-bottom: 0;
   border: none;
 }
+
+@mixin tips-clients-header-styles {
+  .header-text-container {
+    position: absolute;
+    top: 130px;
+    left: 60%;
+
+    .header-title {
+      color: white;
+      font-size: 30px;
+    }
+
+    .header-subtitle {
+      color: $brand-orange;
+      font-size: 20px;
+    }
+
+    @media screen and (max-width: $screen-sm-max) {
+      top: 22px !important;
+      left: 0;
+      width: 100%;
+      text-align: center;
+    }
+
+    @media screen and (max-width: $screen-xs-max) {
+      display: none;
+    }
+  }
+}

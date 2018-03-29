@@ -2,8 +2,10 @@
     <div class="container-fluid client-form-page">
         <div class="row">
             <img v-if="header.image" v-bind:src="`/img/${header.image}`" />
-            <p>{{header.title}}</p>
-            <p>{{header.subtitle}}</p>
+            <div class="header-text-container">
+              <p class="header-title">{{header.title}}</p>
+              <p class="header-subtitle">{{header.subtitle}}</p>
+            </div>
             <h2>CONVIÉRTETE EN <strong>DISTRIBUIDOR</strong></h2>
             <div class="col-sm-6 image-container">
               <img v-if="description.image" v-bind:src="`/img/${description.image}`" />

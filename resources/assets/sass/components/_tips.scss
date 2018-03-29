@@ -1,0 +1,83 @@
+.tips-page {
+  position: relative;
+
+  @include tips-clients-header-styles;
+
+  h2 {
+    @include section-name-text;
+    margin-top: 0;
+  }
+
+  .tips-container {
+    margin-top: 15px;
+
+    @media screen and (max-width: $screen-xs-max) {
+      margin-top: 35px;
+    }
+
+    @media screen and (max-width: $screen-sm-max) {
+      width: 100%;
+    }
+  }
+
+  .tip-container {
+    position: relative;
+    padding: 35px;
+
+    p {
+      color: $brand-grey-text;
+      font-size: 18px;
+      margin-top: 20px;
+
+      @media screen and (max-width: $screen-xs-max) {
+        font-size: 16px;
+        margin-top: 15px;
+      }
+
+      @media screen and (min-width: $screen-md-min) {
+        text-align: justify;
+      }
+    }
+
+    @media screen and (max-width: $screen-xs-max) {
+      padding: 10px;
+    }
+
+    > h4 {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      margin: 0;
+      line-height: 50px;
+      text-align: center;
+      background-color: $brand-orange;
+      color: white;
+      font-size: 30px;
+
+      @media screen and (min-width: $screen-md-min) {
+        top: 50px;
+        left: 75px;
+      }
+    }
+
+    @media screen and (min-width: $screen-sm-min) {
+      &:nth-child(3n + 3) {
+        clear: right;
+      }
+
+      &:nth-child(3n + 4) {
+        clear: left;
+      }
+    }
+
+    @media screen and (max-width: $screen-xs-max) {
+      &:nth-child(2n + 2) {
+        clear: right;
+      }
+
+      &:nth-child(2n + 3) {
+        clear: left;
+      }
+    }
+  }
+}
