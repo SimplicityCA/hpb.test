@@ -12411,6 +12411,7 @@ var routes = [{
   component: home
 }, {
   path: '/products/:product_id',
+  name: 'products',
   component: product
 }, {
   path: '/tips',
@@ -89989,7 +89990,14 @@ var render = function() {
                   [
                     _c(
                       "router-link",
-                      { attrs: { to: "/products/carbon-performance" } },
+                      {
+                        attrs: {
+                          to: {
+                            name: "products",
+                            params: { product_id: "carbon-performance" }
+                          }
+                        }
+                      },
                       [_vm._v("Carbon Performance")]
                     )
                   ],
@@ -90001,7 +90009,14 @@ var render = function() {
                   [
                     _c(
                       "router-link",
-                      { attrs: { to: "/products/ceramic-organic" } },
+                      {
+                        attrs: {
+                          to: {
+                            name: "products",
+                            params: { product_id: "ceramic-organic" }
+                          }
+                        }
+                      },
                       [_vm._v("Ceramic Organic")]
                     )
                   ],
@@ -90013,7 +90028,14 @@ var render = function() {
                   [
                     _c(
                       "router-link",
-                      { attrs: { to: "/products/brake-shoe" } },
+                      {
+                        attrs: {
+                          to: {
+                            name: "products",
+                            params: { product_id: "brake-shoe" }
+                          }
+                        }
+                      },
                       [_vm._v("Brake Shoe")]
                     )
                   ],
@@ -92150,12 +92172,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
+    console.log(this.$route.params.product_id);
+
     return {
       id: this.$route.params.product_id,
       product: []
     };
   },
-  created: function created() {
+  mounted: function mounted() {
     var vm = this;
     axios.get('api/product/' + this.id).then(function (response) {
       vm.product = response.data;
