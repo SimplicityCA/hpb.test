@@ -90882,17 +90882,21 @@ var render = function() {
             "slide",
             { key: index },
             [
-              _c("router-link", { attrs: { to: "/products" + product.link } }, [
-                _c("img", { attrs: { src: "/img/" + product.home_image } }),
-                _vm._v(" "),
-                _c("div", { staticClass: "product-title-block-container" }, [
-                  _c("div", { staticClass: "product-title-block" }, [
-                    _c("p", [_c("strong", [_vm._v(_vm._s(product.title))])]),
-                    _vm._v(" "),
-                    _c("p", [_vm._v(_vm._s(product.subtitle))])
+              _c(
+                "router-link",
+                { attrs: { to: "/products/" + product.link } },
+                [
+                  _c("img", { attrs: { src: "/img/" + product.home_image } }),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "product-title-block-container" }, [
+                    _c("div", { staticClass: "product-title-block" }, [
+                      _c("p", [_c("strong", [_vm._v(_vm._s(product.title))])]),
+                      _vm._v(" "),
+                      _c("p", [_vm._v(_vm._s(product.subtitle))])
+                    ])
                   ])
-                ])
-              ])
+                ]
+              )
             ],
             1
           )
@@ -92139,6 +92143,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -92165,18 +92173,24 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container-fluid" }, [
+  return _c("div", { staticClass: "container-fluid product-page" }, [
     _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "product-page__top-section" }, [
+        _c("div", { staticClass: "header-text-container" }, [
+          _c("p", { staticClass: "header-title" }, [
+            _vm._v(_vm._s(_vm.product.title))
+          ]),
+          _vm._v(" "),
+          _c("p", { staticClass: "header-subtitle" }, [
+            _vm._v(_vm._s(_vm.product.subtitle))
+          ])
+        ])
+      ]),
+      _vm._v(" "),
       _vm.product.header_image
         ? _c("img", { attrs: { src: "/img/" + _vm.product.header_image } })
         : _vm._e(),
-      _vm._v(
-        "\n        " +
-          _vm._s(_vm.product.title) +
-          "\n        " +
-          _vm._s(_vm.product.subtitle) +
-          "\n        "
-      ),
+      _vm._v(" "),
       _c("div", [_vm._v(" ANIMACIÓN ")]),
       _vm._v(" "),
       _c("a", [_vm._v("Descargar Catálogo")]),
@@ -92308,10 +92322,6 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container-fluid client-form-page" }, [
     _c("div", { staticClass: "row" }, [
-      _vm.header.image
-        ? _c("img", { attrs: { src: "/img/" + _vm.header.image } })
-        : _vm._e(),
-      _vm._v(" "),
       _c("div", { staticClass: "header-text-container" }, [
         _c("p", { staticClass: "header-title" }, [
           _vm._v(_vm._s(_vm.header.title))
@@ -92321,6 +92331,10 @@ var render = function() {
           _vm._v(_vm._s(_vm.header.subtitle))
         ])
       ]),
+      _vm._v(" "),
+      _vm.header.image
+        ? _c("img", { attrs: { src: "/img/" + _vm.header.image } })
+        : _vm._e(),
       _vm._v(" "),
       _vm._m(0),
       _vm._v(" "),
@@ -92588,10 +92602,6 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container-fluid tips-page" }, [
     _c("div", { staticClass: "row" }, [
-      _vm.header.image
-        ? _c("img", { attrs: { src: "/img/" + _vm.header.image } })
-        : _vm._e(),
-      _vm._v(" "),
       _c("div", { staticClass: "header-text-container" }, [
         _c("p", { staticClass: "header-title" }, [
           _vm._v(_vm._s(_vm.header.title))
@@ -92601,6 +92611,10 @@ var render = function() {
           _vm._v(_vm._s(_vm.header.subtitle))
         ])
       ]),
+      _vm._v(" "),
+      _vm.header.image
+        ? _c("img", { attrs: { src: "/img/" + _vm.header.image } })
+        : _vm._e(),
       _vm._v(" "),
       _vm._m(0),
       _vm._v(" "),

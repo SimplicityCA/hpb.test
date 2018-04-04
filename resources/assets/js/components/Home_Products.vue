@@ -3,7 +3,7 @@
 		<h2>NUESTROS <strong>PRODUCTOS</strong></h2>
 		<carousel :perPage="2" :navigationEnabled="true" :paginationEnabled="false" :perPageCustom="[[420, 2],[768, 2], [1024, 3]]">
 		  <slide v-for="(product, index) in products" :key="index">
-		  	<router-link :to="'/products'+product.link">
+		  	<router-link :to="'/products/'+product.link">
 		  		<img :src="'/img/'+product.home_image"> 
           <div class="product-title-block-container">
   			    <div class="product-title-block">

@@ -1,9 +1,13 @@
 <template>
-    <div class="container-fluid">
+    <div class="container-fluid product-page">
         <div class="row">
-            <img v-if="product.header_image" v-bind:src="`/img/${product.header_image}`" />
-            {{product.title}}
-            {{product.subtitle}}
+            <div class="product-page__top-section">
+              <div class="header-text-container">
+                  <p class="header-title">{{product.title}}</p>
+                  <p class="header-subtitle">{{product.subtitle}}</p>
+                </div>
+              </div>
+              <img v-if="product.header_image" v-bind:src="`/img/${product.header_image}`" />
             <div> ANIMACIÓN </div>
             <a>Descargar Catálogo</a>
             <img v-if="product.description_image" v-bind:src="`/img/${product.description_image}`" />
