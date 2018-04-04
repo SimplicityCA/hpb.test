@@ -19,8 +19,6 @@
 <script>
 export default {
   data () {
-      console.log(this.$route.params.product_id);
-
       return {
           id: this.$route.params.product_id,
           product: []
