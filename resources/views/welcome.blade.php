@@ -17,7 +17,7 @@
             <site-menu></site-menu>
             <!-- <file-upload></file-upload> -->
             <!-- <layout></layout> -->
-            <router-view></router-view>
+            <router-view :key="$route.fullPath"></router-view>
             <contact-form></contact-form>
             <site-footer></site-footer>
         </div>

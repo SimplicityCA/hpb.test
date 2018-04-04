@@ -19,12 +19,14 @@
 <script>
 export default {
   data () {
+      console.log(this.$route.params.product_id);
+
       return {
           id: this.$route.params.product_id,
           product: []
       }
   },
-  created(){
+  mounted(){
     const vm = this;
     axios.get('api/product/'+this.id)
     .then(function (response) {

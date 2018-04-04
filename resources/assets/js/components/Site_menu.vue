@@ -16,9 +16,9 @@
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Productos<span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <li><router-link :to="'/products/carbon-performance'">Carbon Performance</router-link></li>
-              <li><router-link :to="'/products/ceramic-organic'">Ceramic Organic</router-link></li>
-              <li><router-link :to="'/products/brake-shoe'">Brake Shoe</router-link></li>
+              <li><router-link :to="{ name: 'products', params: { product_id: 'carbon-performance' }}">Carbon Performance</router-link></li>
+              <li><router-link :to="{ name: 'products', params: { product_id: 'ceramic-organic' }}">Ceramic Organic</router-link></li>
+              <li><router-link :to="{ name: 'products', params: { product_id: 'brake-shoe' }}">Brake Shoe</router-link></li>
             </ul>
           </li>
           <li><router-link to="/client">Convi&eacute;rtete en Cliente</router-link></li>
