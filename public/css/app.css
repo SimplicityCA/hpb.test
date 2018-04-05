@@ -9582,3 +9582,88 @@ footer .footer-bottom-copy {
   }
 }
 
+.product-page__animation-container {
+  padding: 100px;
+  background-color: grey;
+  color: #FFF;
+}
+
+.product-page__download-container {
+  position: absolute;
+  top: -40px;
+  z-index: 2;
+  left: 45px;
+}
+
+.product-page__download-container .download-file-container {
+  display: inline-block;
+}
+
+.product-page__download-container .download-file {
+  color: #404040;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.product-page__download-container .download-file div {
+  margin-top: -6px;
+}
+
+.product-page__download-container .download-file strong,
+.product-page__download-container .download-file small {
+  display: block;
+}
+
+.product-page__download-container .download-file small {
+  color: #ee482d;
+  text-transform: none;
+  font-size: 1.2rem;
+  margin-top: -3px;
+}
+
+.product-page__download-container .download-file svg path {
+  -webkit-transition: fill .4s ease;
+  transition: fill .4s ease;
+}
+
+.product-page__download-container .download-file:hover {
+  color: #404040;
+  text-decoration: none;
+}
+
+.product-page__download-container .download-file:hover small {
+  color: #ee482d;
+  text-transform: none;
+}
+
+.product-page__download-container .download-file:hover svg path.icon-bg {
+  fill: #404040;
+}
+
+.product-page__product-details-container {
+  position: relative;
+}
+
+.product-page__product-details-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.product-page__product-image {
+  width: 50%;
+}
+
+.product-page__product-info {
+  width: 50%;
+}
+
