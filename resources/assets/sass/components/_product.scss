@@ -1,4 +1,86 @@
 .product-page {
   position: relative;
   @include products-header-styles;
+
+  &__animation-container {
+    padding: 100px;
+    background-color: grey;
+    color: #FFF;
+  }
+
+  &__download-container {
+    position: absolute;
+    top: -40px;
+    z-index: 2;
+    left: 45px;
+
+    .download-file-container {
+      display: inline-block;
+    }
+
+    .download-file {
+      color: $brand-grey-text;
+      text-align: center;
+      text-transform: uppercase;
+      text-decoration: none;
+      font-size: 12px;
+
+      div {
+        margin-top: -6px;
+      }
+
+      strong,
+      small {
+        display: block;
+      }
+
+      small {
+        color: $brand-orange;
+        text-transform: none;
+        font-size: 1.2rem;
+        margin-top: -3px;
+      }
+
+      svg {
+        path {
+          transition: fill .4s ease;
+        }
+      }
+
+      &:hover {
+        color: $brand-grey-text;
+        text-decoration: none;
+
+        small {
+          color: $brand-orange;
+          text-transform: none;
+        }
+
+        svg {
+          path.icon-bg {
+            fill: $brand-grey-text;
+          }
+        }
+      }
+    }
+  }
+
+  &__product-details-container {
+    position: relative;
+  }
+
+  &__product-details-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  &__product-image {
+    width: 50%;
+  }
+
+  &__product-info {
+    width: 50%;
+  }
 }

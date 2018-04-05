@@ -12,7 +12,6 @@
             </div>
             <div class="col-sm-6 form-container">
               <p>{{description.description}}</p>
-              
               <client-form></client-form>
             </div>
         </div>
