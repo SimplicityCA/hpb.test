@@ -10,9 +10,18 @@
 
   &__download-container {
     position: absolute;
-    top: -40px;
+    top: -50px;
     z-index: 2;
     left: 45px;
+
+    @media screen and (max-width: $screen-sm-max) {
+      left: 15px;
+    }
+
+    @media screen and (max-width: $screen-xs-max) {
+      left: 50%;
+      margin-left: -60px;
+    }
 
     .download-file-container {
       display: inline-block;
@@ -70,17 +79,45 @@
   }
 
   &__product-details-content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
+    @media screen and (min-width: $screen-sm-min) {  
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    @media screen and (max-width: $screen-sm-max) and (min-width: $screen-sm-min) {
+      padding-top: 15px;
+    }
+
+    @media screen and (max-width: $screen-xs-max) {
+      margin-top: 100px;
+      margin-bottom: 40px;
+    }
   }
 
   &__product-image {
-    width: 50%;
+    @media screen and (max-width: $screen-xs-max) {
+      text-align: center; 
+
+      img {
+        max-width: 450px;
+      } 
+    }
+
+    @media screen and (min-width: $screen-sm-min) {  
+      padding: 60px;
+      width: 50%;
+    }
   }
 
   &__product-info {
-    width: 50%;
+    @media screen and (min-width: $screen-sm-min) {
+      width: 50%;
+    }
+
+    @media screen and (max-width: $screen-xs-max) {
+      text-align: left;
+    }
   }
 }
