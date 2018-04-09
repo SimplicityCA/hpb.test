@@ -14,12 +14,12 @@ class DownloadTableSeeder extends Seeder
     {
     	$download1 = new Download();
     	$download1->name = 'Catálogo de Productos';
-      $download1->file = 'catalogo-HiGH-POWER-BRAKE.pdf';
+      $download1->file = 'catalogo_HiGH_POWER_BRAKE.pdf';
       $download1->save();
 
       $download2 = new Download();
     	$download2->name = 'Manual Técnico';
-      $download2->file = 'manual-tecnico-HIGH-POWER-BRAKE.pdf';
+      $download2->file = 'manual_tecnico_HIGH_POWER_BRAKE.pdf';
       $download2->save();
     }
 }

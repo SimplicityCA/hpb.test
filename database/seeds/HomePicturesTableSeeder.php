@@ -15,21 +15,21 @@ class HomePicturesTableSeeder extends Seeder
     	$banner1 = new HomePicture();
       $banner1->title = 'ESTAMOS <strong>EVOLUCIONANDO</strong>';
       $banner1->subtitle='La misma calidad de siempre con una nueva imagen';
-      $banner1->image='Banner_Home_1-01.svg';
+      $banner1->image='banner_home_1_01.jpg';
       $banner1->location = 'HOME';
       $banner1->save();
 
       $banner2 = new HomePicture();
       $banner2->title = 'TENEMOS LAS MEJORES <strong>CERTIFICACIONES</strong>';
       $banner2->subtitle='';
-      $banner2->image='Banner_Home_2-01.svg';
+      $banner2->image='banner_home_2_01.jpg';
       $banner2->location = 'HOME';
       $banner2->save();
 
       $banner3 = new HomePicture();
       $banner3->title = 'ESPECIALISTA EN SISTEMA DE FRENADO';
       $banner3->subtitle='';
-      $banner3->image='Banner_Home_3-01.svg';
+      $banner3->image='banner_home_3_01.jpg';
       $banner3->location = 'HOME';
       $banner3->save();
 
