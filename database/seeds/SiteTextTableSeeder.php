@@ -29,7 +29,7 @@ class SiteTextTableSeeder extends Seeder
         $text3 = new SiteText();
         $text3->title = 'CONVIÉRTETE EN CLIENTE';
         $text3->description = 'Si quieres formar parte de nuestros clientes a nivel nacional, debes de tener un almacén de repuestos que compre al por mayor, y si deseas abrir un nuevo almacén, nosotros te brindaremos la mejor asesoría. Por favor llena el formulario a continuación:';
-        $text3->image = 'productos-01-clientes.svg';
+        $text3->image = 'cajas.png';
         $text3->location = 'CLIENTS';
         $text3->save();
 
