@@ -92191,7 +92191,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -92237,13 +92236,11 @@ var render = function() {
         : _vm._e(),
       _vm._v(" "),
       _c("div", { staticClass: "product-page__animation-container" }, [
-        _c("div", [_vm._v("DIV UNO")]),
+        _c("div", [_vm._v("Posterior")]),
         _vm._v(" "),
-        _c("div", [_vm._v("DIV DOS")]),
+        _c("div", [_vm._v("Lámina")]),
         _vm._v(" "),
-        _c("div", [_vm._v("DIV TRES")]),
-        _vm._v(" "),
-        _c("div", [_vm._v("DIV CUATRO")])
+        _c("div", [_vm._v("Frente")])
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "product-page__product-details-container" }, [
