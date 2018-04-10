@@ -1,3 +1,62 @@
+[v-cloak] {
+  display: none;
+}
+
+.slideRight{
+  animation-name: slideRight;
+  -webkit-animation-name: slideRight; 
+
+  animation-duration: 1s; 
+  -webkit-animation-duration: 1s;
+
+  animation-timing-function: ease-in-out; 
+  -webkit-animation-timing-function: ease-in-out;   
+
+  visibility: visible !important; 
+}
+
+@keyframes slideRight {
+  0% {
+    transform: translateX(-150%);
+  }
+  50%{
+    transform: translateX(8%);
+  }
+  65%{
+    transform: translateX(-4%);
+  }
+  80%{
+    transform: translateX(4%);
+  }
+  95%{
+    transform: translateX(-2%);
+  }     
+  100% {
+    transform: translateX(0%);
+  } 
+}
+
+@-webkit-keyframes slideRight {
+  0% {
+    -webkit-transform: translateX(-150%);
+  }
+  50%{
+    -webkit-transform: translateX(8%);
+  }
+  65%{
+    -webkit-transform: translateX(-4%);
+  }
+  80%{
+    -webkit-transform: translateX(4%);
+  }
+  95%{
+    -webkit-transform: translateX(-2%);
+  }     
+  100% {
+    -webkit-transform: translateX(0%);
+  }
+}
+
 .product-page {
   position: relative;
   @include products-header-styles;
@@ -6,6 +65,46 @@
     padding: 100px;
     background-color: grey;
     color: #FFF;
+    background-image: url('/Fondos/stock-photo-futuristic-empty-stage-modern-future-background-technology-sci-fi-interior-concept-d-rendering-543638065.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-color: black;
+
+    > div {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 100px;
+      margin-bottom: 50px;
+
+      &:first-child {
+        background-color: red;
+      }
+
+      &:nth-child(2) {
+        background-color: blue;
+      }
+
+      &:nth-child(3) {
+        background-color: green;
+      }
+
+      &:last-child {
+        background-color: yellow;
+        margin-bottom: 0;
+
+        &.animate {
+          animation-name: slideRight;
+          -webkit-animation-name: slideRight;
+          animation-duration: 1s;
+          -webkit-animation-duration: 1s;
+          animation-timing-function: ease-in-out;
+          -webkit-animation-timing-function: ease-in-out;
+          visibility: visible !important;
+        }
+      }
+    }
   }
 
   &__download-container {
@@ -97,7 +196,7 @@
   }
 
   &__product-image {
-    @media screen and (max-width: $screen-xs-max) {
+    @media screen and (max-width: $screen-xs-max) and (min-width: 600px) {
       text-align: center; 
 
       img {
@@ -118,6 +217,31 @@
 
     @media screen and (max-width: $screen-xs-max) {
       text-align: left;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+
+      li {
+        padding-left: 40px;
+        position: relative;
+        margin-bottom: 10px;
+        font-size: 16px;
+
+        @media screen and (max-width: $screen-xs-max) {
+          font-size: 15px;
+        }
+
+        &:before {
+          content: '•';
+          display: inline-block;
+          width: 40px;
+          position: absolute;
+          left: 28px;
+          color: $brand-orange;
+        }
+      }
     }
   }
 }

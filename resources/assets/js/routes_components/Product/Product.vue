@@ -3,12 +3,17 @@
         <div class="row">
             <div class="product-page__top-section">
               <div class="header-text-container">
-                  <p class="header-title">{{product.title}}</p>
-                  <p class="header-subtitle">{{product.subtitle}}</p>
-                </div>
+                <p class="header-title">{{product.title}}</p>
+                <p class="header-subtitle">{{product.subtitle}}</p>
               </div>
-              <img v-if="product.header_image" v-bind:src="`/img/${product.header_image}`" />
-            <div class="product-page__animation-container"> ANIMACIÓN </div>
+            </div>
+            <img v-if="product.header_image" v-bind:src="`/img/${product.header_image}`" />
+            <div v-cloak class="product-page__animation-container">
+              <div>DIV UNO</div>
+              <div>DIV DOS</div>
+              <div>DIV TRES</div>
+              <div>DIV CUATRO</div>
+            </div>
             <div class="product-page__product-details-container">
               <div class="product-page__download-container">
                 <div class="download-file-container">
