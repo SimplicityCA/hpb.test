@@ -71,37 +71,47 @@
     background-position: top center;
     background-repeat: no-repeat;
     background-color: black;
+    overflow: auto;
+    max-height: 300px;
 
     > div {
       max-width: 400px;
       margin: 0 auto;
-      padding: 100px;
+      padding: 150px;
       margin-bottom: 50px;
 
       &:first-child {
-        background-color: red;
+        // background-color: red;
+        background-image: url('/img/animaciones/carbon/posterior.png');
+        background-size: cover;
       }
 
       &:nth-child(2) {
-        background-color: blue;
+        // background-color: blue;
+        background-image: url('/img/animaciones/carbon/lamina.png');
+        background-size: cover;
       }
 
       &:nth-child(3) {
-        background-color: green;
+        // background-color: green;
+        background-image: url('/img/animaciones/carbon/frente.png');
+        background-size: cover;
       }
 
       &:last-child {
-        background-color: yellow;
+        // background-color: yellow;
         margin-bottom: 0;
+        background-image: url('/img/animaciones/carbon/frente.png');
+        background-size: cover;
 
         &.animate {
-          animation-name: slideRight;
-          -webkit-animation-name: slideRight;
-          animation-duration: 1s;
-          -webkit-animation-duration: 1s;
-          animation-timing-function: ease-in-out;
-          -webkit-animation-timing-function: ease-in-out;
-          visibility: visible !important;
+            animation-name: slideRight;
+            -webkit-animation-name: slideRight;
+            animation-duration: 1s;
+            -webkit-animation-duration: 1s;
+            animation-timing-function: ease-in-out;
+            -webkit-animation-timing-function: ease-in-out;
+            visibility: visible !important;
         }
       }
     }

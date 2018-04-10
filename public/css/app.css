@@ -9664,30 +9664,36 @@ footer .footer-bottom-copy {
   background-position: top center;
   background-repeat: no-repeat;
   background-color: black;
+  overflow: auto;
+  max-height: 300px;
 }
 
 .product-page__animation-container > div {
   max-width: 400px;
   margin: 0 auto;
-  padding: 100px;
+  padding: 150px;
   margin-bottom: 50px;
 }
 
 .product-page__animation-container > div:first-child {
-  background-color: red;
+  background-image: url("/img/animaciones/carbon/posterior.png");
+  background-size: cover;
 }
 
 .product-page__animation-container > div:nth-child(2) {
-  background-color: blue;
+  background-image: url("/img/animaciones/carbon/lamina.png");
+  background-size: cover;
 }
 
 .product-page__animation-container > div:nth-child(3) {
-  background-color: green;
+  background-image: url("/img/animaciones/carbon/frente.png");
+  background-size: cover;
 }
 
 .product-page__animation-container > div:last-child {
-  background-color: yellow;
   margin-bottom: 0;
+  background-image: url("/img/animaciones/carbon/frente.png");
+  background-size: cover;
 }
 
 .product-page__animation-container > div:last-child.animate {

@@ -9,10 +9,9 @@
             </div>
             <img v-if="product.header_image" v-bind:src="`/img/${product.header_image}`" />
             <div v-cloak class="product-page__animation-container">
-              <div>DIV UNO</div>
-              <div>DIV DOS</div>
-              <div>DIV TRES</div>
-              <div>DIV CUATRO</div>
+              <div>Posterior</div>
+              <div>Lámina</div>
+              <div>Frente</div>
             </div>
             <div class="product-page__product-details-container">
               <div class="product-page__download-container">
