@@ -42,8 +42,10 @@
 export default {
   data () {
       return {
-          id: this.$route.params.product_id,
-          product: []
+        id: this.$route.params.product_id,
+        product: [],
+        prevScrollValue: window.scrollY,
+        scrollDirection: 'down'
       }
   },
   mounted(){
@@ -60,13 +62,30 @@ export default {
     // });
     var scrollableProductAnimation = document.getElementById("product-animation");
     scrollableProductAnimation.addEventListener('scroll', this.handleScrollEl);
+    // console.log('prevScrollValue: ' + this.prevScrollValue);
   },
   methods: {
     handleScroll (event) {
       console.log('window scroll ' + window.scrollY);
-      console.log('ID scroll ' + document.getElementById("product-animation").scrollTop);      
+      console.log('ID scroll ' + document.getElementById("product-animation").scrollTop);
+
+      if (window.scrollY > this.prevScrollValue) {
+        this.scrollDirection = 'down';
+        console.log('Scroll direction is: ' + this.scrollDirection);
+        console.log('Scroll previous value is: ' + this.prevScrollValue);
+      }
+
+      if (window.scrollY < this.prevScrollValue) {
+        this.scrollDirection = 'up';
+        console.log('Scroll direction is: ' + this.scrollDirection);
+        console.log('Scroll previous value is: ' + this.prevScrollValue);
+      }
+
+      this.prevScrollValue = window.scrollY;
+
       if (window.scrollY > 150) {
         document.getElementById("product-animation").scrollTop += 1;
+        // console.log('with parallax, prevScrollValue is ' + this.prevScrollValue);
       }
     },
     handleScrollEl (event) {
