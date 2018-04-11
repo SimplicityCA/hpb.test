@@ -8,7 +8,7 @@
               </div>
             </div>
             <img v-if="product.header_image" v-bind:src="`/img/${product.header_image}`" />
-            <div v-cloak class="product-page__animation-container">
+            <div v-cloak class="product-page__animation-container" id="product-animation">
               <div>Posterior</div>
               <div>Lámina</div>
               <div>Frente</div>
@@ -54,7 +54,41 @@ export default {
     })
     .catch(function (error) {
       console.log(error);
-    });   
+    });
+    // document.querySelector('#product-animation').addEventListener('scroll', function() {
+    //   alert('you scrolled');
+    // });
+    var scrollableProductAnimation = document.getElementById("product-animation");
+    scrollableProductAnimation.addEventListener('scroll', this.handleScrollEl);
+  },
+  methods: {
+    handleScroll (event) {
+      console.log('window scroll ' + window.scrollY);
+      console.log('ID scroll ' + document.getElementById("product-animation").scrollTop);      
+      if (window.scrollY > 150) {
+        document.getElementById("product-animation").scrollTop += 1;
+      }
+    },
+    handleScrollEl (event) {
+      console.log('target ' + event.target.scrollTop);
+      console.log('ID scroll ' + document.getElementById("product-animation").scrollTop);
+    }
+  },
+  created(){
+    // var scrollableProductAnimation = document.getElementById("product-animation");
+    // console.log(scrollableProductAnimation);
+    // scrollableProductAnimation.addEventListener('scroll', this.handleScrollEl);
+    // document.querySelector('#product-animation').addEventListener('scroll', function() {
+    //   alert('you scrolled');
+    // });
+
+    window.addEventListener('scroll', this.handleScroll);
+  },
+  destroyed(){
+    var scrollableProductAnimation = document.getElementById("product-animation");
+    scrollableProductAnimation.removeEventListener('scroll', this.handleScrollEl); 
+
+    window.removeEventListener('scroll', this.handleScroll);
   }
 }
 </script>
