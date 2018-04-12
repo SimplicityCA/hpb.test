@@ -2,6 +2,104 @@
   display: none;
 }
 
+/*
+==============================================
+slideUp
+==============================================
+*/
+
+@mixin slideUp {
+  animation-name: slideUp;
+  -webkit-animation-name: slideUp;  
+
+  animation-duration: 2s; 
+  -webkit-animation-duration: 2s;
+
+  animation-timing-function: ease;  
+  -webkit-animation-timing-function: ease;
+
+  visibility: visible !important;     
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(100%);
+  }
+  50%{
+    transform: translateY(-8%);
+  }
+  65%{
+    transform: translateY(4%);
+  }
+  80%{
+    transform: translateY(-4%);
+  }
+  95%{
+    transform: translateY(2%);
+  }     
+  100% {
+    transform: translateY(0%);
+  } 
+}
+
+@-webkit-keyframes slideUp {
+  0% {
+    -webkit-transform: translateY(100%);
+  }
+  50%{
+    -webkit-transform: translateY(-8%);
+  }
+  65%{
+    -webkit-transform: translateY(4%);
+  }
+  80%{
+    -webkit-transform: translateY(-4%);
+  }
+  95%{
+    -webkit-transform: translateY(2%);
+  }     
+  100% {
+    -webkit-transform: translateY(0%);
+  } 
+}
+
+@mixin slideUpFinal {
+  animation-name: slideUpFinal;
+  -webkit-animation-name: slideUpFinal;  
+
+  animation-duration: 1s; 
+  -webkit-animation-duration: 1s;
+
+  animation-timing-function: ease;  
+  -webkit-animation-timing-function: ease;
+
+  visibility: visible !important;     
+}
+
+@keyframes slideUpFinal {
+  0% {
+    transform: translateY(100%);
+  }
+  50%{
+    transform: translateY(50%);
+  }
+  100% {
+    transform: translateY(0%);
+  } 
+}
+
+@-webkit-keyframes slideUpFinal {
+  0% {
+    -webkit-transform: translateY(100%);
+  }
+  50%{
+    -webkit-transform: translateY(50%);
+  }    
+  100% {
+    -webkit-transform: translateY(0%);
+  } 
+}
+
 .slideRight{
   animation-name: slideRight;
   -webkit-animation-name: slideRight; 
@@ -71,7 +169,7 @@
     background-position: top center;
     background-repeat: no-repeat;
     background-color: black;
-    overflow: auto;
+    overflow: hidden;
     max-height: 300px;
 
     > div {
@@ -103,16 +201,20 @@
         margin-bottom: 0;
         background-image: url('/img/animaciones/carbon/frente.png');
         background-size: cover;
+      }
 
-        &.animate {
-            animation-name: slideRight;
-            -webkit-animation-name: slideRight;
-            animation-duration: 1s;
-            -webkit-animation-duration: 1s;
-            animation-timing-function: ease-in-out;
-            -webkit-animation-timing-function: ease-in-out;
-            visibility: visible !important;
-        }
+      &.animated {
+        animation-name: slideRight;
+        -webkit-animation-name: slideRight;
+        animation-duration: 1s;
+        -webkit-animation-duration: 1s;
+        animation-timing-function: ease-in-out;
+        -webkit-animation-timing-function: ease-in-out;
+        visibility: visible !important;
+      }
+
+      &.toStage {
+        @include slideUpFinal;
       }
     }
   }

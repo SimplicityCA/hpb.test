@@ -9551,6 +9551,101 @@ footer .footer-bottom-copy {
   display: none;
 }
 
+/*
+==============================================
+slideUp
+==============================================
+*/
+
+@keyframes slideUp {
+  0% {
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+  }
+
+  50% {
+    -webkit-transform: translateY(-8%);
+            transform: translateY(-8%);
+  }
+
+  65% {
+    -webkit-transform: translateY(4%);
+            transform: translateY(4%);
+  }
+
+  80% {
+    -webkit-transform: translateY(-4%);
+            transform: translateY(-4%);
+  }
+
+  95% {
+    -webkit-transform: translateY(2%);
+            transform: translateY(2%);
+  }
+
+  100% {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+}
+
+@-webkit-keyframes slideUp {
+  0% {
+    -webkit-transform: translateY(100%);
+  }
+
+  50% {
+    -webkit-transform: translateY(-8%);
+  }
+
+  65% {
+    -webkit-transform: translateY(4%);
+  }
+
+  80% {
+    -webkit-transform: translateY(-4%);
+  }
+
+  95% {
+    -webkit-transform: translateY(2%);
+  }
+
+  100% {
+    -webkit-transform: translateY(0%);
+  }
+}
+
+@keyframes slideUpFinal {
+  0% {
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+  }
+
+  50% {
+    -webkit-transform: translateY(50%);
+            transform: translateY(50%);
+  }
+
+  100% {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+}
+
+@-webkit-keyframes slideUpFinal {
+  0% {
+    -webkit-transform: translateY(100%);
+  }
+
+  50% {
+    -webkit-transform: translateY(50%);
+  }
+
+  100% {
+    -webkit-transform: translateY(0%);
+  }
+}
+
 .slideRight {
   animation-name: slideRight;
   -webkit-animation-name: slideRight;
@@ -9664,7 +9759,7 @@ footer .footer-bottom-copy {
   background-position: top center;
   background-repeat: no-repeat;
   background-color: black;
-  overflow: auto;
+  overflow: hidden;
   max-height: 300px;
 }
 
@@ -9696,13 +9791,23 @@ footer .footer-bottom-copy {
   background-size: cover;
 }
 
-.product-page__animation-container > div:last-child.animate {
+.product-page__animation-container > div.animated {
   animation-name: slideRight;
   -webkit-animation-name: slideRight;
   animation-duration: 1s;
   -webkit-animation-duration: 1s;
   animation-timing-function: ease-in-out;
   -webkit-animation-timing-function: ease-in-out;
+  visibility: visible !important;
+}
+
+.product-page__animation-container > div.toStage {
+  animation-name: slideUpFinal;
+  -webkit-animation-name: slideUpFinal;
+  animation-duration: 1s;
+  -webkit-animation-duration: 1s;
+  animation-timing-function: ease;
+  -webkit-animation-timing-function: ease;
   visibility: visible !important;
 }
 
