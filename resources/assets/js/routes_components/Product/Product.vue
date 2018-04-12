@@ -9,9 +9,9 @@
             </div>
             <img v-if="product.header_image" v-bind:src="`/img/${product.header_image}`" />
             <div v-cloak class="product-page__animation-container" id="product-animation">
-              <div>Posterior</div>
-              <div>Lámina</div>
-              <div>Frente</div>
+              <div v-bind:class="{ animated: animateFirstImage}">Posterior</div>
+              <div v-bind:class="{ animated: animateSecondImage}">Lámina</div>
+              <div v-bind:class="{ animated: animateThirdImage}">Frente</div>
             </div>
             <div class="product-page__product-details-container">
               <div class="product-page__download-container">
@@ -45,7 +45,10 @@ export default {
         id: this.$route.params.product_id,
         product: [],
         prevScrollValue: window.scrollY,
-        scrollDirection: 'down'
+        scrollDirection: 'down',
+        animateFirstImage: false,
+        animateSecondImage: false,
+        animateThirdImage: false
       }
   },
   mounted(){
@@ -69,23 +72,34 @@ export default {
       console.log('window scroll ' + window.scrollY);
       console.log('ID scroll ' + document.getElementById("product-animation").scrollTop);
 
+      // User is scrolling down
       if (window.scrollY > this.prevScrollValue) {
         this.scrollDirection = 'down';
         console.log('Scroll direction is: ' + this.scrollDirection);
         console.log('Scroll previous value is: ' + this.prevScrollValue);
+        document.getElementById("product-animation").scrollTop += 5;
       }
 
+      // User is scrolling up
       if (window.scrollY < this.prevScrollValue) {
         this.scrollDirection = 'up';
         console.log('Scroll direction is: ' + this.scrollDirection);
         console.log('Scroll previous value is: ' + this.prevScrollValue);
+        document.getElementById("product-animation").scrollTop -= 5;
       }
 
       this.prevScrollValue = window.scrollY;
 
-      if (window.scrollY > 150) {
-        document.getElementById("product-animation").scrollTop += 1;
-        // console.log('with parallax, prevScrollValue is ' + this.prevScrollValue);
+      if (window.scrollY > 5) {
+        this.animateFirstImage = true;
+      }
+
+    if (window.scrollY > 80) {
+        this.animateSecondImage = true;
+      }
+
+    if (window.scrollY > 180) {
+        this.animateThirdImage = true;
       }
     },
     handleScrollEl (event) {

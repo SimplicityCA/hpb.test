@@ -92201,7 +92201,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       id: this.$route.params.product_id,
       product: [],
       prevScrollValue: window.scrollY,
-      scrollDirection: 'down'
+      scrollDirection: 'down',
+      animateFirstImage: false,
+      animateSecondImage: false,
+      animateThirdImage: false
     };
   },
   mounted: function mounted() {
@@ -92224,23 +92227,34 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       console.log('window scroll ' + window.scrollY);
       console.log('ID scroll ' + document.getElementById("product-animation").scrollTop);
 
+      // User is scrolling down
       if (window.scrollY > this.prevScrollValue) {
         this.scrollDirection = 'down';
         console.log('Scroll direction is: ' + this.scrollDirection);
         console.log('Scroll previous value is: ' + this.prevScrollValue);
+        document.getElementById("product-animation").scrollTop += 5;
       }
 
+      // User is scrolling up
       if (window.scrollY < this.prevScrollValue) {
         this.scrollDirection = 'up';
         console.log('Scroll direction is: ' + this.scrollDirection);
         console.log('Scroll previous value is: ' + this.prevScrollValue);
+        document.getElementById("product-animation").scrollTop -= 5;
       }
 
       this.prevScrollValue = window.scrollY;
 
-      if (window.scrollY > 150) {
-        document.getElementById("product-animation").scrollTop += 1;
-        // console.log('with parallax, prevScrollValue is ' + this.prevScrollValue);
+      if (window.scrollY > 5) {
+        this.animateFirstImage = true;
+      }
+
+      if (window.scrollY > 80) {
+        this.animateSecondImage = true;
+      }
+
+      if (window.scrollY > 180) {
+        this.animateThirdImage = true;
       }
     },
     handleScrollEl: function handleScrollEl(event) {
@@ -92299,11 +92313,17 @@ var render = function() {
           attrs: { id: "product-animation" }
         },
         [
-          _c("div", [_vm._v("Posterior")]),
+          _c("div", { class: { animated: _vm.animateFirstImage } }, [
+            _vm._v("Posterior")
+          ]),
           _vm._v(" "),
-          _c("div", [_vm._v("Lámina")]),
+          _c("div", { class: { animated: _vm.animateSecondImage } }, [
+            _vm._v("Lámina")
+          ]),
           _vm._v(" "),
-          _c("div", [_vm._v("Frente")])
+          _c("div", { class: { animated: _vm.animateThirdImage } }, [
+            _vm._v("Frente")
+          ])
         ]
       ),
       _vm._v(" "),
