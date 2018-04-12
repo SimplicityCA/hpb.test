@@ -92313,15 +92313,15 @@ var render = function() {
           attrs: { id: "product-animation" }
         },
         [
-          _c("div", { class: { toStage: _vm.animateFirstImage } }, [
+          _c("div", { class: { animated: _vm.animateFirstImage } }, [
             _vm._v("Posterior")
           ]),
           _vm._v(" "),
-          _c("div", { class: { toStage: _vm.animateSecondImage } }, [
+          _c("div", { class: { animated: _vm.animateSecondImage } }, [
             _vm._v("Lámina")
           ]),
           _vm._v(" "),
-          _c("div", { class: { toStage: _vm.animateThirdImage } }, [
+          _c("div", { class: { animated: _vm.animateThirdImage } }, [
             _vm._v("Frente")
           ])
         ]

@@ -9,9 +9,9 @@
             </div>
             <img v-if="product.header_image" v-bind:src="`/img/${product.header_image}`" />
             <div v-cloak class="product-page__animation-container" id="product-animation">
-              <div v-bind:class="{ toStage: animateFirstImage}">Posterior</div>
-              <div v-bind:class="{ toStage: animateSecondImage}">Lámina</div>
-              <div v-bind:class="{ toStage: animateThirdImage}">Frente</div>
+              <div v-bind:class="{ animated: animateFirstImage}">Posterior</div>
+              <div v-bind:class="{ animated: animateSecondImage}">Lámina</div>
+              <div v-bind:class="{ animated: animateThirdImage}">Frente</div>
             </div>
             <div class="product-page__product-details-container">
               <div class="product-page__download-container">
