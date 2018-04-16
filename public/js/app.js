@@ -12427,7 +12427,11 @@ var routes = [{
 var router = new __WEBPACK_IMPORTED_MODULE_0_vue_router__["a" /* default */]({
   routes: routes,
   scrollBehavior: function scrollBehavior(to, from, savedPosition) {
-    return { x: 0, y: 0 };
+    if (savedPosition) {
+      return savedPosition;
+    } else {
+      return { x: 0, y: 0 };
+    }
   }
 });
 
@@ -92278,7 +92282,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         // console.log('animation container height: ' + document.getElementById("product-animation").offsetHeight);
         // console.log('product-animation height: ' + document.getElementById("product-animation").scrollTop);
         // All should show from scroll 0 to 610 no more
-        if (window.scrollY < windowViewportHeight - 100) {
+        // if (window.scrollY < (windowViewportHeight + 50)) {
+        if (document.getElementById("product-animation").scrollTop <= animationContainerTotalScroll) {
           document.getElementById("product-animation").scrollTop += window.scrollY - this.prevScrollValue + animationContainerTotalScroll / (windowViewportHeight - 100);
         }
       }
@@ -92293,7 +92298,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         console.log('Current scrollY minus prevScrollValue: ' + -1 * (window.scrollY - this.prevScrollValue));
         console.log('animationContainerTotalScroll: ' + animationContainerTotalScroll);
         console.log('window Viewport height: ' + windowViewportHeight);
-        if (window.scrollY < windowViewportHeight - 100) {
+        // if (window.scrollY < (windowViewportHeight + )) {
+        if (document.getElementById("product-animation").scrollTop >= 0 && window.scrollY < windowViewportHeight + 60) {
           document.getElementById("product-animation").scrollTop -= -1 * (window.scrollY - this.prevScrollValue) + animationContainerTotalScroll / (windowViewportHeight - 100);
         }
       }

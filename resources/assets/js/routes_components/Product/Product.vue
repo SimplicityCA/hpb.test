@@ -124,7 +124,8 @@ export default {
         // console.log('animation container height: ' + document.getElementById("product-animation").offsetHeight);
         // console.log('product-animation height: ' + document.getElementById("product-animation").scrollTop);
         // All should show from scroll 0 to 610 no more
-        if (window.scrollY < (windowViewportHeight - 100)) {
+        // if (window.scrollY < (windowViewportHeight + 50)) {
+        if (document.getElementById("product-animation").scrollTop <= animationContainerTotalScroll) {
           document.getElementById("product-animation").scrollTop += (window.scrollY - this.prevScrollValue) + animationContainerTotalScroll/(windowViewportHeight - 100);
         }
       }
@@ -139,7 +140,8 @@ export default {
         console.log('Current scrollY minus prevScrollValue: ' + (-1)*(window.scrollY - this.prevScrollValue));
         console.log('animationContainerTotalScroll: ' + (animationContainerTotalScroll));
         console.log('window Viewport height: ' + (windowViewportHeight));
-        if (window.scrollY < (windowViewportHeight - 100)) {
+        // if (window.scrollY < (windowViewportHeight + )) {
+        if (document.getElementById("product-animation").scrollTop >= 0 && (window.scrollY < (windowViewportHeight + 60))) {
           document.getElementById("product-animation").scrollTop -= (-1)*(window.scrollY - this.prevScrollValue) + animationContainerTotalScroll/(windowViewportHeight - 100);
         }
       }
