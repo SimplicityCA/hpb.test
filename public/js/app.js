@@ -92224,23 +92224,78 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
   methods: {
     handleScroll: function handleScroll(event) {
-      console.log('window scroll ' + window.scrollY);
-      console.log('ID scroll ' + document.getElementById("product-animation").scrollTop);
+      // console.log('window scroll ' + window.scrollY);
+      // console.log('ID scroll ' + document.getElementById("product-animation").scrollTop);
+
+      var body = document.body,
+          html = document.documentElement;
+
+      var bodyHeight = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
+      // console.log('body all height: ' + bodyHeight);
+
+      var productAnimationEl = document.getElementById("product-animation");
+
+      var productAnimationElHeight = Math.max(productAnimationEl.scrollHeight, productAnimationEl.offsetHeight);
+
+      //Elements needed for getting animation done completely
+
+      // Product Details
+      var productDetailsEl = document.querySelectorAll('div.product-page__product-details-container');
+      productDetailsEl = productDetailsEl[0];
+      var productDetailsElHeight = productDetailsEl.offsetHeight;
+
+      // Contact Form
+      var contactFormEl = document.querySelectorAll('div.contact-form');
+      contactFormEl = contactFormEl[0];
+      var contactFormElHeight = contactFormEl.offsetHeight;
+
+      // Footer
+      var footerEl = document.querySelectorAll('footer');
+      footerEl = footerEl[0];
+      var footerElHeight = footerEl.offsetHeight;
+
+      // console.log('productDetailsElHeight: ' + productDetailsElHeight + ' contactFormElHeight: ' + contactFormElHeight + ' footerElHeight: ' + footerElHeight);
+
+      var spaceForTheWholeAnimationToHappen = productAnimationElHeight + contactFormElHeight + footerElHeight;
+      // console.log('All space below animation: ' + spaceForTheWholeAnimationToHappen);
+      spaceForTheWholeAnimationToHappen = bodyHeight - spaceForTheWholeAnimationToHappen + 300;
+      // console.log('Final space for the whole animation to happen: ' + spaceForTheWholeAnimationToHappen);
+
+      var animationContainerTotalScroll = productAnimationElHeight - productAnimationEl.offsetHeight;
+      var windowViewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+      // console.log('windowViewportHeight: ' + windowViewportHeight);
 
       // User is scrolling down
       if (window.scrollY > this.prevScrollValue) {
         this.scrollDirection = 'down';
-        console.log('Scroll direction is: ' + this.scrollDirection);
-        console.log('Scroll previous value is: ' + this.prevScrollValue);
-        document.getElementById("product-animation").scrollTop += 5;
+        console.log('DOWN DOWN DOWN------------------');
+        console.log('Current scrollY minus prevScrollValue: ' + (window.scrollY - this.prevScrollValue));
+        console.log('animationContainerTotalScroll: ' + animationContainerTotalScroll);
+        console.log('window Viewport height: ' + windowViewportHeight);
+        // console.log('Scroll direction is: ' + this.scrollDirection);
+        // console.log('Scroll previous value is: ' + this.prevScrollValue);
+        // document.getElementById("product-animation").scrollTop += 5;
+        // console.log('animation container height: ' + document.getElementById("product-animation").offsetHeight);
+        // console.log('product-animation height: ' + document.getElementById("product-animation").scrollTop);
+        // All should show from scroll 0 to 610 no more
+        if (window.scrollY < windowViewportHeight - 100) {
+          document.getElementById("product-animation").scrollTop += window.scrollY - this.prevScrollValue + animationContainerTotalScroll / (windowViewportHeight - 100);
+        }
       }
 
       // User is scrolling up
       if (window.scrollY < this.prevScrollValue) {
         this.scrollDirection = 'up';
-        console.log('Scroll direction is: ' + this.scrollDirection);
-        console.log('Scroll previous value is: ' + this.prevScrollValue);
-        document.getElementById("product-animation").scrollTop -= 5;
+        // console.log('Scroll direction is: ' + this.scrollDirection);
+        // console.log('Scroll previous value is: ' + this.prevScrollValue);
+        // document.getElementById("product-animation").scrollTop -= 5;
+        console.log('UP UP UP------------------');
+        console.log('Current scrollY minus prevScrollValue: ' + -1 * (window.scrollY - this.prevScrollValue));
+        console.log('animationContainerTotalScroll: ' + animationContainerTotalScroll);
+        console.log('window Viewport height: ' + windowViewportHeight);
+        if (window.scrollY < windowViewportHeight - 100) {
+          document.getElementById("product-animation").scrollTop -= -1 * (window.scrollY - this.prevScrollValue) + animationContainerTotalScroll / (windowViewportHeight - 100);
+        }
       }
 
       this.prevScrollValue = window.scrollY;
