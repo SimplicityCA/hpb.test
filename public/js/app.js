@@ -92284,7 +92284,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         // All should show from scroll 0 to 610 no more
         // if (window.scrollY < (windowViewportHeight + 50)) {
         if (document.getElementById("product-animation").scrollTop <= animationContainerTotalScroll) {
-          document.getElementById("product-animation").scrollTop += window.scrollY - this.prevScrollValue + animationContainerTotalScroll / (windowViewportHeight - 100);
+          document.getElementById("product-animation").scrollTop += window.scrollY - this.prevScrollValue + animationContainerTotalScroll / (windowViewportHeight - 30);
         }
       }
 
