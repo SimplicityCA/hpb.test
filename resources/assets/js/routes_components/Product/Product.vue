@@ -8,11 +8,45 @@
               </div>
             </div>
             <img v-if="product.header_image" v-bind:src="`/img/${product.header_image}`" />
-            <div v-cloak class="product-page__animation-container" id="product-animation">
-              <div v-bind:class="{ animated: animateFirstImage}">Posterior</div>
-              <div v-bind:class="{ animated: animateSecondImage}">Lámina</div>
-              <div v-bind:class="{ animated: animateThirdImage}">Frente</div>
-            </div>
+            <template v-if="$route.params.product_id === 'carbon-performance'">
+              <div v-cloak class="product-page__animation-container carbon-performance" id="product-animation">
+                <div v-bind:class="{ animated: animateFirstImage}">
+                  <span class="product__image-text">Shim de Aluminio</span>
+                </div>
+                <div v-bind:class="{ animated: animateSecondImage}">
+                  <span class="product__image-text">Backing Plate de Hierro</span>
+                </div>
+                <div v-bind:class="{ animated: animateThirdImage}">
+                  <span class="product__image-text">Material Cerámico Orgánico que Cuida el Medio Ambiente</span>
+                </div>
+              </div>
+            </template>
+            <template v-if="$route.params.product_id === 'ceramic-organic'">
+              <div v-cloak class="product-page__animation-container ceramic-organic" id="product-animation">
+                <div v-bind:class="{ animated: animateFirstImage}">
+                  <span class="product__image-text">Shim de Aluminio</span>
+                </div>
+                <div v-bind:class="{ animated: animateSecondImage}">
+                  <span class="product__image-text">Backing Plate de Hierro</span>
+                </div>
+                <div v-bind:class="{ animated: animateThirdImage}">
+                  <span class="product__image-text">Material Cerámico Orgánico que Cuida el Medio Ambiente</span>
+                </div>
+              </div>
+            </template>
+            <template v-if="$route.params.product_id === 'brake-shoe'">
+              <div v-cloak class="product-page__animation-container brake-shoe" id="product-animation">
+                <div v-bind:class="{ animated: animateFirstImage}">
+                  <span class="product__image-text">Backing plate de hierro</span>
+                </div>
+                <div v-bind:class="{ animated: animateSecondImage}">
+                  <span class="product__image-text"></span>
+                </div>
+                <div v-bind:class="{ animated: animateThirdImage}">
+                  <span class="product__image-text">Material de Fricción de Alta Duración</span>
+                </div>
+              </div>
+            </template>
             <div class="product-page__product-details-container">
               <div class="product-page__download-container">
                 <div class="download-file-container">

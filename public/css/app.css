@@ -9763,6 +9763,42 @@ slideUp
   max-height: 400px;
 }
 
+.product-page__animation-container.carbon-performance > div:first-child {
+  background-image: url("/img/animaciones/carbon/posterior.png");
+}
+
+.product-page__animation-container.carbon-performance > div:nth-child(2) {
+  background-image: url("/img/animaciones/carbon/lamina.png");
+}
+
+.product-page__animation-container.carbon-performance > div:nth-child(3) {
+  background-image: url("/img/animaciones/carbon/frente.png");
+}
+
+.product-page__animation-container.ceramic-organic > div:first-child {
+  background-image: url("/img/animaciones/ceramic/posterior.png");
+}
+
+.product-page__animation-container.ceramic-organic > div:nth-child(2) {
+  background-image: url("/img/animaciones/ceramic/lamina.png");
+}
+
+.product-page__animation-container.ceramic-organic > div:nth-child(3) {
+  background-image: url("/img/animaciones/ceramic/frente.png");
+}
+
+.product-page__animation-container.brake-shoe > div:first-child {
+  background-image: url("/img/animaciones/shoe/zapata1.png");
+}
+
+.product-page__animation-container.brake-shoe > div:nth-child(2) {
+  background-image: url("/img/animaciones/shoe/zapata2.png");
+}
+
+.product-page__animation-container.brake-shoe > div:nth-child(3) {
+  background-image: url("/img/animaciones/shoe/zapata3.png");
+}
+
 .product-page__animation-container > div {
   max-width: 400px;
   margin: 0 auto;
@@ -9771,23 +9807,19 @@ slideUp
 }
 
 .product-page__animation-container > div:first-child {
-  background-image: url("/img/animaciones/carbon/posterior.png");
   background-size: cover;
 }
 
 .product-page__animation-container > div:nth-child(2) {
-  background-image: url("/img/animaciones/carbon/lamina.png");
   background-size: cover;
 }
 
 .product-page__animation-container > div:nth-child(3) {
-  background-image: url("/img/animaciones/carbon/frente.png");
   background-size: cover;
 }
 
 .product-page__animation-container > div:last-child {
   margin-bottom: 0;
-  background-image: url("/img/animaciones/carbon/frente.png");
   background-size: cover;
 }
 
