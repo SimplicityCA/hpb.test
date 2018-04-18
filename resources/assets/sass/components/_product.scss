@@ -172,6 +172,54 @@ slideUp
     overflow: hidden;
     max-height: 400px;
 
+    &.carbon-performance {
+      > div {
+        &:first-child {
+          background-image: url('/img/animaciones/carbon/posterior.png');
+        }
+
+        &:nth-child(2) {
+          background-image: url('/img/animaciones/carbon/lamina.png');
+        }
+
+        &:nth-child(3) {
+          background-image: url('/img/animaciones/carbon/frente.png');
+        }
+      }
+    }
+
+    &.ceramic-organic {
+      > div {
+        &:first-child {
+          background-image: url('/img/animaciones/ceramic/posterior.png');
+        }
+
+        &:nth-child(2) {
+          background-image: url('/img/animaciones/ceramic/lamina.png');
+        }
+
+        &:nth-child(3) {
+          background-image: url('/img/animaciones/ceramic/frente.png');
+        }
+      }
+    }
+
+    &.brake-shoe {
+      > div {
+        &:first-child {
+          background-image: url('/img/animaciones/shoe/zapata1.png');
+        }
+
+        &:nth-child(2) {
+          background-image: url('/img/animaciones/shoe/zapata2.png');
+        }
+
+        &:nth-child(3) {
+          background-image: url('/img/animaciones/shoe/zapata3.png');
+        }
+      }
+    }
+
     > div {
       max-width: 400px;
       margin: 0 auto;
@@ -179,27 +227,19 @@ slideUp
       margin-bottom: 50px;
 
       &:first-child {
-        // background-color: red;
-        background-image: url('/img/animaciones/carbon/posterior.png');
         background-size: cover;
       }
 
       &:nth-child(2) {
-        // background-color: blue;
-        background-image: url('/img/animaciones/carbon/lamina.png');
         background-size: cover;
       }
 
       &:nth-child(3) {
-        // background-color: green;
-        background-image: url('/img/animaciones/carbon/frente.png');
         background-size: cover;
       }
 
       &:last-child {
-        // background-color: yellow;
         margin-bottom: 0;
-        background-image: url('/img/animaciones/carbon/frente.png');
         background-size: cover;
       }
 
