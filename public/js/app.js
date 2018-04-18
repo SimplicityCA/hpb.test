@@ -12408,20 +12408,25 @@ var tips = Vue.component('tips', __webpack_require__(101));
 
 var routes = [{
   path: '/',
-  component: home
+  component: home,
+  meta: { title: 'HPB - Home' }
 }, {
   path: '/products/:product_id',
   name: 'products',
-  component: product
+  component: product,
+  meta: { title: 'HPB - Productos' }
 }, {
   path: '/tips',
-  component: tips
+  component: tips,
+  meta: { title: 'HPB - Tips de Instalación' }
 }, {
   path: '/client',
-  component: client
+  component: client,
+  meta: { title: 'HPB - Conviértete en Cliente' }
 }, {
   path: '/downloads',
-  component: downloads
+  component: downloads,
+  meta: { title: 'HPB - Descargables' }
 }];
 
 var router = new __WEBPACK_IMPORTED_MODULE_0_vue_router__["a" /* default */]({
@@ -12433,6 +12438,11 @@ var router = new __WEBPACK_IMPORTED_MODULE_0_vue_router__["a" /* default */]({
       return { x: 0, y: 0 };
     }
   }
+});
+
+router.beforeEach(function (to, from, next) {
+  document.title = to.meta.title;
+  next();
 });
 
 var app = new Vue({

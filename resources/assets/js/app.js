@@ -54,24 +54,29 @@ const tips = Vue.component('tips', require('./routes_components/Tips/Tips.vue'))
 const routes = [
   {
     path: '/',
-    component: home
+    component: home,
+    meta: {title: 'HPB - Home'}
   },
   {
     path: '/products/:product_id',
     name: 'products',
     component:product,
+    meta: {title: 'HPB - Productos'},
   },
   {
     path: '/tips',
-    component: tips
+    component: tips,
+    meta: {title: 'HPB - Tips de Instalación'},
   },
   {
     path: '/client',
-    component: client
+    component: client,
+    meta: {title: 'HPB - Conviértete en Cliente'},
   },
   {
     path: '/downloads',
-    component: downloads
+    component: downloads,
+    meta: {title: 'HPB - Descargables'},
   },
 ];
 
@@ -85,6 +90,12 @@ const router = new VueRouter({
     }
   }
 });
+
+router.beforeEach((to, from, next) => {
+  document.title = to.meta.title
+  next()
+});
+
 
 const app = new Vue({
     el: '#app',
