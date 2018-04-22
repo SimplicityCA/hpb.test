@@ -8415,6 +8415,7 @@ button.close {
 
 #app p {
   font-family: "Roboto-Light", "Arial", serif;
+  line-height: 1.15em;
 }
 
 .navbar.navbar-default {
@@ -9749,11 +9750,61 @@ slideUp
   }
 }
 
+.product-page__image-text {
+  font-family: "Roboto-Light", "Arial", serif;
+  font-size: 26px;
+  width: 35%;
+  line-height: 1.35em;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  padding: 15px 20px;
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 991px) {
+  .product-page__image-text {
+    font-size: 22px;
+    word-wrap: break-word;
+    padding: 12px 17px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .product-page__image-text {
+    font-size: 17px;
+    padding: 5px 10px;
+  }
+}
+
+.product-page__image-wrapper {
+  width: 65%;
+}
+
+.product-page__animation-item-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.product-page__animation-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
 .product-page__animation-container {
-  padding: 100px;
+  padding: 45px 30px;
   background-color: grey;
   color: #FFF;
-  background-image: url("/Fondos/stock-photo-futuristic-empty-stage-modern-future-background-technology-sci-fi-interior-concept-d-rendering-543638065.jpg");
+  background-image: url("/img/animaciones/fondos/1600x1600.jpg");
   background-size: cover;
   background-attachment: fixed;
   background-position: top center;
@@ -9763,67 +9814,104 @@ slideUp
   max-height: 400px;
 }
 
-.product-page__animation-container.carbon-performance > div:first-child {
-  background-image: url("/img/animaciones/carbon/posterior.png");
+.product-page__animation-container.carbon-performance .product-page__animation-wrapper > div:first-child .product-page__image {
+  background-image: url("/img/animaciones/carbon/carbon1.png");
 }
 
-.product-page__animation-container.carbon-performance > div:nth-child(2) {
-  background-image: url("/img/animaciones/carbon/lamina.png");
+.product-page__animation-container.carbon-performance .product-page__animation-wrapper > div:nth-child(2) .product-page__image {
+  background-image: url("/img/animaciones/carbon/carbon2.png");
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
 }
 
-.product-page__animation-container.carbon-performance > div:nth-child(3) {
-  background-image: url("/img/animaciones/carbon/frente.png");
+.product-page__animation-container.carbon-performance .product-page__animation-wrapper > div:nth-child(2) .product-page__image-text {
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
 }
 
-.product-page__animation-container.ceramic-organic > div:first-child {
-  background-image: url("/img/animaciones/ceramic/posterior.png");
+.product-page__animation-container.carbon-performance .product-page__animation-wrapper > div:nth-child(3) .product-page__image {
+  background-image: url("/img/animaciones/carbon/carbon3.png");
 }
 
-.product-page__animation-container.ceramic-organic > div:nth-child(2) {
-  background-image: url("/img/animaciones/ceramic/lamina.png");
+.product-page__animation-container.ceramic-organic .product-page__animation-wrapper > div:first-child .product-page__image {
+  background-image: url("/img/animaciones/ceramic/ceramic1.png");
 }
 
-.product-page__animation-container.ceramic-organic > div:nth-child(3) {
-  background-image: url("/img/animaciones/ceramic/frente.png");
+.product-page__animation-container.ceramic-organic .product-page__animation-wrapper > div:nth-child(2) .product-page__image {
+  background-image: url("/img/animaciones/ceramic/ceramic2.png");
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
 }
 
-.product-page__animation-container.brake-shoe > div:first-child {
+.product-page__animation-container.ceramic-organic .product-page__animation-wrapper > div:nth-child(2) .product-page__image-text {
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+}
+
+.product-page__animation-container.ceramic-organic .product-page__animation-wrapper > div:nth-child(3) .product-page__image {
+  background-image: url("/img/animaciones/ceramic/ceramic3.png");
+}
+
+.product-page__animation-container.brake-shoe .product-page__animation-wrapper > div:first-child .product-page__image {
   background-image: url("/img/animaciones/shoe/zapata1.png");
 }
 
-.product-page__animation-container.brake-shoe > div:nth-child(2) {
+.product-page__animation-container.brake-shoe .product-page__animation-wrapper > div:nth-child(2) .product-page__image {
   background-image: url("/img/animaciones/shoe/zapata2.png");
 }
 
-.product-page__animation-container.brake-shoe > div:nth-child(3) {
+.product-page__animation-container.brake-shoe .product-page__animation-wrapper > div:nth-child(2) .product-page__image-text {
+  display: none;
+}
+
+.product-page__animation-container.brake-shoe .product-page__animation-wrapper > div:nth-child(3) .product-page__image {
   background-image: url("/img/animaciones/shoe/zapata3.png");
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
 }
 
-.product-page__animation-container > div {
-  max-width: 400px;
+.product-page__animation-container.brake-shoe .product-page__animation-wrapper > div:nth-child(3) .product-page__image-text {
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+}
+
+.product-page__animation-container .product-page__image {
   margin: 0 auto;
-  padding: 150px;
   margin-bottom: 50px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
-.product-page__animation-container > div:first-child {
-  background-size: cover;
+@media screen and (min-width: 1200px) {
+  .product-page__animation-container .product-page__image {
+    height: 400px;
+  }
 }
 
-.product-page__animation-container > div:nth-child(2) {
-  background-size: cover;
+@media screen and (max-width: 1199px) {
+  .product-page__animation-container .product-page__image {
+    height: 300px;
+  }
 }
 
-.product-page__animation-container > div:nth-child(3) {
-  background-size: cover;
+@media screen and (max-width: 991px) {
+  .product-page__animation-container .product-page__image {
+    height: 170px;
+  }
 }
 
-.product-page__animation-container > div:last-child {
+.product-page__animation-container .product-page__image:last-child {
   margin-bottom: 0;
-  background-size: cover;
 }
 
-.product-page__animation-container > div.animated {
+.product-page__animation-container .product-page__image.animated {
   animation-name: slideRight;
   -webkit-animation-name: slideRight;
   animation-duration: 1s;
@@ -9833,7 +9921,7 @@ slideUp
   visibility: visible !important;
 }
 
-.product-page__animation-container > div.toStage {
+.product-page__animation-container .product-page__image.toStage {
   animation-name: slideUpFinal;
   -webkit-animation-name: slideUpFinal;
   animation-duration: 1s;

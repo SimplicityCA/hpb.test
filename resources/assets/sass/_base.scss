@@ -19,5 +19,6 @@
 
   p {
     @include font-stack-roboto-light;
+    line-height: 1.15em;
   }
 }

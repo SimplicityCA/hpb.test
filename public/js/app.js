@@ -92242,6 +92242,39 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -92424,25 +92457,29 @@ var render = function() {
                   attrs: { id: "product-animation" }
                 },
                 [
-                  _c("div", { class: { animated: _vm.animateFirstImage } }, [
-                    _c("span", { staticClass: "product__image-text" }, [
-                      _vm._v("Shim de Aluminio")
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { class: { animated: _vm.animateSecondImage } }, [
-                    _c("span", { staticClass: "product__image-text" }, [
-                      _vm._v("Backing Plate de Hierro")
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { class: { animated: _vm.animateThirdImage } }, [
-                    _c("span", { staticClass: "product__image-text" }, [
-                      _vm._v(
-                        "Material Cerámico Orgánico que Cuida el Medio Ambiente"
+                  _c(
+                    "div",
+                    { staticClass: "product-page__animation-wrapper" },
+                    [
+                      _c(
+                        "div",
+                        { class: { animated: _vm.animateFirstImage } },
+                        [_vm._m(0)]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { class: { animated: _vm.animateSecondImage } },
+                        [_vm._m(1)]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { class: { animated: _vm.animateThirdImage } },
+                        [_vm._m(2)]
                       )
-                    ])
-                  ])
+                    ]
+                  )
                 ]
               )
             ]
@@ -92458,25 +92495,29 @@ var render = function() {
                   attrs: { id: "product-animation" }
                 },
                 [
-                  _c("div", { class: { animated: _vm.animateFirstImage } }, [
-                    _c("span", { staticClass: "product__image-text" }, [
-                      _vm._v("Shim de Aluminio")
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { class: { animated: _vm.animateSecondImage } }, [
-                    _c("span", { staticClass: "product__image-text" }, [
-                      _vm._v("Backing Plate de Hierro")
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { class: { animated: _vm.animateThirdImage } }, [
-                    _c("span", { staticClass: "product__image-text" }, [
-                      _vm._v(
-                        "Material Cerámico Orgánico que Cuida el Medio Ambiente"
+                  _c(
+                    "div",
+                    { staticClass: "product-page__animation-wrapper" },
+                    [
+                      _c(
+                        "div",
+                        { class: { animated: _vm.animateFirstImage } },
+                        [_vm._m(3)]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { class: { animated: _vm.animateSecondImage } },
+                        [_vm._m(4)]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { class: { animated: _vm.animateThirdImage } },
+                        [_vm._m(5)]
                       )
-                    ])
-                  ])
+                    ]
+                  )
                 ]
               )
             ]
@@ -92491,21 +92532,29 @@ var render = function() {
                   attrs: { id: "product-animation" }
                 },
                 [
-                  _c("div", { class: { animated: _vm.animateFirstImage } }, [
-                    _c("span", { staticClass: "product__image-text" }, [
-                      _vm._v("Backing plate de hierro")
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { class: { animated: _vm.animateSecondImage } }, [
-                    _c("span", { staticClass: "product__image-text" })
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { class: { animated: _vm.animateThirdImage } }, [
-                    _c("span", { staticClass: "product__image-text" }, [
-                      _vm._v("Material de Fricción de Alta Duración")
-                    ])
-                  ])
+                  _c(
+                    "div",
+                    { staticClass: "product-page__animation-wrapper" },
+                    [
+                      _c(
+                        "div",
+                        { class: { animated: _vm.animateFirstImage } },
+                        [_vm._m(6)]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { class: { animated: _vm.animateSecondImage } },
+                        [_vm._m(7)]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { class: { animated: _vm.animateThirdImage } },
+                        [_vm._m(8)]
+                      )
+                    ]
+                  )
                 ]
               )
             ]
@@ -92586,7 +92635,168 @@ var render = function() {
     )
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "product-page__animation-item-container" },
+      [
+        _c("div", { staticClass: "product-page__image-text" }, [
+          _vm._v("Shim de Aluminio")
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "product-page__image-wrapper" }, [
+          _c("div", { staticClass: "product-page__image" })
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "product-page__animation-item-container" },
+      [
+        _c("div", { staticClass: "product-page__image-text" }, [
+          _vm._v("Backing Plate de Hierro")
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "product-page__image-wrapper" }, [
+          _c("div", { staticClass: "product-page__image" })
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "product-page__animation-item-container" },
+      [
+        _c("div", { staticClass: "product-page__image-text" }, [
+          _vm._v("Material Cerámico Orgánico que Cuida el Medio Ambiente")
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "product-page__image-wrapper" }, [
+          _c("div", { staticClass: "product-page__image" })
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "product-page__animation-item-container" },
+      [
+        _c("div", { staticClass: "product-page__image-text" }, [
+          _vm._v("Shim de Aluminio")
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "product-page__image-wrapper" }, [
+          _c("div", { staticClass: "product-page__image" })
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "product-page__animation-item-container" },
+      [
+        _c("div", { staticClass: "product-page__image-text" }, [
+          _vm._v("Backing Plate de Hierro")
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "product-page__image-wrapper" }, [
+          _c("div", { staticClass: "product-page__image" })
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "product-page__animation-item-container" },
+      [
+        _c("div", { staticClass: "product-page__image-text" }, [
+          _vm._v("Material Cerámico Orgánico que Cuida el Medio Ambiente")
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "product-page__image-wrapper" }, [
+          _c("div", { staticClass: "product-page__image" })
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "product-page__animation-item-container" },
+      [
+        _c("div", { staticClass: "product-page__image-text" }, [
+          _vm._v("Backing plate de hierro")
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "product-page__image-wrapper" }, [
+          _c("div", { staticClass: "product-page__image" })
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "product-page__animation-item-container" },
+      [
+        _c("div", { staticClass: "product-page__image-text" }),
+        _vm._v(" "),
+        _c("div", { staticClass: "product-page__image-wrapper" }, [
+          _c("div", { staticClass: "product-page__image" })
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "product-page__animation-item-container" },
+      [
+        _c("div", { staticClass: "product-page__image-text" }, [
+          _vm._v("Material de Fricción de Alta Duración")
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "product-page__image-wrapper" }, [
+          _c("div", { staticClass: "product-page__image" })
+        ])
+      ]
+    )
+  }
+]
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
