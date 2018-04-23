@@ -29,7 +29,7 @@
           </div>
         </div>
         <div class="footer-bottom-copy">
-          © 2018 High Power Brake - Un producto de Importadora Dávila. Todos los derechos reservados.
+          © 2018 High Power Brake - Un producto de <a class="footer-link" href="http://importadoradavila.com" target="_blank">Importadora Dávila</a>. Todos los derechos reservados. Desarrollado por <a class="footer-link" href="http://simplicityuniverse.com" target="_blank">Simplicity</a>
         </div>
       </div>
     </div><!--/.container-fluid -->

@@ -90349,11 +90349,7 @@ var render = function() {
           ])
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "footer-bottom-copy" }, [
-          _vm._v(
-            "\n          © 2018 High Power Brake - Un producto de Importadora Dávila. Todos los derechos reservados.\n        "
-          )
-        ])
+        _vm._m(2)
       ])
     ])
   ])
@@ -90426,6 +90422,31 @@ var staticRenderFns = [
           )
         ])
       ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "footer-bottom-copy" }, [
+      _vm._v("\n          © 2018 High Power Brake - Un producto de "),
+      _c(
+        "a",
+        {
+          staticClass: "footer-link",
+          attrs: { href: "http://importadoradavila.com", target: "_blank" }
+        },
+        [_vm._v("Importadora Dávila")]
+      ),
+      _vm._v(". Todos los derechos reservados. Desarrollado por "),
+      _c(
+        "a",
+        {
+          staticClass: "footer-link",
+          attrs: { href: "http://simplicityuniverse.com", target: "_blank" }
+        },
+        [_vm._v("Simplicity")]
+      )
     ])
   }
 ]

@@ -8758,6 +8758,10 @@ footer .footer-bottom-copy {
   font-size: 12px;
 }
 
+footer .footer-bottom-copy .footer-link {
+  color: #FFF;
+}
+
 .contact-form {
   background-color: #f1f2f2;
 }
