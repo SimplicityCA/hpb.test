@@ -13,19 +13,19 @@
                 <div class="product-page__animation-wrapper">
                   <div v-bind:class="{ animated: animateFirstImage}">
                     <div class="product-page__animation-item-container">
-                      <div class="product-page__image-text">Shim de Aluminio</div>
+                      <div class="product-page__image-text">Backing plate de hierro</div>
                       <div class="product-page__image-wrapper"><div class="product-page__image"></div></div>
                     </div>
                   </div>
                   <div v-bind:class="{ animated: animateSecondImage}">
                     <div class="product-page__animation-item-container">
-                      <div class="product-page__image-text">Backing Plate de Hierro</div>
+                      <div class="product-page__image-text">Shim de aluminio</div>
                       <div class="product-page__image-wrapper"><div class="product-page__image"></div></div>
                     </div>
                   </div>
                   <div v-bind:class="{ animated: animateThirdImage}">
                     <div class="product-page__animation-item-container">
-                      <div class="product-page__image-text">Material Cerámico Orgánico que Cuida el Medio Ambiente</div>
+                      <div class="product-page__image-text">Material de fricción de primera calidad</div>
                       <div class="product-page__image-wrapper"><div class="product-page__image"></div></div>
                     </div>
                   </div>
@@ -37,19 +37,19 @@
                 <div class="product-page__animation-wrapper">
                   <div v-bind:class="{ animated: animateFirstImage}">
                     <div class="product-page__animation-item-container">
-                      <div class="product-page__image-text">Shim de Aluminio</div>
+                      <div class="product-page__image-text">Backing plate de hierro</div>
                       <div class="product-page__image-wrapper"><div class="product-page__image"></div></div>
                     </div>
                   </div>
                   <div v-bind:class="{ animated: animateSecondImage}">
                     <div class="product-page__animation-item-container">
-                      <div class="product-page__image-text">Backing Plate de Hierro</div>
+                      <div class="product-page__image-text">Shim de aluminio</div>
                       <div class="product-page__image-wrapper"><div class="product-page__image"></div></div>
                     </div>
                   </div>
                   <div v-bind:class="{ animated: animateThirdImage}">
                     <div class="product-page__animation-item-container">
-                      <div class="product-page__image-text">Material Cerámico Orgánico que Cuida el Medio Ambiente</div>
+                      <div class="product-page__image-text">Material cerámico orgánico que cuida el medio ambiente</div>
                       <div class="product-page__image-wrapper"><div class="product-page__image"></div></div>
                     </div>
                   </div>
@@ -73,7 +73,7 @@
                   </div>
                   <div v-bind:class="{ animated: animateThirdImage}">
                     <div class="product-page__animation-item-container">
-                      <div class="product-page__image-text">Material de Fricción de Alta Duración</div>
+                      <div class="product-page__image-text">Material de fricción de alta duración</div>
                       <div class="product-page__image-wrapper"><div class="product-page__image"></div></div>
                     </div>
                   </div>
@@ -83,7 +83,7 @@
             <div class="product-page__product-details-container">
               <div class="product-page__download-container">
                 <div class="download-file-container">
-                  <a class="download-file" href="#">
+                  <a class="download-file" href="/downloads/catalogoHPB2018.pdf" target="_blank">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 152 152" width="120" height="120"><path class="icon-bg" fill="#ee482d" d="M0 0h152v152H0z"/><path class="icon-figure" d="M63.5 56.8c.3-.8 1.1-1.4 2-1.4h5.4V39.6c0-1.6 1.3-2.9 2.9-2.9h8c1.6 0 2.9 1.3 2.9 2.9v15.9H90c.9 0 1.7.5 2 1.4.3.8.2 1.8-.5 2.4L79.3 71.4c-.4.4-1 .6-1.5.6-.6 0-1.1-.2-1.5-.6L64 59.2c-.7-.6-.9-1.6-.5-2.4zm52.3 53.7c0 2.5-2 4.5-4.5 4.5h-63c-2 0-3.8-1.3-4.3-3.3l-7.6-26.5c-.2-.8-.1-1.7.4-2.3.5-.7 1.3-1 2.1-1h5.3V64.6c0-1.5 1.2-2.6 2.6-2.6h12.6c.2.3.5.7.8 1l4.3 4.3H49.4V82h55.8c1.2 0 2.2.8 2.5 1.9l2.7 9.6V75.9H82.2c.3-.2.6-.4.9-.7l4.6-4.6h25.5c1.5 0 2.6 1.2 2.6 2.6v37.3z" fill="#fff"/></svg>
                     <strong>Catálogo Digital</strong><div>High Power Brake</div>
                     <small>Descargar</small>

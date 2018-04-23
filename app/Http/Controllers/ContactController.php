@@ -23,7 +23,7 @@ class ContactController extends Controller
 
         if($contact->save())
         {
-            Mail::to('joserhond@gmail.com')->send(new HomeContact($request));
+            Mail::to('esteban.davila@importadoradavila.com')->send(new HomeContact($request));
         }   
       }     
       catch(\Exception $e){

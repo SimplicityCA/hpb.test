@@ -20,8 +20,8 @@
           <div class="footer-rows-container__row">
             <div class="footer-rows-container__row-title">Descargas</div>
             <ul class="footer-rows-container__row-list">
-              <li><a href="#/downloads/products-catalog" class="">Catálogo de Productos</a></li>
-              <li><a href="#/downloads/technical-manual" class="">Manual Técnico</a></li>
+              <li><a href="/downloads/catalogoHPB2018.pdf" target="_blank">Catálogo de Productos</a></li>
+              <li><a href="/downloads/manual_tecnico_y_de_recomendaciones_high_power_brake.pdf" target="_blank">Manual Técnico</a></li>
             </ul>
           </div>
           <div class="footer-rows-container__row">

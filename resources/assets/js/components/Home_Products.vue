@@ -14,7 +14,7 @@
 			  </router-link>
 		  </slide>
 		</carousel>
-    <div class="separator">separator</div>
+    <!-- <div class="separator">separator</div>
     <carousel :perPageCustom="[[768, 2], [1024, 3]]" :paginationEnabled="false" :navigationEnabled="true">
       <slide>
         Slide 1 Content
@@ -28,7 +28,7 @@
       <slide>
         Slide 4 Content
       </slide>
-    </carousel>
+    </carousel> -->
 	</div>
 </template>
 <script>

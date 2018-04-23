@@ -18,14 +18,14 @@ class CertificationTableSeeder extends Seeder
       $certification1->image = 'ameca_01.svg';
       $certification1->save();
 
-      $certification2 = new Certification();
+      /*$certification2 = new Certification();
       $certification2->name = 'ISO 9001';
       $certification2->description = 'La fabricación de nuestros productos High Power Brake están certificados bajo la norma ISO/TS 16949:2009 y la ISO 9001';
       $certification2->image = 'bsi_01.svg';
-      $certification2->save();
+      $certification2->save();*/
 
       $certification3 = new Certification();
-      $certification3->name = 'INEN 2185:2012';
+      $certification3->name = 'INEN';
       $certification3->description = 'Esta norma establece los requisitos que debe cumplir y los ensayos a los cuales debe someterse el material de fricción empleado en los sistemas de frenos de los vehículos automotores. Esta norma se aplica a los revestimientos de frenos y a los ensambles de pastillas y zapatas.';
       $certification3->image = 'inen_01.svg';
       $certification3->save();

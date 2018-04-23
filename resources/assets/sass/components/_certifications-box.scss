@@ -54,9 +54,9 @@
       }
 
       &:nth-child(2) {
+        text-align: justify;
         @media screen and (min-width: $screen-sm-min) {
           width: 66.67%;
-          text-align: justify;
           padding-left: 35px;
           border-left: 1px solid $brand-orange;
 
@@ -121,6 +121,12 @@
 
     strong {
       color: $brand-grey-text;
+    }
+  }
+
+  .certification-col{
+    @media (min-width: 992px){
+      width:20%;
     }
   }
 }

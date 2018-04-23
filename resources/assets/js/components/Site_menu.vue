@@ -25,8 +25,8 @@
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Descargas<span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <li><router-link to="/downloads/products-catalog">Cat&aacute;logo de Productos</router-link></li>
-              <li><router-link to="/downloads/technical-manual">Manual T&eacute;cnico</router-link></li>
+              <li><a href="/downloads/catalogoHPB2018.pdf" target="_blank">Cat&aacute;logo de Productos</a></li>
+              <li><a href="/downloads/manual_tecnico_y_de_recomendaciones_high_power_brake.pdf" target="_blank">Manual T&eacute;cnico</a></li>
             </ul>
           </li>
           <li><router-link to="/tips">Tips de Instalaci&oacute;n</router-link></li>

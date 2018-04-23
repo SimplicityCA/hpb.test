@@ -9,7 +9,7 @@
 			</div>	
 		</div>
 		<div class="container certifications-box__content">
-			<div v-for="(certification, index) in certifications" class="col-md-2 col-sm-4 col-xs-6">
+			<div v-for="(certification, index) in certifications" class="certification-col col-sm-4 col-xs-6">
 				<img :src="'/img/'+certification.image" >
 				<h4>{{certification.name}}</h4>
 				<p v-html="certification.description"></p>

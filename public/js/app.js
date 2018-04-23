@@ -90071,35 +90071,7 @@ var render = function() {
               1
             ),
             _vm._v(" "),
-            _c("li", { staticClass: "dropdown" }, [
-              _vm._m(2),
-              _vm._v(" "),
-              _c("ul", { staticClass: "dropdown-menu" }, [
-                _c(
-                  "li",
-                  [
-                    _c(
-                      "router-link",
-                      { attrs: { to: "/downloads/products-catalog" } },
-                      [_vm._v("Catálogo de Productos")]
-                    )
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "li",
-                  [
-                    _c(
-                      "router-link",
-                      { attrs: { to: "/downloads/technical-manual" } },
-                      [_vm._v("Manual Técnico")]
-                    )
-                  ],
-                  1
-                )
-              ])
-            ]),
+            _vm._m(2),
             _vm._v(" "),
             _c(
               "li",
@@ -90173,20 +90145,51 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "a",
-      {
-        staticClass: "dropdown-toggle",
-        attrs: {
-          href: "#",
-          "data-toggle": "dropdown",
-          role: "button",
-          "aria-haspopup": "true",
-          "aria-expanded": "false"
-        }
-      },
-      [_vm._v("Descargas"), _c("span", { staticClass: "caret" })]
-    )
+    return _c("li", { staticClass: "dropdown" }, [
+      _c(
+        "a",
+        {
+          staticClass: "dropdown-toggle",
+          attrs: {
+            href: "#",
+            "data-toggle": "dropdown",
+            role: "button",
+            "aria-haspopup": "true",
+            "aria-expanded": "false"
+          }
+        },
+        [_vm._v("Descargas"), _c("span", { staticClass: "caret" })]
+      ),
+      _vm._v(" "),
+      _c("ul", { staticClass: "dropdown-menu" }, [
+        _c("li", [
+          _c(
+            "a",
+            {
+              attrs: {
+                href: "/downloads/catalogoHPB2018.pdf",
+                target: "_blank"
+              }
+            },
+            [_vm._v("Catálogo de Productos")]
+          )
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c(
+            "a",
+            {
+              attrs: {
+                href:
+                  "/downloads/manual_tecnico_y_de_recomendaciones_high_power_brake.pdf",
+                target: "_blank"
+              }
+            },
+            [_vm._v("Manual Técnico")]
+          )
+        ])
+      ])
+    ])
   }
 ]
 render._withStripped = true
@@ -90397,15 +90400,30 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("ul", { staticClass: "footer-rows-container__row-list" }, [
         _c("li", [
-          _c("a", { attrs: { href: "#/downloads/products-catalog" } }, [
-            _vm._v("Catálogo de Productos")
-          ])
+          _c(
+            "a",
+            {
+              attrs: {
+                href: "/downloads/catalogoHPB2018.pdf",
+                target: "_blank"
+              }
+            },
+            [_vm._v("Catálogo de Productos")]
+          )
         ]),
         _vm._v(" "),
         _c("li", [
-          _c("a", { attrs: { href: "#/downloads/technical-manual" } }, [
-            _vm._v("Manual Técnico")
-          ])
+          _c(
+            "a",
+            {
+              attrs: {
+                href:
+                  "/downloads/manual_tecnico_y_de_recomendaciones_high_power_brake.pdf",
+                target: "_blank"
+              }
+            },
+            [_vm._v("Manual Técnico")]
+          )
         ])
       ])
     ])
@@ -90777,15 +90795,19 @@ var render = function() {
       "div",
       { staticClass: "container certifications-box__content" },
       _vm._l(_vm.certifications, function(certification, index) {
-        return _c("div", { staticClass: "col-md-2 col-sm-4 col-xs-6" }, [
-          _c("img", { attrs: { src: "/img/" + certification.image } }),
-          _vm._v(" "),
-          _c("h4", [_vm._v(_vm._s(certification.name))]),
-          _vm._v(" "),
-          _c("p", {
-            domProps: { innerHTML: _vm._s(certification.description) }
-          })
-        ])
+        return _c(
+          "div",
+          { staticClass: "certification-col col-sm-4 col-xs-6" },
+          [
+            _c("img", { attrs: { src: "/img/" + certification.image } }),
+            _vm._v(" "),
+            _c("h4", [_vm._v(_vm._s(certification.name))]),
+            _vm._v(" "),
+            _c("p", {
+              domProps: { innerHTML: _vm._s(certification.description) }
+            })
+          ]
+        )
       })
     )
   ])
@@ -90940,29 +90962,6 @@ var render = function() {
             1
           )
         })
-      ),
-      _vm._v(" "),
-      _c("div", { staticClass: "separator" }, [_vm._v("separator")]),
-      _vm._v(" "),
-      _c(
-        "carousel",
-        {
-          attrs: {
-            perPageCustom: [[768, 2], [1024, 3]],
-            paginationEnabled: false,
-            navigationEnabled: true
-          }
-        },
-        [
-          _c("slide", [_vm._v("\n        Slide 1 Content\n      ")]),
-          _vm._v(" "),
-          _c("slide", [_vm._v("\n        Slide 2 Content\n      ")]),
-          _vm._v(" "),
-          _c("slide", [_vm._v("\n        Slide 3 Content\n      ")]),
-          _vm._v(" "),
-          _c("slide", [_vm._v("\n        Slide 4 Content\n      ")])
-        ],
-        1
       )
     ],
     1
@@ -91909,38 +91908,48 @@ var render = function() {
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "download-file-container" }, [
-              _c("a", { staticClass: "download-file", attrs: { href: "#" } }, [
-                _vm._v("Catálogo Digital High Power Brake\n              "),
-                _c(
-                  "svg",
-                  {
-                    attrs: {
-                      xmlns: "http://www.w3.org/2000/svg",
-                      viewBox: "0 0 486.619 486.619",
-                      width: "45",
-                      height: "45"
-                    }
-                  },
-                  [
-                    _c("path", {
+              _c(
+                "a",
+                {
+                  staticClass: "download-file",
+                  attrs: {
+                    href: "/downloads/catalogoHPB2018.pdf",
+                    target: "_blank"
+                  }
+                },
+                [
+                  _vm._v("Catálogo Digital High Power Brake\n              "),
+                  _c(
+                    "svg",
+                    {
                       attrs: {
-                        d:
-                          "M470.481 211.25H314.28l-27.912 27.896c-1.641 1.646-3.468 3.018-5.311 4.381H454.34v107.525l-16.752-58.983a16.14 16.14 0 0 0-15.524-11.726H80.694V190.58h92.42l-26.241-26.249c-1.892-1.875-3.529-3.915-5.028-6.028H64.557c-8.92 0-16.139 7.227-16.139 16.139v105.902H16.141a16.131 16.131 0 0 0-12.875 6.406 16.119 16.119 0 0 0-2.648 14.145l46.526 162.178a27.618 27.618 0 0 0 26.548 20.003H459c15.253 0 27.619-12.365 27.619-27.619V227.389c0-8.913-7.219-16.139-16.138-16.139z",
-                        fill: "#ee482d"
+                        xmlns: "http://www.w3.org/2000/svg",
+                        viewBox: "0 0 486.619 486.619",
+                        width: "45",
+                        height: "45"
                       }
-                    }),
-                    _c("path", {
-                      attrs: {
-                        d:
-                          "M244.556 216.371a13.37 13.37 0 0 0 9.473 3.934c3.436 0 6.871-1.315 9.473-3.934l74.955-74.931a13.393 13.393 0 0 0 2.916-14.595 13.433 13.433 0 0 0-12.389-8.282h-32.75v-97.17c0-9.866-7.99-17.85-17.855-17.85H229.68c-9.851 0-17.824 7.983-17.824 17.85v97.17h-32.768c-5.406 0-10.275 3.271-12.355 8.282a13.332 13.332 0 0 0 2.9 14.595l74.923 74.931z",
-                        fill: "#ee482d"
-                      }
-                    })
-                  ]
-                ),
-                _vm._v(" "),
-                _c("small", [_vm._v("Descargar")])
-              ])
+                    },
+                    [
+                      _c("path", {
+                        attrs: {
+                          d:
+                            "M470.481 211.25H314.28l-27.912 27.896c-1.641 1.646-3.468 3.018-5.311 4.381H454.34v107.525l-16.752-58.983a16.14 16.14 0 0 0-15.524-11.726H80.694V190.58h92.42l-26.241-26.249c-1.892-1.875-3.529-3.915-5.028-6.028H64.557c-8.92 0-16.139 7.227-16.139 16.139v105.902H16.141a16.131 16.131 0 0 0-12.875 6.406 16.119 16.119 0 0 0-2.648 14.145l46.526 162.178a27.618 27.618 0 0 0 26.548 20.003H459c15.253 0 27.619-12.365 27.619-27.619V227.389c0-8.913-7.219-16.139-16.138-16.139z",
+                          fill: "#ee482d"
+                        }
+                      }),
+                      _c("path", {
+                        attrs: {
+                          d:
+                            "M244.556 216.371a13.37 13.37 0 0 0 9.473 3.934c3.436 0 6.871-1.315 9.473-3.934l74.955-74.931a13.393 13.393 0 0 0 2.916-14.595 13.433 13.433 0 0 0-12.389-8.282h-32.75v-97.17c0-9.866-7.99-17.85-17.855-17.85H229.68c-9.851 0-17.824 7.983-17.824 17.85v97.17h-32.768c-5.406 0-10.275 3.271-12.355 8.282a13.332 13.332 0 0 0 2.9 14.595l74.923 74.931z",
+                          fill: "#ee482d"
+                        }
+                      })
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c("small", [_vm._v("Descargar")])
+                ]
+              )
             ]),
             _vm._v(" "),
             _c("pulse-loader", {
@@ -92563,38 +92572,48 @@ var render = function() {
         _c("div", { staticClass: "product-page__product-details-container" }, [
           _c("div", { staticClass: "product-page__download-container" }, [
             _c("div", { staticClass: "download-file-container" }, [
-              _c("a", { staticClass: "download-file", attrs: { href: "#" } }, [
-                _c(
-                  "svg",
-                  {
-                    attrs: {
-                      xmlns: "http://www.w3.org/2000/svg",
-                      viewBox: "0 0 152 152",
-                      width: "120",
-                      height: "120"
-                    }
-                  },
-                  [
-                    _c("path", {
-                      staticClass: "icon-bg",
-                      attrs: { fill: "#ee482d", d: "M0 0h152v152H0z" }
-                    }),
-                    _c("path", {
-                      staticClass: "icon-figure",
+              _c(
+                "a",
+                {
+                  staticClass: "download-file",
+                  attrs: {
+                    href: "/downloads/catalogoHPB2018.pdf",
+                    target: "_blank"
+                  }
+                },
+                [
+                  _c(
+                    "svg",
+                    {
                       attrs: {
-                        d:
-                          "M63.5 56.8c.3-.8 1.1-1.4 2-1.4h5.4V39.6c0-1.6 1.3-2.9 2.9-2.9h8c1.6 0 2.9 1.3 2.9 2.9v15.9H90c.9 0 1.7.5 2 1.4.3.8.2 1.8-.5 2.4L79.3 71.4c-.4.4-1 .6-1.5.6-.6 0-1.1-.2-1.5-.6L64 59.2c-.7-.6-.9-1.6-.5-2.4zm52.3 53.7c0 2.5-2 4.5-4.5 4.5h-63c-2 0-3.8-1.3-4.3-3.3l-7.6-26.5c-.2-.8-.1-1.7.4-2.3.5-.7 1.3-1 2.1-1h5.3V64.6c0-1.5 1.2-2.6 2.6-2.6h12.6c.2.3.5.7.8 1l4.3 4.3H49.4V82h55.8c1.2 0 2.2.8 2.5 1.9l2.7 9.6V75.9H82.2c.3-.2.6-.4.9-.7l4.6-4.6h25.5c1.5 0 2.6 1.2 2.6 2.6v37.3z",
-                        fill: "#fff"
+                        xmlns: "http://www.w3.org/2000/svg",
+                        viewBox: "0 0 152 152",
+                        width: "120",
+                        height: "120"
                       }
-                    })
-                  ]
-                ),
-                _vm._v(" "),
-                _c("strong", [_vm._v("Catálogo Digital")]),
-                _c("div", [_vm._v("High Power Brake")]),
-                _vm._v(" "),
-                _c("small", [_vm._v("Descargar")])
-              ])
+                    },
+                    [
+                      _c("path", {
+                        staticClass: "icon-bg",
+                        attrs: { fill: "#ee482d", d: "M0 0h152v152H0z" }
+                      }),
+                      _c("path", {
+                        staticClass: "icon-figure",
+                        attrs: {
+                          d:
+                            "M63.5 56.8c.3-.8 1.1-1.4 2-1.4h5.4V39.6c0-1.6 1.3-2.9 2.9-2.9h8c1.6 0 2.9 1.3 2.9 2.9v15.9H90c.9 0 1.7.5 2 1.4.3.8.2 1.8-.5 2.4L79.3 71.4c-.4.4-1 .6-1.5.6-.6 0-1.1-.2-1.5-.6L64 59.2c-.7-.6-.9-1.6-.5-2.4zm52.3 53.7c0 2.5-2 4.5-4.5 4.5h-63c-2 0-3.8-1.3-4.3-3.3l-7.6-26.5c-.2-.8-.1-1.7.4-2.3.5-.7 1.3-1 2.1-1h5.3V64.6c0-1.5 1.2-2.6 2.6-2.6h12.6c.2.3.5.7.8 1l4.3 4.3H49.4V82h55.8c1.2 0 2.2.8 2.5 1.9l2.7 9.6V75.9H82.2c.3-.2.6-.4.9-.7l4.6-4.6h25.5c1.5 0 2.6 1.2 2.6 2.6v37.3z",
+                          fill: "#fff"
+                        }
+                      })
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c("strong", [_vm._v("Catálogo Digital")]),
+                  _c("div", [_vm._v("High Power Brake")]),
+                  _vm._v(" "),
+                  _c("small", [_vm._v("Descargar")])
+                ]
+              )
             ])
           ]),
           _vm._v(" "),
@@ -92645,7 +92664,7 @@ var staticRenderFns = [
       { staticClass: "product-page__animation-item-container" },
       [
         _c("div", { staticClass: "product-page__image-text" }, [
-          _vm._v("Shim de Aluminio")
+          _vm._v("Backing plate de hierro")
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "product-page__image-wrapper" }, [
@@ -92663,7 +92682,7 @@ var staticRenderFns = [
       { staticClass: "product-page__animation-item-container" },
       [
         _c("div", { staticClass: "product-page__image-text" }, [
-          _vm._v("Backing Plate de Hierro")
+          _vm._v("Shim de aluminio")
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "product-page__image-wrapper" }, [
@@ -92681,7 +92700,7 @@ var staticRenderFns = [
       { staticClass: "product-page__animation-item-container" },
       [
         _c("div", { staticClass: "product-page__image-text" }, [
-          _vm._v("Material Cerámico Orgánico que Cuida el Medio Ambiente")
+          _vm._v("Material de fricción de primera calidad")
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "product-page__image-wrapper" }, [
@@ -92699,7 +92718,7 @@ var staticRenderFns = [
       { staticClass: "product-page__animation-item-container" },
       [
         _c("div", { staticClass: "product-page__image-text" }, [
-          _vm._v("Shim de Aluminio")
+          _vm._v("Backing plate de hierro")
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "product-page__image-wrapper" }, [
@@ -92717,7 +92736,7 @@ var staticRenderFns = [
       { staticClass: "product-page__animation-item-container" },
       [
         _c("div", { staticClass: "product-page__image-text" }, [
-          _vm._v("Backing Plate de Hierro")
+          _vm._v("Shim de aluminio")
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "product-page__image-wrapper" }, [
@@ -92735,7 +92754,7 @@ var staticRenderFns = [
       { staticClass: "product-page__animation-item-container" },
       [
         _c("div", { staticClass: "product-page__image-text" }, [
-          _vm._v("Material Cerámico Orgánico que Cuida el Medio Ambiente")
+          _vm._v("Material cerámico orgánico que cuida el medio ambiente")
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "product-page__image-wrapper" }, [
@@ -92787,7 +92806,7 @@ var staticRenderFns = [
       { staticClass: "product-page__animation-item-container" },
       [
         _c("div", { staticClass: "product-page__image-text" }, [
-          _vm._v("Material de Fricción de Alta Duración")
+          _vm._v("Material de fricción de alta duración")
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "product-page__image-wrapper" }, [

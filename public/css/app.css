@@ -9028,10 +9028,13 @@ footer .footer-bottom-copy {
   }
 }
 
+.certifications-box__header > div:nth-child(2) {
+  text-align: justify;
+}
+
 @media screen and (min-width: 768px) {
   .certifications-box__header > div:nth-child(2) {
     width: 66.67%;
-    text-align: justify;
     padding-left: 35px;
     border-left: 1px solid #ee482d;
   }
@@ -9099,6 +9102,12 @@ footer .footer-bottom-copy {
 
 .certifications-box h2 strong {
   color: #404040;
+}
+
+@media (min-width: 992px) {
+  .certifications-box .certification-col {
+    width: 20%;
+  }
 }
 
 #myCarousel .carousel-caption {

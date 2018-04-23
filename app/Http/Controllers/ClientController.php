@@ -47,7 +47,7 @@ class ClientController extends Controller
 
         if($client->save())
         {
-          Mail::to('joserhond@gmail.com')->send(new BecomeClient($request));
+          Mail::to('esteban.davila@importadoradavila.com')->send(new BecomeClient($request));
         }   
       }     
       catch(\Exception $e){
