@@ -89993,8 +89993,12 @@ var render = function() {
           _c("ul", { staticClass: "nav navbar-nav" }, [
             _c(
               "li",
-              {},
-              [_c("router-link", { attrs: { to: "/" } }, [_vm._v("Home")])],
+              { staticClass: "home-menu-item" },
+              [
+                _c("router-link", { attrs: { to: { name: "home" } } }, [
+                  _vm._v("Home")
+                ])
+              ],
               1
             ),
             _vm._v(" "),

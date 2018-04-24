@@ -21,4 +21,9 @@
     @include font-stack-roboto-light;
     line-height: 1.15em;
   }
+
+  .router-link-active {
+    color: $brand-orange;
+    cursor: default;
+  }
 }
