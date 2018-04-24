@@ -8418,6 +8418,11 @@ button.close {
   line-height: 1.15em;
 }
 
+#app .router-link-active {
+  color: #ee482d;
+  cursor: default;
+}
+
 .navbar.navbar-default {
   background-color: #000;
   color: #FFF;
@@ -8432,6 +8437,10 @@ button.close {
   .navbar.navbar-default {
     padding-bottom: 0;
   }
+}
+
+.navbar.navbar-default .home-menu-item a {
+  cursor: pointer !important;
 }
 
 @media screen and (max-width: 767px) {
@@ -9827,6 +9836,18 @@ slideUp
   max-height: 400px;
 }
 
+@media screen and (min-width: 1200px) {
+  .product-page__animation-container {
+    max-height: 500px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .product-page__animation-container {
+    max-height: 350px;
+  }
+}
+
 .product-page__animation-container.carbon-performance .product-page__animation-wrapper > div:first-child .product-page__image {
   background-image: url("/img/animaciones/carbon/carbon1.png");
 }
@@ -9846,6 +9867,55 @@ slideUp
 
 .product-page__animation-container.carbon-performance .product-page__animation-wrapper > div:nth-child(3) .product-page__image {
   background-image: url("/img/animaciones/carbon/carbon3.png");
+}
+
+@media screen and (min-width: 1200px) {
+  .product-page__animation-container.carbon-performance .product-page__animation-wrapper > div:first-child {
+    margin-top: 200px;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .product-page__animation-container.carbon-performance .product-page__animation-wrapper > div:first-child {
+    margin-top: 90px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .product-page__animation-container.carbon-performance .product-page__animation-wrapper > div:first-child {
+    margin-top: 200px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .product-page__animation-container.carbon-performance .product-page__animation-wrapper > div:first-child {
+    margin-top: 50px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .product-page__animation-container.carbon-performance .product-page__animation-wrapper > div:nth-child(2) {
+    margin-top: 35px;
+    margin-bottom: 35px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .product-page__animation-container.carbon-performance .product-page__animation-wrapper > div:nth-child(3) {
+    margin-bottom: 200px;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .product-page__animation-container.carbon-performance .product-page__animation-wrapper > div:nth-child(3) {
+    margin-bottom: 220px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .product-page__animation-container.carbon-performance .product-page__animation-wrapper > div:nth-child(3) {
+    margin-bottom: 300px;
+  }
 }
 
 .product-page__animation-container.ceramic-organic .product-page__animation-wrapper > div:first-child .product-page__image {

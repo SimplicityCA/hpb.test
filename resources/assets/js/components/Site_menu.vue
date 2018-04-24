@@ -12,7 +12,7 @@
       </div>
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
-          <li class=""><router-link to="/">Home</router-link></li>
+          <li class="home-menu-item"><router-link :to="{ name: 'home' }">Home</router-link></li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Productos<span class="caret"></span></a>
             <ul class="dropdown-menu">
