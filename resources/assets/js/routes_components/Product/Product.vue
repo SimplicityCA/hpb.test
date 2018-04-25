@@ -115,7 +115,11 @@ export default {
         scrollDirection: 'down',
         animateFirstImage: false,
         animateSecondImage: false,
-        animateThirdImage: false
+        animateThirdImage: false,
+        viewportHeight: 0,
+        windowWidth: 0,
+        windowHeight: 0,
+        positionOfAnimationScroll: 0
       }
   },
   mounted(){
@@ -132,59 +136,83 @@ export default {
     // });
     var scrollableProductAnimation = document.getElementById("product-animation");
     scrollableProductAnimation.addEventListener('scroll', this.handleScrollEl);
+    this.viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
     // console.log('prevScrollValue: ' + this.prevScrollValue);
+
+    this.$nextTick(function() {
+      window.addEventListener('resize', this.getWindowWidth);
+      window.addEventListener('resize', this.getWindowHeight);
+
+      //Init
+      this.getWindowWidth()
+      this.getWindowHeight()
+    })
   },
   methods: {
     handleScroll (event) {
       // console.log('window scroll ' + window.scrollY);
       // console.log('ID scroll ' + document.getElementById("product-animation").scrollTop);
-
-      var body = document.body,
-      html = document.documentElement;
-
-      var bodyHeight = Math.max( body.scrollHeight, body.offsetHeight, 
-                     html.clientHeight, html.scrollHeight, html.offsetHeight );
-      // console.log('body all height: ' + bodyHeight);
-
-      var productAnimationEl = document.getElementById("product-animation");
+      // console.log('previous viewportHeight:' + this.viewportHeight);
+      this.viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+      console.log('Window scroll: ' + window.scrollY);
+      console.log('new viewportHeight:' + this.viewportHeight);
+      var productAnimationEl = document.querySelectorAll('#product-animation div.product-page__animation-wrapper');
+      productAnimationEl = productAnimationEl[0];
 
       var productAnimationElHeight = Math.max( productAnimationEl.scrollHeight, productAnimationEl.offsetHeight );
 
-      //Elements needed for getting animation done completely
+      this.positionOfAnimationScroll = window.scrollY*(productAnimationElHeight/this.viewportHeight);
 
-      // Product Details
-      var productDetailsEl = document.querySelectorAll('div.product-page__product-details-container');
-      productDetailsEl = productDetailsEl[0];
-      var productDetailsElHeight = productDetailsEl.offsetHeight;
+      // New Code
 
-      // Contact Form
-      var contactFormEl = document.querySelectorAll('div.contact-form');
-      contactFormEl = contactFormEl[0];
-      var contactFormElHeight = contactFormEl.offsetHeight;
+      // End of New Code
 
-      // Footer
-      var footerEl = document.querySelectorAll('footer');
-      footerEl = footerEl[0];
-      var footerElHeight = footerEl.offsetHeight;
+      // var body = document.body,
+      // html = document.documentElement;
 
-      // console.log('productDetailsElHeight: ' + productDetailsElHeight + ' contactFormElHeight: ' + contactFormElHeight + ' footerElHeight: ' + footerElHeight);
+      // var bodyHeight = Math.max( body.scrollHeight, body.offsetHeight, 
+      //                html.clientHeight, html.scrollHeight, html.offsetHeight );
+      // // console.log('body all height: ' + bodyHeight);
 
-      var spaceForTheWholeAnimationToHappen = productAnimationElHeight + contactFormElHeight + footerElHeight;
-      // console.log('All space below animation: ' + spaceForTheWholeAnimationToHappen);
-      spaceForTheWholeAnimationToHappen = bodyHeight - spaceForTheWholeAnimationToHappen + 300;
-      // console.log('Final space for the whole animation to happen: ' + spaceForTheWholeAnimationToHappen);
+      // var productAnimationEl = document.getElementById("product-animation");
 
-      var animationContainerTotalScroll = (productAnimationElHeight - productAnimationEl.offsetHeight);
-      var windowViewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-      // console.log('windowViewportHeight: ' + windowViewportHeight);
+      // var productAnimationElHeight = Math.max( productAnimationEl.scrollHeight, productAnimationEl.offsetHeight );
+
+      // //Elements needed for getting animation done completely
+
+      // // Product Details
+      // var productDetailsEl = document.querySelectorAll('div.product-page__product-details-container');
+      // productDetailsEl = productDetailsEl[0];
+      // var productDetailsElHeight = productDetailsEl.offsetHeight;
+
+      // // Contact Form
+      // var contactFormEl = document.querySelectorAll('div.contact-form');
+      // contactFormEl = contactFormEl[0];
+      // var contactFormElHeight = contactFormEl.offsetHeight;
+
+      // // Footer
+      // var footerEl = document.querySelectorAll('footer');
+      // footerEl = footerEl[0];
+      // var footerElHeight = footerEl.offsetHeight;
+
+      // // console.log('productDetailsElHeight: ' + productDetailsElHeight + ' contactFormElHeight: ' + contactFormElHeight + ' footerElHeight: ' + footerElHeight);
+
+      // var spaceForTheWholeAnimationToHappen = productAnimationElHeight + contactFormElHeight + footerElHeight;
+      // // console.log('All space below animation: ' + spaceForTheWholeAnimationToHappen);
+      // spaceForTheWholeAnimationToHappen = bodyHeight - spaceForTheWholeAnimationToHappen + 300;
+      // // console.log('Final space for the whole animation to happen: ' + spaceForTheWholeAnimationToHappen);
+
+      // var animationContainerTotalScroll = (productAnimationElHeight - productAnimationEl.offsetHeight);
+      // var windowViewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+      // // console.log('windowViewportHeight: ' + windowViewportHeight);
 
       // User is scrolling down
       if (window.scrollY > this.prevScrollValue) {
         this.scrollDirection = 'down';
         console.log('DOWN DOWN DOWN------------------');
-        console.log('Current scrollY minus prevScrollValue: ' + (window.scrollY - this.prevScrollValue));
-        console.log('animationContainerTotalScroll: ' + (animationContainerTotalScroll));
-        console.log('window Viewport height: ' + (windowViewportHeight));
+        // console.log('Current scrollY minus prevScrollValue: ' + (window.scrollY - this.prevScrollValue));
+        // console.log('animationContainerTotalScroll: ' + (animationContainerTotalScroll));
+        // console.log('window Viewport height: ' + (windowViewportHeight));
         // console.log('Scroll direction is: ' + this.scrollDirection);
         // console.log('Scroll previous value is: ' + this.prevScrollValue);
         // document.getElementById("product-animation").scrollTop += 5;
@@ -192,8 +220,12 @@ export default {
         // console.log('product-animation height: ' + document.getElementById("product-animation").scrollTop);
         // All should show from scroll 0 to 610 no more
         // if (window.scrollY < (windowViewportHeight + 50)) {
-        if (document.getElementById("product-animation").scrollTop <= animationContainerTotalScroll) {
-          document.getElementById("product-animation").scrollTop += (window.scrollY - this.prevScrollValue) + animationContainerTotalScroll/(windowViewportHeight - 30);
+        // if (document.getElementById("product-animation").scrollTop <= animationContainerTotalScroll) {
+        //   document.getElementById("product-animation").scrollTop += (window.scrollY - this.prevScrollValue) + animationContainerTotalScroll/(windowViewportHeight - 30);
+        // }
+        if (window.scrollY <= this.viewportHeight) {
+          console.log('positionOfAnimationScroll: ' + this.positionOfAnimationScroll);
+          document.getElementById("product-animation").scrollTop += (this.positionOfAnimationScroll - document.getElementById("product-animation").scrollTop);
         }
       }
 
@@ -204,12 +236,16 @@ export default {
         // console.log('Scroll previous value is: ' + this.prevScrollValue);
         // document.getElementById("product-animation").scrollTop -= 5;
         console.log('UP UP UP------------------');
-        console.log('Current scrollY minus prevScrollValue: ' + (-1)*(window.scrollY - this.prevScrollValue));
-        console.log('animationContainerTotalScroll: ' + (animationContainerTotalScroll));
-        console.log('window Viewport height: ' + (windowViewportHeight));
-        // if (window.scrollY < (windowViewportHeight + )) {
-        if (document.getElementById("product-animation").scrollTop >= 0 && (window.scrollY < (windowViewportHeight + 60))) {
-          document.getElementById("product-animation").scrollTop -= (-1)*(window.scrollY - this.prevScrollValue) + animationContainerTotalScroll/(windowViewportHeight - 100);
+        // console.log('Current scrollY minus prevScrollValue: ' + (-1)*(window.scrollY - this.prevScrollValue));
+        // console.log('animationContainerTotalScroll: ' + (animationContainerTotalScroll));
+        // console.log('window Viewport height: ' + (windowViewportHeight));
+        // // if (window.scrollY < (windowViewportHeight + )) {
+        // if (document.getElementById("product-animation").scrollTop >= 0 && (window.scrollY < (windowViewportHeight + 60))) {
+        //   document.getElementById("product-animation").scrollTop -= (-1)*(window.scrollY - this.prevScrollValue) + animationContainerTotalScroll/(windowViewportHeight - 100);
+        // }
+        if (window.scrollY <= this.viewportHeight) {
+          console.log('scrollingUp: ' + this.positionOfAnimationScroll);
+          document.getElementById("product-animation").scrollTop -= (document.getElementById("product-animation").scrollTop - this.positionOfAnimationScroll);
         }
       }
 
@@ -219,27 +255,31 @@ export default {
         this.animateFirstImage = true;
       }
 
-    if (window.scrollY > 80) {
+      if (window.scrollY > 80) {
         this.animateSecondImage = true;
       }
 
-    if (window.scrollY > 180) {
+      if (window.scrollY > 180) {
         this.animateThirdImage = true;
       }
     },
     handleScrollEl (event) {
       console.log('target ' + event.target.scrollTop);
       console.log('ID scroll ' + document.getElementById("product-animation").scrollTop);
+    },
+    getWindowWidth(event) {
+      this.windowWidth = document.documentElement.clientWidth;
+      console.log('windowWidth: ' + this.windowWidth);
+    },
+    getWindowHeight(event) {
+      this.windowHeight = document.documentElement.clientHeight;
     }
   },
+  beforeDestroy() {
+    window.removeEventListener('resize', this.getWindowWidth);
+    window.removeEventListener('resize', this.getWindowHeight);
+  },
   created(){
-    // var scrollableProductAnimation = document.getElementById("product-animation");
-    // console.log(scrollableProductAnimation);
-    // scrollableProductAnimation.addEventListener('scroll', this.handleScrollEl);
-    // document.querySelector('#product-animation').addEventListener('scroll', function() {
-    //   alert('you scrolled');
-    // });
-
     window.addEventListener('scroll', this.handleScroll);
   },
   destroyed(){
