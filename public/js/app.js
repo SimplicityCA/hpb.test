@@ -90442,15 +90442,18 @@ var staticRenderFns = [
         },
         [_vm._v("Importadora Dávila")]
       ),
-      _vm._v(". Todos los derechos reservados. Desarrollado por "),
-      _c(
-        "a",
-        {
-          staticClass: "footer-link",
-          attrs: { href: "http://simplicityuniverse.com", target: "_blank" }
-        },
-        [_vm._v("Simplicity")]
-      )
+      _vm._v(". Todos los derechos reservados. "),
+      _c("p", [
+        _vm._v("Desarrollado por "),
+        _c(
+          "a",
+          {
+            staticClass: "footer-link",
+            attrs: { href: "http://simplicityuniverse.com", target: "_blank" }
+          },
+          [_vm._v("Simplicity")]
+        )
+      ])
     ])
   }
 ]

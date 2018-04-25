@@ -139,6 +139,10 @@ footer {
     border-top: 1px solid #FFF;
     background-color: $brand-orange;
     font-size: 12px;
+    p{
+      margin:0;
+      font-weight: 600;
+    }
     .footer-link{
       color: #FFF;
     }

@@ -8767,6 +8767,11 @@ footer .footer-bottom-copy {
   font-size: 12px;
 }
 
+footer .footer-bottom-copy p {
+  margin: 0;
+  font-weight: 600;
+}
+
 footer .footer-bottom-copy .footer-link {
   color: #FFF;
 }
