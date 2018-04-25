@@ -148,6 +148,9 @@ export default {
       this.getWindowWidth()
       this.getWindowHeight()
     })
+
+    // Add code below to check if window width is at tablets and mobile size and if that's the case scroll parallax from the beginning.
+
     if (this.viewportHeight < 500) {
       this.startParallaxPosition = this.viewportHeight/1.6;
     }

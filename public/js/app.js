@@ -92353,6 +92353,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       this.getWindowWidth();
       this.getWindowHeight();
     });
+
+    // Add code below to check if window width is at tablets and mobile size and if that's the case scroll parallax from the beginning.
+
     if (this.viewportHeight < 500) {
       this.startParallaxPosition = this.viewportHeight / 1.6;
     } else if (this.viewportHeight >= 500 && this.viewportHeight < 655) {
