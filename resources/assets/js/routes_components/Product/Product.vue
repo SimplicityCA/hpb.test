@@ -119,7 +119,8 @@ export default {
         viewportHeight: 0,
         windowWidth: 0,
         windowHeight: 0,
-        positionOfAnimationScroll: 0
+        positionOfAnimationScroll: 0,
+        startParallaxPosition: 260
       }
   },
   mounted(){
@@ -147,6 +148,16 @@ export default {
       this.getWindowWidth()
       this.getWindowHeight()
     })
+    if (this.viewportHeight < 500) {
+      this.startParallaxPosition = this.viewportHeight/1.6;
+    }
+    else if (this.viewportHeight >= 500 && this.viewportHeight < 655) {
+      this.startParallaxPosition = this.viewportHeight/2.9;
+    }
+    else if (this.viewportHeight >= 655) {
+      this.startParallaxPosition = 10;
+    }
+    console.log('startParallaxPosition: ' + this.startParallaxPosition);
   },
   methods: {
     handleScroll (event) {
@@ -159,9 +170,15 @@ export default {
       var productAnimationEl = document.querySelectorAll('#product-animation div.product-page__animation-wrapper');
       productAnimationEl = productAnimationEl[0];
 
-      var productAnimationElHeight = Math.max( productAnimationEl.scrollHeight, productAnimationEl.offsetHeight );
+      // var productAnimationElHeight = Math.max( productAnimationEl.scrollHeight, productAnimationEl.offsetHeight );
+      var productAnimationElHeight = ( productAnimationEl.offsetHeight );
 
-      this.positionOfAnimationScroll = window.scrollY*(productAnimationElHeight/this.viewportHeight);
+      this.positionOfAnimationScroll = window.scrollY*((productAnimationElHeight + this.startParallaxPosition)/this.viewportHeight);
+      var scrollingSpeedForAnimation = productAnimationElHeight/this.viewportHeight;
+
+      var scrolledVariance = -1;
+
+      console.log('document.getElementById("product-animation").scrollTop: ' + document.getElementById("product-animation").scrollTop);
 
       // New Code
 
@@ -223,9 +240,14 @@ export default {
         // if (document.getElementById("product-animation").scrollTop <= animationContainerTotalScroll) {
         //   document.getElementById("product-animation").scrollTop += (window.scrollY - this.prevScrollValue) + animationContainerTotalScroll/(windowViewportHeight - 30);
         // }
-        if (window.scrollY <= this.viewportHeight) {
+        // scrolledVariance = window.scrollY - this.startParallaxPosition;
+        // console.log('scrolledVariance: ' + scrolledVariance);
+        // this.positionOfAnimationScroll = scrolledVariance * (productAnimationElHeight/this.viewportHeight);
+        if (window.scrollY <= (this.viewportHeight + this.startParallaxPosition) && window.scrollY >= this.startParallaxPosition) {
+          this.positionOfAnimationScroll = (window.scrollY - this.startParallaxPosition)*((productAnimationElHeight + this.startParallaxPosition)/this.viewportHeight);
           console.log('positionOfAnimationScroll: ' + this.positionOfAnimationScroll);
-          document.getElementById("product-animation").scrollTop += (this.positionOfAnimationScroll - document.getElementById("product-animation").scrollTop);
+          // document.getElementById("product-animation").scrollTop += (this.positionOfAnimationScroll - document.getElementById("product-animation").scrollTop);
+          document.getElementById("product-animation").scrollTop += (this.positionOfAnimationScroll - document.getElementById("product-animation").scrollTop);        
         }
       }
 
@@ -243,7 +265,11 @@ export default {
         // if (document.getElementById("product-animation").scrollTop >= 0 && (window.scrollY < (windowViewportHeight + 60))) {
         //   document.getElementById("product-animation").scrollTop -= (-1)*(window.scrollY - this.prevScrollValue) + animationContainerTotalScroll/(windowViewportHeight - 100);
         // }
-        if (window.scrollY <= this.viewportHeight) {
+        // scrolledVariance = this.prevScrollValue - window.scrollY;
+        // console.log('scrolledVariance: ' + scrolledVariance);
+        // this.positionOfAnimationScroll = scrolledVariance * (productAnimationElHeight/this.viewportHeight);
+        if (window.scrollY <= (this.viewportHeight + this.startParallaxPosition) && window.scrollY >= this.startParallaxPosition) {
+          this.positionOfAnimationScroll = (window.scrollY - this.startParallaxPosition)*((productAnimationElHeight + this.startParallaxPosition)/this.viewportHeight);
           console.log('scrollingUp: ' + this.positionOfAnimationScroll);
           document.getElementById("product-animation").scrollTop -= (document.getElementById("product-animation").scrollTop - this.positionOfAnimationScroll);
         }
@@ -281,6 +307,15 @@ export default {
   },
   created(){
     window.addEventListener('scroll', this.handleScroll);
+    // if (this.viewportHeight < 500) {
+    //   this.startParallaxPosition = 270;
+    // }
+    // else if (this.viewportHeight > 500 && this.viewportHeight < 650) {
+    //   this.startParallaxPosition = 250;
+    // }
+    // else if (this.viewportHeight >= 650 && this.viewportHeight < 750) {
+    //   this.startParallaxPosition = 250;
+    // }
   },
   destroyed(){
     var scrollableProductAnimation = document.getElementById("product-animation");
