@@ -161,6 +161,7 @@ export default {
       this.startParallaxPosition = 10;
     }
     console.log('startParallaxPosition: ' + this.startParallaxPosition);
+    window.addEventListener('scroll', this.handleScroll);
   },
   methods: {
     handleScroll (event) {
@@ -307,9 +308,15 @@ export default {
   beforeDestroy() {
     window.removeEventListener('resize', this.getWindowWidth);
     window.removeEventListener('resize', this.getWindowHeight);
+
+    var scrollableProductAnimation = document.getElementById("product-animation");
+    if(scrollableProductAnimation != undefined)
+    {
+      scrollableProductAnimation.removeEventListener('scroll', this.handleScrollEl); 
+    }
+    window.removeEventListener('scroll', this.handleScroll);
   },
   created(){
-    window.addEventListener('scroll', this.handleScroll);
     // if (this.viewportHeight < 500) {
     //   this.startParallaxPosition = 270;
     // }
@@ -321,10 +328,7 @@ export default {
     // }
   },
   destroyed(){
-    var scrollableProductAnimation = document.getElementById("product-animation");
-    scrollableProductAnimation.removeEventListener('scroll', this.handleScrollEl); 
-
-    window.removeEventListener('scroll', this.handleScroll);
+    
   }
 }
 </script>

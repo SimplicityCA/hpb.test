@@ -8418,7 +8418,7 @@ button.close {
   line-height: 1.15em;
 }
 
-#app .router-link-active {
+#app .router-link-exact-active {
   color: #ee482d;
   cursor: default;
 }

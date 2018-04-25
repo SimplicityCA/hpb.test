@@ -43,6 +43,9 @@ Vue.component('certification', require('./components/Certification.vue'));
 Vue.component('home-products', require('./components/Home_Products.vue'));
 Vue.component('contact-form', require('./components/Contact.vue'));
 Vue.component('client-form', require('./components/Client_form.vue'));
+//Chat
+(function(){ var widget_id = 'qj22dbTsJo';var d=document;var w=window;function l(){var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = '//code.jivosite.com/script/widget/'+widget_id; var ss = document.getElementsByTagName('script')[0]; ss.parentNode.insertBefore(s, ss);}if(d.readyState=='complete'){l();}else{if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();
+        
 
 //Routes Components
 const home = Vue.component('home', require('./routes_components/Home/Home.vue'));
@@ -54,6 +57,7 @@ const tips = Vue.component('tips', require('./routes_components/Tips/Tips.vue'))
 const routes = [
   {
     path: '/',
+    name: 'home',
     component: home,
     meta: {title: 'HPB - Home'}
   },
