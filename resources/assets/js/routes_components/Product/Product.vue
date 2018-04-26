@@ -207,12 +207,13 @@ export default {
       this.startParallaxPosition = 10;
       console.log('case number: ' + '10' + '-- viewportHeight: ' + this.viewportHeight + ' -- windowWidth: ' + this.windowWidth);
     } else if (this.viewportHeight > 655 && this.windowWidth < 1000) {
-      //Tablet casi cuadrada, empiece desde init.
-      this.startParallaxPosition = 30;
+      //Tablet casi cuadrada, empiece desde init. // !!! IPAD not working properly !!!
+      this.startParallaxPosition = 0;
       console.log('case number: ' + '11' + '-- viewportHeight: ' + this.viewportHeight + ' -- windowWidth: ' + this.windowWidth);
     } else if (this.viewportHeight > 655 && this.windowWidth > 1000) {
-      //Desktop largo y alto empiece a un tercio o similar.
-      this.startParallaxPosition = this.viewportHeight/8;
+      //Desktop largo y alto empiece a un tercio o similar. // !!! IPAD PRO not working properly !!!
+      // this.startParallaxPosition = this.viewportHeight/8;
+      this.startParallaxPosition = 0;
       console.log('case number: ' + '12' + '-- viewportHeight: ' + this.viewportHeight + ' -- windowWidth: ' + this.windowWidth);
     }
     // End of New Logic
