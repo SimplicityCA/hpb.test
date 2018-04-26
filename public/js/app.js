@@ -92400,7 +92400,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       this.positionOfAnimationScroll = window.scrollY * ((productAnimationElHeight + this.startParallaxPosition) / this.viewportHeight);
       var scrollingSpeedForAnimation = productAnimationElHeight / this.viewportHeight;
 
-      var scrolledVariance = -1;
+      var prevAnimationScrollTop = document.getElementById("product-animation").scrollTop;
+      var newAnimationScrollTop = document.getElementById("product-animation").scrollTop;
 
       console.log('document.getElementById("product-animation").scrollTop: ' + document.getElementById("product-animation").scrollTop);
 
@@ -92464,14 +92465,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         // if (document.getElementById("product-animation").scrollTop <= animationContainerTotalScroll) {
         //   document.getElementById("product-animation").scrollTop += (window.scrollY - this.prevScrollValue) + animationContainerTotalScroll/(windowViewportHeight - 30);
         // }
-        // scrolledVariance = window.scrollY - this.startParallaxPosition;
-        // console.log('scrolledVariance: ' + scrolledVariance);
-        // this.positionOfAnimationScroll = scrolledVariance * (productAnimationElHeight/this.viewportHeight);
         if (window.scrollY <= this.viewportHeight + this.startParallaxPosition && window.scrollY >= this.startParallaxPosition) {
           this.positionOfAnimationScroll = (window.scrollY - this.startParallaxPosition) * ((productAnimationElHeight + this.startParallaxPosition) / this.viewportHeight);
           console.log('positionOfAnimationScroll: ' + this.positionOfAnimationScroll);
           // document.getElementById("product-animation").scrollTop += (this.positionOfAnimationScroll - document.getElementById("product-animation").scrollTop);
-          document.getElementById("product-animation").scrollTop += this.positionOfAnimationScroll - document.getElementById("product-animation").scrollTop;
+          newAnimationScrollTop = document.getElementById("product-animation").scrollTop + (this.positionOfAnimationScroll - document.getElementById("product-animation").scrollTop);
+
+          if (newAnimationScrollTop > prevAnimationScrollTop) {
+            document.getElementById("product-animation").scrollTop += this.positionOfAnimationScroll - document.getElementById("product-animation").scrollTop;
+          }
         }
       }
 
@@ -92489,9 +92491,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         // if (document.getElementById("product-animation").scrollTop >= 0 && (window.scrollY < (windowViewportHeight + 60))) {
         //   document.getElementById("product-animation").scrollTop -= (-1)*(window.scrollY - this.prevScrollValue) + animationContainerTotalScroll/(windowViewportHeight - 100);
         // }
-        // scrolledVariance = this.prevScrollValue - window.scrollY;
-        // console.log('scrolledVariance: ' + scrolledVariance);
-        // this.positionOfAnimationScroll = scrolledVariance * (productAnimationElHeight/this.viewportHeight);
         if (window.scrollY <= this.viewportHeight + this.startParallaxPosition && window.scrollY >= this.startParallaxPosition) {
           this.positionOfAnimationScroll = (window.scrollY - this.startParallaxPosition) * ((productAnimationElHeight + this.startParallaxPosition) / this.viewportHeight);
           console.log('scrollingUp: ' + this.positionOfAnimationScroll);
@@ -92520,6 +92519,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     getWindowWidth: function getWindowWidth(event) {
       this.windowWidth = document.documentElement.clientWidth;
       console.log('windowWidth: ' + this.windowWidth);
+      if (this.viewportHeight != Math.max(document.documentElement.clientHeight, window.innerHeight || 0)) {
+        this.viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+        console.log('!!! New viewportHeight: ' + this.viewportHeight);
+      }
     },
     getWindowHeight: function getWindowHeight(event) {
       this.windowHeight = document.documentElement.clientHeight;
