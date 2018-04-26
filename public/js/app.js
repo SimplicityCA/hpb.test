@@ -92359,6 +92359,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     var scrollableProductAnimation = document.getElementById("product-animation");
     scrollableProductAnimation.addEventListener('scroll', this.handleScrollEl);
     this.viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+    this.windowWidth = document.documentElement.clientWidth;
     // console.log('prevScrollValue: ' + this.prevScrollValue);
 
     this.$nextTick(function () {
@@ -92372,13 +92373,70 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
     // Add code below to check if window width is at tablets and mobile size and if that's the case scroll parallax from the beginning.
 
-    if (this.viewportHeight < 500) {
-      this.startParallaxPosition = this.viewportHeight / 1.6;
-    } else if (this.viewportHeight >= 500 && this.viewportHeight < 655) {
-      this.startParallaxPosition = this.viewportHeight / 2.9;
-    } else if (this.viewportHeight >= 655) {
+    // Code working ok for desktops 1100px >
+    // if (this.viewportHeight < 500) {
+    //   this.startParallaxPosition = this.viewportHeight/1.6;
+    // }
+    // else if (this.viewportHeight >= 500 && this.viewportHeight < 655) {
+    //   this.startParallaxPosition = this.viewportHeight/2.9;
+    // }
+    // else if (this.viewportHeight >= 655) {
+    //   this.startParallaxPosition = 10;
+    // }
+
+
+    // New Logic
+    if (this.viewportHeight < 500 && this.windowWidth < 550) {
+      //Mobile seguro, start prllx from init
       this.startParallaxPosition = 10;
+      console.log('case number: ' + '1' + '-- viewportHeight: ' + this.viewportHeight + ' -- windowWidth: ' + this.windowWidth);
+    } else if (this.viewportHeight < 500 && this.windowWidth < 750) {
+      //Dudoso, start prllx en medio del scroll del total disponible dado por this.viewportHeight
+      this.startParallaxPosition = this.viewportHeight / 3.2;
+      console.log('case number: ' + '2' + '-- viewportHeight: ' + this.viewportHeight + ' -- windowWidth: ' + this.windowWidth);
+    } else if (this.viewportHeight < 500 && this.windowWidth < 1000) {
+      //Dudoso, start prllx en medio del scroll del total disponible dado por this.viewportHeight (Mismo q arriba)
+      this.startParallaxPosition = this.viewportHeight / 2.2;
+      console.log('case number: ' + '3' + '-- viewportHeight: ' + this.viewportHeight + ' -- windowWidth: ' + this.windowWidth);
+    } else if (this.viewportHeight < 500 && this.windowWidth > 1000) {
+      //Dudoso, start prllx en 2 terceras partes del scroll del total disponible dado por this.viewportHeight
+      this.startParallaxPosition = this.viewportHeight / 1.5;
+      console.log('case number: ' + '4' + '-- viewportHeight: ' + this.viewportHeight + ' -- windowWidth: ' + this.windowWidth);
+    } else if (this.viewportHeight < 655 && this.windowWidth < 550) {
+      //Mobile seguro vertical casi cuadrado, start prllx from init
+      this.startParallaxPosition = 10;
+      console.log('case number: ' + '5' + '-- viewportHeight: ' + this.viewportHeight + ' -- windowWidth: ' + this.windowWidth);
+    } else if (this.viewportHeight < 655 && this.windowWidth < 750) {
+      //Mobile tablet, empezar animacion a un tercio de init o algo menos
+      this.startParallaxPosition = this.viewportHeight / 6;
+      console.log('case number: ' + '6' + '-- viewportHeight: ' + this.viewportHeight + ' -- windowWidth: ' + this.windowWidth);
+    } else if (this.viewportHeight < 655 && this.windowWidth < 1000) {
+      //Tablet vertical o parecido, espere a 2/3 o algo mas de un medio para animar el parallax
+      this.startParallaxPosition = this.viewportHeight / 2.9;
+      console.log('case number: ' + '7' + '-- viewportHeight: ' + this.viewportHeight + ' -- windowWidth: ' + this.windowWidth);
+    } else if (this.viewportHeight < 655 && this.windowWidth > 1000) {
+      //Tablet vertical o parecido, parecido a lo q esta ahora
+      this.startParallaxPosition = this.viewportHeight / 2.9;
+      console.log('case number: ' + '8' + '-- viewportHeight: ' + this.viewportHeight + ' -- windowWidth: ' + this.windowWidth);
+    } else if (this.viewportHeight > 655 && this.windowWidth < 550) {
+      //Mobile seguro vertical casi cuadrado, start prllx from init
+      this.startParallaxPosition = 10;
+      console.log('case number: ' + '9' + '-- viewportHeight: ' + this.viewportHeight + ' -- windowWidth: ' + this.windowWidth);
+    } else if (this.viewportHeight > 655 && this.windowWidth < 750) {
+      //Tablet larga, empiece prllx desde 1 cuarto o menos.
+      this.startParallaxPosition = 10;
+      console.log('case number: ' + '10' + '-- viewportHeight: ' + this.viewportHeight + ' -- windowWidth: ' + this.windowWidth);
+    } else if (this.viewportHeight > 655 && this.windowWidth < 1000) {
+      //Tablet casi cuadrada, empiece desde init.
+      this.startParallaxPosition = 30;
+      console.log('case number: ' + '11' + '-- viewportHeight: ' + this.viewportHeight + ' -- windowWidth: ' + this.windowWidth);
+    } else if (this.viewportHeight > 655 && this.windowWidth > 1000) {
+      //Desktop largo y alto empiece a un tercio o similar.
+      this.startParallaxPosition = this.viewportHeight / 8;
+      console.log('case number: ' + '12' + '-- viewportHeight: ' + this.viewportHeight + ' -- windowWidth: ' + this.windowWidth);
     }
+    // End of New Logic
+
     console.log('startParallaxPosition: ' + this.startParallaxPosition);
     window.addEventListener('scroll', this.handleScroll);
   },
