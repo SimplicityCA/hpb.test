@@ -125,7 +125,7 @@ export default {
   },
   mounted(){
     const vm = this;
-    axios.get('api/product/'+this.id)
+    axios.get('/api/product/'+this.id)
     .then(function (response) {
       vm.product = response.data;
     })

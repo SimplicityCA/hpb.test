@@ -17,7 +17,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-
 Route::get('homepictures', 'HomePictureController@index');
 Route::get('aboutus', 'SiteTextController@aboutus');
 Route::get('certification', 'SiteTextController@certification');
@@ -29,4 +28,3 @@ Route::get('clientbanner', 'ClientController@banner');
 Route::get('clientdescription', 'ClientController@description');
 Route::post('client', 'ClientController@store');
 Route::get('tips', 'SiteTextController@tips');
-

@@ -80,10 +80,6 @@ const routes = [
     component: downloads,
     meta: {title: 'HPB - Descargables'},
   },
-  {
-    path: '*',
-    redirect: { name: 'home' }
-  },
 ];
 
 const router = new VueRouter({
