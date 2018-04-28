@@ -9,7 +9,7 @@
             </div>
             <img v-if="product.header_image" v-bind:src="`/img/${product.header_image}`" />
             <template v-if="$route.params.product_id === 'carbon-performance'">
-              <div v-cloak class="product-page__animation-container carbon-performance" id="product-animation">
+              <div v-cloak class="product-page__animation-container carbon-performance" id="product-animation" v-bind:class="{ withoutParallax: withoutParallax}">
                 <div class="product-page__animation-wrapper">
                   <div v-bind:class="{ animated: animateFirstImage}">
                     <div class="product-page__animation-item-container">
@@ -33,7 +33,7 @@
               </div>
             </template>
             <template v-if="$route.params.product_id === 'ceramic-organic'">
-              <div v-cloak class="product-page__animation-container ceramic-organic" id="product-animation">
+              <div v-cloak class="product-page__animation-container ceramic-organic" id="product-animation" v-bind:class="{ withoutParallax: withoutParallax}">
                 <div class="product-page__animation-wrapper">
                   <div v-bind:class="{ animated: animateFirstImage}">
                     <div class="product-page__animation-item-container">
@@ -57,7 +57,7 @@
               </div>
             </template>
             <template v-if="$route.params.product_id === 'brake-shoe'">
-              <div v-cloak class="product-page__animation-container brake-shoe" id="product-animation">
+              <div v-cloak class="product-page__animation-container brake-shoe" id="product-animation" v-bind:class="{ withoutParallax: withoutParallax}">
                 <div class="product-page__animation-wrapper">
                   <div v-bind:class="{ animated: animateFirstImage}">
                     <div class="product-page__animation-item-container">
@@ -120,7 +120,10 @@ export default {
         windowWidth: 0,
         windowHeight: 0,
         positionOfAnimationScroll: 0,
-        startParallaxPosition: 260
+        startParallaxPosition: 260,
+        documentHeight: 0,
+        availableSpaceToScroll: 0,
+        withoutParallax: false
       }
   },
   mounted(){
@@ -132,14 +135,26 @@ export default {
     .catch(function (error) {
       console.log(error);
     });
-    // document.querySelector('#product-animation').addEventListener('scroll', function() {
-    //   alert('you scrolled');
-    // });
+
     var scrollableProductAnimation = document.getElementById("product-animation");
     scrollableProductAnimation.addEventListener('scroll', this.handleScrollEl);
     this.viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
     this.windowWidth = document.documentElement.clientWidth;
     // console.log('prevScrollValue: ' + this.prevScrollValue);
+    var bodyElement = document.body;
+    var htmlElement = document.documentElement;
+
+    this.documentHeight = Math.max( bodyElement.scrollHeight, bodyElement.offsetHeight, htmlElement.clientHeight, htmlElement.scrollHeight, htmlElement.offsetHeight );
+    this.availableSpaceToScroll = this.documentHeight - this.viewportHeight;
+    
+    if (this.availableSpaceToScroll <= 100) {
+      this.withoutParallax = true;
+      console.log('Muy poco espacio para scroll, withoutParallax: ' + this.withoutParallax);
+    } else {
+      console.log('Espacio amplio para scroll, withoutParallax: ' + this.withoutParallax);
+    }
+
+    console.log('!!!!! main measurements: viewportHeight: ' + this.viewportHeight + ' windowWidth: ' + this.windowWidth + ' documentHeight: ' + this.documentHeight + ' availableSpaceToScroll: ' + this.availableSpaceToScroll);
 
     this.$nextTick(function() {
       window.addEventListener('resize', this.getWindowWidth);
@@ -176,27 +191,27 @@ export default {
       console.log('case number: ' + '2' + '-- viewportHeight: ' + this.viewportHeight + ' -- windowWidth: ' + this.windowWidth);
     } else if (this.viewportHeight < 500 && this.windowWidth < 1000) {
       //Dudoso, start prllx en medio del scroll del total disponible dado por this.viewportHeight (Mismo q arriba)
-      this.startParallaxPosition = this.viewportHeight/2.2;
+      this.startParallaxPosition = this.viewportHeight/2.88;
       console.log('case number: ' + '3' + '-- viewportHeight: ' + this.viewportHeight + ' -- windowWidth: ' + this.windowWidth);
     } else if (this.viewportHeight < 500 && this.windowWidth > 1000) {
       //Dudoso, start prllx en 2 terceras partes del scroll del total disponible dado por this.viewportHeight
-      this.startParallaxPosition = this.viewportHeight/1.5;
+      this.startParallaxPosition = this.viewportHeight/2.8;
       console.log('case number: ' + '4' + '-- viewportHeight: ' + this.viewportHeight + ' -- windowWidth: ' + this.windowWidth);
     } else if (this.viewportHeight < 655 && this.windowWidth < 550) {
       //Mobile seguro vertical casi cuadrado, start prllx from init
-      this.startParallaxPosition = 10;
+      this.startParallaxPosition = 50;
       console.log('case number: ' + '5' + '-- viewportHeight: ' + this.viewportHeight + ' -- windowWidth: ' + this.windowWidth);
     } else if (this.viewportHeight < 655 && this.windowWidth < 750) {
       //Mobile tablet, empezar animacion a un tercio de init o algo menos
       this.startParallaxPosition = this.viewportHeight/6;
       console.log('case number: ' + '6' + '-- viewportHeight: ' + this.viewportHeight + ' -- windowWidth: ' + this.windowWidth);
     } else if (this.viewportHeight < 655 && this.windowWidth < 1000) {
-      //Tablet vertical o parecido, espere a 2/3 o algo mas de un medio para animar el parallax
+      //Tablet vertical o parecido, espere a 2/3 o algo mas de un medio para animar el parallax !!! Could be refined!!!
       this.startParallaxPosition = this.viewportHeight/2.9;
       console.log('case number: ' + '7' + '-- viewportHeight: ' + this.viewportHeight + ' -- windowWidth: ' + this.windowWidth);
     } else if (this.viewportHeight < 655 && this.windowWidth > 1000) {
       //Tablet vertical o parecido, parecido a lo q esta ahora
-      this.startParallaxPosition = this.viewportHeight/2.9;
+      this.startParallaxPosition = this.viewportHeight/3.5;
       console.log('case number: ' + '8' + '-- viewportHeight: ' + this.viewportHeight + ' -- windowWidth: ' + this.windowWidth);
     } else if (this.viewportHeight > 655 && this.windowWidth < 550) {
       //Mobile seguro vertical casi cuadrado, start prllx from init
@@ -208,12 +223,12 @@ export default {
       console.log('case number: ' + '10' + '-- viewportHeight: ' + this.viewportHeight + ' -- windowWidth: ' + this.windowWidth);
     } else if (this.viewportHeight > 655 && this.windowWidth < 1000) {
       //Tablet casi cuadrada, empiece desde init. // !!! IPAD not working properly !!!
-      this.startParallaxPosition = 0;
+      this.startParallaxPosition = 100;
       console.log('case number: ' + '11' + '-- viewportHeight: ' + this.viewportHeight + ' -- windowWidth: ' + this.windowWidth);
     } else if (this.viewportHeight > 655 && this.windowWidth > 1000) {
       //Desktop largo y alto empiece a un tercio o similar. // !!! IPAD PRO not working properly !!!
       // this.startParallaxPosition = this.viewportHeight/8;
-      this.startParallaxPosition = 0;
+      this.startParallaxPosition = 200;
       console.log('case number: ' + '12' + '-- viewportHeight: ' + this.viewportHeight + ' -- windowWidth: ' + this.windowWidth);
     }
     // End of New Logic
@@ -226,129 +241,120 @@ export default {
       // console.log('window scroll ' + window.scrollY);
       // console.log('ID scroll ' + document.getElementById("product-animation").scrollTop);
       // console.log('previous viewportHeight:' + this.viewportHeight);
-      this.viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-      console.log('Window scroll: ' + window.scrollY);
-      console.log('new viewportHeight:' + this.viewportHeight);
-      var productAnimationEl = document.querySelectorAll('#product-animation div.product-page__animation-wrapper');
-      productAnimationEl = productAnimationEl[0];
+      console.log("withoutParallax on scroll: " + this.withoutParallax);
 
-      // var productAnimationElHeight = Math.max( productAnimationEl.scrollHeight, productAnimationEl.offsetHeight );
-      var productAnimationElHeight = ( productAnimationEl.offsetHeight );
+      if (this.withoutParallax === false) {
+        this.viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+        console.log('Window scroll: ' + window.scrollY);
+        console.log('new viewportHeight:' + this.viewportHeight);
+        var productAnimationEl = document.querySelectorAll('#product-animation div.product-page__animation-wrapper');
+        productAnimationEl = productAnimationEl[0];
 
-      this.positionOfAnimationScroll = window.scrollY*((productAnimationElHeight + this.startParallaxPosition)/this.viewportHeight);
-      var scrollingSpeedForAnimation = productAnimationElHeight/this.viewportHeight;
+        // var productAnimationElHeight = Math.max( productAnimationEl.scrollHeight, productAnimationEl.offsetHeight );
+        var productAnimationElHeight = ( productAnimationEl.offsetHeight );
 
-      var prevAnimationScrollTop = document.getElementById("product-animation").scrollTop;
-      var newAnimationScrollTop = document.getElementById("product-animation").scrollTop;
+        this.positionOfAnimationScroll = window.scrollY*((productAnimationElHeight + this.startParallaxPosition)/this.viewportHeight);
+        var scrollingSpeedForAnimation = productAnimationElHeight/this.viewportHeight;
 
-      console.log('document.getElementById("product-animation").scrollTop: ' + document.getElementById("product-animation").scrollTop);
+        var prevAnimationScrollTop = document.getElementById("product-animation").scrollTop;
+        var newAnimationScrollTop = document.getElementById("product-animation").scrollTop;
 
-      // New Code
+        console.log('document.getElementById("product-animation").scrollTop: ' + document.getElementById("product-animation").scrollTop);
 
-      // End of New Code
+        // New Code
 
-      // var body = document.body,
-      // html = document.documentElement;
+        // End of New Code
 
-      // var bodyHeight = Math.max( body.scrollHeight, body.offsetHeight, 
-      //                html.clientHeight, html.scrollHeight, html.offsetHeight );
-      // // console.log('body all height: ' + bodyHeight);
+        // User is scrolling down
+        if (window.scrollY > this.prevScrollValue) {
+          this.scrollDirection = 'down';
+          console.log('DOWN DOWN DOWN------------------');
+          if (window.scrollY <= (this.viewportHeight + this.startParallaxPosition) && window.scrollY >= this.startParallaxPosition) {
 
-      // var productAnimationEl = document.getElementById("product-animation");
+            // Esta formula sirve siempre y cuando al menos exista 
+            // un tamanio igual a (productAnimationElHeight + this.startParallaxPosition) 
+            // para hacer scroll extra del viewportHeight, si no hay.
+            // la formula q debe usarse seria:
 
-      // var productAnimationElHeight = Math.max( productAnimationEl.scrollHeight, productAnimationEl.offsetHeight );
+            if (this.availableSpaceToScroll >= (productAnimationElHeight + this.startParallaxPosition)) {
+              this.positionOfAnimationScroll = (window.scrollY - this.startParallaxPosition)*((productAnimationElHeight + this.startParallaxPosition)/this.viewportHeight);
+            } else {
+              this.positionOfAnimationScroll = (window.scrollY - this.startParallaxPosition)*((productAnimationElHeight + this.startParallaxPosition)/this.availableSpaceToScroll);
+            }
 
-      // //Elements needed for getting animation done completely
 
-      // // Product Details
-      // var productDetailsEl = document.querySelectorAll('div.product-page__product-details-container');
-      // productDetailsEl = productDetailsEl[0];
-      // var productDetailsElHeight = productDetailsEl.offsetHeight;
 
-      // // Contact Form
-      // var contactFormEl = document.querySelectorAll('div.contact-form');
-      // contactFormEl = contactFormEl[0];
-      // var contactFormElHeight = contactFormEl.offsetHeight;
+            console.log('positionOfAnimationScroll: ' + this.positionOfAnimationScroll);
+            // document.getElementById("product-animation").scrollTop += (this.positionOfAnimationScroll - document.getElementById("product-animation").scrollTop);
+            newAnimationScrollTop = document.getElementById("product-animation").scrollTop + (this.positionOfAnimationScroll - document.getElementById("product-animation").scrollTop);
 
-      // // Footer
-      // var footerEl = document.querySelectorAll('footer');
-      // footerEl = footerEl[0];
-      // var footerElHeight = footerEl.offsetHeight;
-
-      // // console.log('productDetailsElHeight: ' + productDetailsElHeight + ' contactFormElHeight: ' + contactFormElHeight + ' footerElHeight: ' + footerElHeight);
-
-      // var spaceForTheWholeAnimationToHappen = productAnimationElHeight + contactFormElHeight + footerElHeight;
-      // // console.log('All space below animation: ' + spaceForTheWholeAnimationToHappen);
-      // spaceForTheWholeAnimationToHappen = bodyHeight - spaceForTheWholeAnimationToHappen + 300;
-      // // console.log('Final space for the whole animation to happen: ' + spaceForTheWholeAnimationToHappen);
-
-      // var animationContainerTotalScroll = (productAnimationElHeight - productAnimationEl.offsetHeight);
-      // var windowViewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-      // // console.log('windowViewportHeight: ' + windowViewportHeight);
-
-      // User is scrolling down
-      if (window.scrollY > this.prevScrollValue) {
-        this.scrollDirection = 'down';
-        console.log('DOWN DOWN DOWN------------------');
-        // console.log('Current scrollY minus prevScrollValue: ' + (window.scrollY - this.prevScrollValue));
-        // console.log('animationContainerTotalScroll: ' + (animationContainerTotalScroll));
-        // console.log('window Viewport height: ' + (windowViewportHeight));
-        // console.log('Scroll direction is: ' + this.scrollDirection);
-        // console.log('Scroll previous value is: ' + this.prevScrollValue);
-        // document.getElementById("product-animation").scrollTop += 5;
-        // console.log('animation container height: ' + document.getElementById("product-animation").offsetHeight);
-        // console.log('product-animation height: ' + document.getElementById("product-animation").scrollTop);
-        // All should show from scroll 0 to 610 no more
-        // if (window.scrollY < (windowViewportHeight + 50)) {
-        // if (document.getElementById("product-animation").scrollTop <= animationContainerTotalScroll) {
-        //   document.getElementById("product-animation").scrollTop += (window.scrollY - this.prevScrollValue) + animationContainerTotalScroll/(windowViewportHeight - 30);
-        // }
-        if (window.scrollY <= (this.viewportHeight + this.startParallaxPosition) && window.scrollY >= this.startParallaxPosition) {
-          this.positionOfAnimationScroll = (window.scrollY - this.startParallaxPosition)*((productAnimationElHeight + this.startParallaxPosition)/this.viewportHeight);
-          console.log('positionOfAnimationScroll: ' + this.positionOfAnimationScroll);
-          // document.getElementById("product-animation").scrollTop += (this.positionOfAnimationScroll - document.getElementById("product-animation").scrollTop);
-          newAnimationScrollTop = document.getElementById("product-animation").scrollTop + (this.positionOfAnimationScroll - document.getElementById("product-animation").scrollTop);
-
-          if (newAnimationScrollTop > prevAnimationScrollTop) {
-            document.getElementById("product-animation").scrollTop += (this.positionOfAnimationScroll - document.getElementById("product-animation").scrollTop);
-          } 
+            if (newAnimationScrollTop > prevAnimationScrollTop) {
+              document.getElementById("product-animation").scrollTop += (this.positionOfAnimationScroll - document.getElementById("product-animation").scrollTop);
+            } 
+          }
         }
-      }
 
-      // User is scrolling up
-      if (window.scrollY < this.prevScrollValue) {
-        this.scrollDirection = 'up';
-        // console.log('Scroll direction is: ' + this.scrollDirection);
-        // console.log('Scroll previous value is: ' + this.prevScrollValue);
-        // document.getElementById("product-animation").scrollTop -= 5;
-        console.log('UP UP UP------------------');
-        // console.log('Current scrollY minus prevScrollValue: ' + (-1)*(window.scrollY - this.prevScrollValue));
-        // console.log('animationContainerTotalScroll: ' + (animationContainerTotalScroll));
-        // console.log('window Viewport height: ' + (windowViewportHeight));
-        // // if (window.scrollY < (windowViewportHeight + )) {
-        // if (document.getElementById("product-animation").scrollTop >= 0 && (window.scrollY < (windowViewportHeight + 60))) {
-        //   document.getElementById("product-animation").scrollTop -= (-1)*(window.scrollY - this.prevScrollValue) + animationContainerTotalScroll/(windowViewportHeight - 100);
-        // }
-        if (window.scrollY <= (this.viewportHeight + this.startParallaxPosition) && window.scrollY >= this.startParallaxPosition) {
-          this.positionOfAnimationScroll = (window.scrollY - this.startParallaxPosition)*((productAnimationElHeight + this.startParallaxPosition)/this.viewportHeight);
-          console.log('scrollingUp: ' + this.positionOfAnimationScroll);
-          document.getElementById("product-animation").scrollTop -= (document.getElementById("product-animation").scrollTop - this.positionOfAnimationScroll);
+        // User is scrolling up
+        if (window.scrollY < this.prevScrollValue) {
+          this.scrollDirection = 'up';
+          console.log('UP UP UP------------------');
+          if (window.scrollY <= (this.viewportHeight + this.startParallaxPosition) && window.scrollY >= this.startParallaxPosition) {
+            
+
+            // Esta formula sirve siempre y cuando al menos exista 
+            // un tamanio igual a (productAnimationElHeight + this.startParallaxPosition) 
+            // para hacer scroll extra del viewportHeight, si no hay.
+            // la formula q debe usarse seria:
+
+            if (this.availableSpaceToScroll >= (productAnimationElHeight + this.startParallaxPosition)) {
+              this.positionOfAnimationScroll = (window.scrollY - this.startParallaxPosition)*((productAnimationElHeight + this.startParallaxPosition)/this.viewportHeight);
+            } else {
+              this.positionOfAnimationScroll = (window.scrollY - this.startParallaxPosition)*((productAnimationElHeight + this.startParallaxPosition)/this.availableSpaceToScroll);
+            }
+
+            console.log('scrollingUp: ' + this.positionOfAnimationScroll);
+            document.getElementById("product-animation").scrollTop -= (document.getElementById("product-animation").scrollTop - this.positionOfAnimationScroll);
+          }
         }
+
+        this.prevScrollValue = window.scrollY;
       }
 
-      this.prevScrollValue = window.scrollY;
+      var animationScrollTop = document.getElementById("product-animation").scrollTop;
+      if (this.id === 'carbon-performance') {
+        // Sirve solo para desktops al momento alta controlar screen width correctamente
 
-      if (window.scrollY > 5) {
-        this.animateFirstImage = true;
+        if (this.windowWidth >= 1200) {
+          console.log('------ ELement scroll top position: ' + document.getElementById("product-animation").scrollTop);
+          if (animationScrollTop >= 10 && animationScrollTop <= 30 && this.animateFirstImage === false) {
+            this.animateFirstImage = true;
+          }
+
+          if (animationScrollTop >= 410 && animationScrollTop <= 430 && this.animateSecondImage === false) {
+            this.animateSecondImage = true;
+          }
+
+          if (animationScrollTop >= 750 && animationScrollTop <= 770 && this.animateThirdImage === false) {
+            this.animateThirdImage = true;
+          }
+        }
+      } else if (this.id === 'ceramic-organic') {
+        // console.log('!!!!---- Is ceramic ----!!!!');
+      } else if (this.id === 'brake-shoe') {
+        // console.log('!!!!---- Is brake shoe ----!!!!');
       }
 
-      if (window.scrollY > 80) {
-        this.animateSecondImage = true;
-      }
+      // if (window.scrollY > 5) {
+      //   this.animateFirstImage = true;
+      // }
 
-      if (window.scrollY > 180) {
-        this.animateThirdImage = true;
-      }
+      // if (window.scrollY > 80) {
+      //   this.animateSecondImage = true;
+      // }
+
+      // if (window.scrollY > 180) {
+      //   this.animateThirdImage = true;
+      // }
     },
     handleScrollEl (event) {
       console.log('target ' + event.target.scrollTop);
@@ -361,6 +367,13 @@ export default {
         this.viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
         console.log('!!! New viewportHeight: ' + this.viewportHeight);
       }
+
+      var bodyElement = document.body;
+      var htmlElement = document.documentElement;
+
+      this.documentHeight = Math.max( bodyElement.scrollHeight, bodyElement.offsetHeight, htmlElement.clientHeight, htmlElement.scrollHeight, htmlElement.offsetHeight );
+      this.availableSpaceToScroll = this.documentHeight - this.viewportHeight;
+      console.log('!!!!! main measurements: viewportHeight: ' + this.viewportHeight + ' windowWidth: ' + this.windowWidth + ' documentHeight: ' + this.documentHeight + ' availableSpaceToScroll: ' + this.availableSpaceToScroll);
     },
     getWindowHeight(event) {
       this.windowHeight = document.documentElement.clientHeight;
