@@ -27,4 +27,4 @@ Route::get('product/{link}', 'ProductController@show');
 Route::get('clientbanner', 'ClientController@banner');
 Route::get('clientdescription', 'ClientController@description');
 Route::post('client', 'ClientController@store');
-Route::get('tips', 'siteTextController@tips');
+Route::get('tips', 'SiteTextController@tips');
