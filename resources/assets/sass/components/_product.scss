@@ -198,17 +198,15 @@ slideUp
     margin: 0 auto;
 
     > div {
-      opacity: 0;
-      max-width: 0;
-      transition: opacity 1s, max-width 1s;
-      // position: relative;
-      // left: -100%;
-      // transition: width 1s;
+      @media screen and (min-width: $screen-lg-min) {
+        opacity: 0;
+        max-width: 0;
+        transition: opacity 1s, max-width 1s;
 
-      &.animated {
-        opacity: 1;
-        max-width: 2000px;
-        // left: unset;
+        &.animated {
+          opacity: 1;
+          max-width: 2000px;
+        }
       }
     }
   }

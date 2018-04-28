@@ -9827,16 +9827,18 @@ slideUp
   margin: 0 auto;
 }
 
-.product-page__animation-wrapper > div {
-  opacity: 0;
-  max-width: 0;
-  -webkit-transition: opacity 1s, max-width 1s;
-  transition: opacity 1s, max-width 1s;
-}
+@media screen and (min-width: 1200px) {
+  .product-page__animation-wrapper > div {
+    opacity: 0;
+    max-width: 0;
+    -webkit-transition: opacity 1s, max-width 1s;
+    transition: opacity 1s, max-width 1s;
+  }
 
-.product-page__animation-wrapper > div.animated {
-  opacity: 1;
-  max-width: 2000px;
+  .product-page__animation-wrapper > div.animated {
+    opacity: 1;
+    max-width: 2000px;
+  }
 }
 
 .product-page__animation-container {

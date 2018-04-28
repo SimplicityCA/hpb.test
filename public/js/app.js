@@ -92347,7 +92347,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       startParallaxPosition: 260,
       documentHeight: 0,
       availableSpaceToScroll: 0,
-      withoutParallax: false
+      withoutParallax: false,
+      resizedTimes: 0
     };
   },
   mounted: function mounted() {
@@ -92386,6 +92387,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       this.getWindowWidth();
       this.getWindowHeight();
     });
+
+    // if (this.windowWidth >= 1200) {
+    console.log('Checking initial scroll position of animation: ' + window.scrollY);
+    if (window.scrollY > 20) {
+      console.log('turning all to true animated');
+      this.animateFirstImage = true;
+      this.animateSecondImage = true;
+      this.animateThirdImage = true;
+    }
+    // }
 
     // Add code below to check if window width is at tablets and mobile size and if that's the case scroll parallax from the beginning.
 
@@ -92465,6 +92476,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       // console.log('previous viewportHeight:' + this.viewportHeight);
       console.log("withoutParallax on scroll: " + this.withoutParallax);
 
+      // if (this.windowWidth >= 1200) {
+      console.log('Checking initial scroll position of animation: ' + window.scrollY);
+      if (window.scrollY > 20 && this.prevScrollValue == 0) {
+        console.log('turning all to true animated');
+        this.animateFirstImage = true;
+        this.animateSecondImage = true;
+        this.animateThirdImage = true;
+      }
+      // }
+
       if (this.withoutParallax === false) {
         this.viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
         console.log('Window scroll: ' + window.scrollY);
@@ -92540,7 +92561,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       }
 
       var animationScrollTop = document.getElementById("product-animation").scrollTop;
-      if (this.id === 'carbon-performance') {
+      if (this.id === 'carbon-performance' || this.id === 'ceramic-organic') {
         // Sirve solo para desktops al momento alta controlar screen width correctamente
 
         if (this.windowWidth >= 1200) {
@@ -92557,11 +92578,23 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.animateThirdImage = true;
           }
         }
-      } else if (this.id === 'ceramic-organic') {
-        // console.log('!!!!---- Is ceramic ----!!!!');
-      } else if (this.id === 'brake-shoe') {}
-      // console.log('!!!!---- Is brake shoe ----!!!!');
+      } else if (this.id === 'brake-shoe') {
+        // console.log('!!!!---- Is brake shoe ----!!!!');
+        if (this.windowWidth >= 1200) {
+          console.log('------ ELement scroll top position: ' + document.getElementById("product-animation").scrollTop);
+          if (animationScrollTop >= 10 && animationScrollTop <= 30 && this.animateFirstImage === false) {
+            this.animateFirstImage = true;
+          }
 
+          if (animationScrollTop >= 410 && animationScrollTop <= 430 && this.animateSecondImage === false) {
+            this.animateSecondImage = true;
+          }
+
+          if (animationScrollTop >= 750 && animationScrollTop <= 770 && this.animateThirdImage === false) {
+            this.animateThirdImage = true;
+          }
+        }
+      }
 
       // if (window.scrollY > 5) {
       //   this.animateFirstImage = true;
@@ -92581,6 +92614,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     getWindowWidth: function getWindowWidth(event) {
       this.windowWidth = document.documentElement.clientWidth;
+      this.resizedTimes += 1;
+
+      if (this.resizedTimes >= 2) {
+        this.animateFirstImage = true;
+        this.animateSecondImage = true;
+        this.animateThirdImage = true;
+      }
+
       console.log('windowWidth: ' + this.windowWidth);
       if (this.viewportHeight != Math.max(document.documentElement.clientHeight, window.innerHeight || 0)) {
         this.viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
