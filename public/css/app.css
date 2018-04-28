@@ -9905,6 +9905,54 @@ slideUp
   }
 }
 
+@media screen and (min-width: 1200px) {
+  .product-page__animation-container .product-page__animation-wrapper > div:first-child {
+    margin-top: 55px;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .product-page__animation-container .product-page__animation-wrapper > div:first-child {
+    margin-top: 50px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .product-page__animation-container .product-page__animation-wrapper > div:first-child {
+    margin-top: 45px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .product-page__animation-container .product-page__animation-wrapper > div:first-child {
+    margin-top: 45px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .product-page__animation-container .product-page__animation-wrapper > div:nth-child(3) {
+    margin-bottom: 55px;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .product-page__animation-container .product-page__animation-wrapper > div:nth-child(3) {
+    margin-bottom: 50px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .product-page__animation-container .product-page__animation-wrapper > div:nth-child(3) {
+    margin-bottom: 45px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .product-page__animation-container .product-page__animation-wrapper > div:nth-child(3) {
+    margin-bottom: 45px;
+  }
+}
+
 .product-page__animation-container.carbon-performance .product-page__animation-wrapper > div:first-child .product-page__image {
   background-image: url("/img/animaciones/carbon/carbon1.png");
 }

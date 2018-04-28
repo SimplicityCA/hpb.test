@@ -254,16 +254,35 @@ slideUp
           }
         }
       }
+    }
 
-      &.ceramic-organic {
-        .product-page__animation-wrapper > div {
-
+    .product-page__animation-wrapper > div {
+      &:first-child {
+        @media screen and (min-width: $screen-lg-min) {
+          margin-top: 55px;
+        }
+        @media screen and (max-width: $screen-md-max) {
+          margin-top: 50px;
+        }
+        @media screen and (max-width: $screen-sm-max) {
+          margin-top: 45px;
+        }
+        @media screen and (max-width: $screen-xs-max) {
+          margin-top: 45px;
         }
       }
-
-      &.brake-shoe {
-        .product-page__animation-wrapper > div {
-
+      &:nth-child(3) {
+        @media screen and (min-width: $screen-lg-min) {
+          margin-bottom: 55px;
+        }
+        @media screen and (max-width: $screen-md-max) {
+          margin-bottom: 50px;
+        }
+        @media screen and (max-width: $screen-sm-max) {
+          margin-bottom: 45px;
+        }
+        @media screen and (max-width: $screen-xs-max) {
+          margin-bottom: 45px;
         }
       }
     }
