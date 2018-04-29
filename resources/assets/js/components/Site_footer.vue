@@ -9,9 +9,9 @@
           <div class="footer-rows-container__row">
             <div class="footer-rows-container__row-title">Productos</div>
             <ul class="footer-rows-container__row-list">
-              <li><a href="#/products/carbon-performance" class="">Carbon Performance</a></li>
-              <li><a href="#/products/ceramic-organic" class="">Ceramic Organic</a></li>
-              <li><a href="#/products/brake-shoe" class="">Brake Shoe</a></li>
+              <li><a href="/products/carbon-performance" class="">Carbon Performance</a></li>
+              <li><a href="/products/ceramic-organic" class="">Ceramic Organic</a></li>
+              <li><a href="/products/brake-shoe" class="">Brake Shoe</a></li>
             </ul>
           </div>
           <div class="footer-rows-container__row">
