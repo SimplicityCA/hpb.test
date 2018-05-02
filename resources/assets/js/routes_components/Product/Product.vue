@@ -347,15 +347,15 @@ export default {
 
         if (this.windowWidth >= 1200) {
           console.log('------ ELement scroll top position: ' + document.getElementById("product-animation").scrollTop);
-          if (animationScrollTop >= 10 && animationScrollTop <= 30 && this.animateFirstImage === false) {
+          if (animationScrollTop >= 10 && animationScrollTop <= 80 && this.animateFirstImage === false) {
             this.animateFirstImage = true;
           }
 
-          if (animationScrollTop >= 410 && animationScrollTop <= 430 && this.animateSecondImage === false) {
+          if (animationScrollTop >= 410 && animationScrollTop <= 480 && this.animateSecondImage === false) {
             this.animateSecondImage = true;
           }
 
-          if (animationScrollTop >= 750 && animationScrollTop <= 770 && this.animateThirdImage === false) {
+          if (animationScrollTop >= 750 && animationScrollTop <= 820 && this.animateThirdImage === false) {
             this.animateThirdImage = true;
           }
         }
@@ -363,15 +363,15 @@ export default {
         // console.log('!!!!---- Is brake shoe ----!!!!');
         if (this.windowWidth >= 1200) {
           console.log('------ ELement scroll top position: ' + document.getElementById("product-animation").scrollTop);
-          if (animationScrollTop >= 10 && animationScrollTop <= 30 && this.animateFirstImage === false) {
+          if (animationScrollTop >= 10 && animationScrollTop <= 80 && this.animateFirstImage === false) {
             this.animateFirstImage = true;
           }
 
-          if (animationScrollTop >= 410 && animationScrollTop <= 430 && this.animateSecondImage === false) {
+          if (animationScrollTop >= 410 && animationScrollTop <= 480 && this.animateSecondImage === false) {
             this.animateSecondImage = true;
           }
 
-          if (animationScrollTop >= 750 && animationScrollTop <= 770 && this.animateThirdImage === false) {
+          if (animationScrollTop >= 750 && animationScrollTop <= 820 && this.animateThirdImage === false) {
             this.animateThirdImage = true;
           }
         }
