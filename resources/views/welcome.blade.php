@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <title>High Power Brake</title>
+        <meta name="description" content="High Power Brake se especializa en repuestos para el sistema de frenado. Contamos con pastillas de freno y zapatas de freno aprobadas en certificaciones nacionales e internacionales que le brindarán una mejor experiencia de manejo." />
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
 

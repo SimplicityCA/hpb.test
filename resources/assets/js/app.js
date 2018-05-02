@@ -57,28 +57,32 @@ const routes = [
     path: '/',
     name: 'home',
     component: home,
-    meta: {title: 'HPB - Home'}
+    meta: {title: 'High Power Brake - Home'}
   },
   {
     path: '/products/:product_id',
     name: 'products',
     component:product,
-    meta: {title: 'HPB - Productos'},
+    meta: {title: 'High Power Brake - Productos'},
   },
   {
     path: '/tips',
     component: tips,
-    meta: {title: 'HPB - Tips de Instalación'},
+    meta: {title: 'High Power Brake - Tips de Instalación'},
   },
   {
     path: '/client',
     component: client,
-    meta: {title: 'HPB - Conviértete en Cliente'},
+    meta: {title: 'High Power Brake - Conviértete en Cliente'},
   },
   {
     path: '/downloads',
     component: downloads,
-    meta: {title: 'HPB - Descargables'},
+    meta: {title: 'High Power Brake - Descargables'},
+  },
+  {
+    path: '*',
+    redirect: { name: 'home' }
   },
 ];
 
