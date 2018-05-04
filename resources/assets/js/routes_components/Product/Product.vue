@@ -150,12 +150,12 @@ export default {
     
     if (this.availableSpaceToScroll <= 100) {
       this.withoutParallax = true;
-      console.log('Muy poco espacio para scroll, withoutParallax: ' + this.withoutParallax);
+      // console.log('Muy poco espacio para scroll, withoutParallax: ' + this.withoutParallax);
     } else {
-      console.log('Espacio amplio para scroll, withoutParallax: ' + this.withoutParallax);
+      // console.log('Espacio amplio para scroll, withoutParallax: ' + this.withoutParallax);
     }
 
-    console.log('!!!!! main measurements: viewportHeight: ' + this.viewportHeight + ' windowWidth: ' + this.windowWidth + ' documentHeight: ' + this.documentHeight + ' availableSpaceToScroll: ' + this.availableSpaceToScroll);
+    // console.log('!!!!! main measurements: viewportHeight: ' + this.viewportHeight + ' windowWidth: ' + this.windowWidth + ' documentHeight: ' + this.documentHeight + ' availableSpaceToScroll: ' + this.availableSpaceToScroll);
 
     this.$nextTick(function() {
       window.addEventListener('resize', this.getWindowWidth);
@@ -167,9 +167,9 @@ export default {
     })
 
     // if (this.windowWidth >= 1200) {
-      console.log('Checking initial scroll position of animation: ' + window.scrollY);
+      // console.log('Checking initial scroll position of animation: ' + window.scrollY);
       if (window.scrollY > 20) {
-        console.log('turning all to true animated');
+        // console.log('turning all to true animated');
         this.animateFirstImage = true;
         this.animateSecondImage = true;
         this.animateThirdImage = true;
@@ -195,56 +195,56 @@ export default {
     if (this.viewportHeight < 500 && this.windowWidth < 550) {
       //Mobile seguro, start prllx from init
       this.startParallaxPosition = 10;
-      console.log('case number: ' + '1' + '-- viewportHeight: ' + this.viewportHeight + ' -- windowWidth: ' + this.windowWidth);
+      // console.log('case number: ' + '1' + '-- viewportHeight: ' + this.viewportHeight + ' -- windowWidth: ' + this.windowWidth);
     } else if (this.viewportHeight < 500 && this.windowWidth < 750) {
       //Dudoso, start prllx en medio del scroll del total disponible dado por this.viewportHeight
       this.startParallaxPosition = this.viewportHeight/3.2;
-      console.log('case number: ' + '2' + '-- viewportHeight: ' + this.viewportHeight + ' -- windowWidth: ' + this.windowWidth);
+      // console.log('case number: ' + '2' + '-- viewportHeight: ' + this.viewportHeight + ' -- windowWidth: ' + this.windowWidth);
     } else if (this.viewportHeight < 500 && this.windowWidth < 1000) {
       //Dudoso, start prllx en medio del scroll del total disponible dado por this.viewportHeight (Mismo q arriba)
       this.startParallaxPosition = this.viewportHeight/2.88;
-      console.log('case number: ' + '3' + '-- viewportHeight: ' + this.viewportHeight + ' -- windowWidth: ' + this.windowWidth);
+      // console.log('case number: ' + '3' + '-- viewportHeight: ' + this.viewportHeight + ' -- windowWidth: ' + this.windowWidth);
     } else if (this.viewportHeight < 500 && this.windowWidth > 1000) {
       //Dudoso, start prllx en 2 terceras partes del scroll del total disponible dado por this.viewportHeight
       this.startParallaxPosition = this.viewportHeight/2.8;
-      console.log('case number: ' + '4' + '-- viewportHeight: ' + this.viewportHeight + ' -- windowWidth: ' + this.windowWidth);
+      // console.log('case number: ' + '4' + '-- viewportHeight: ' + this.viewportHeight + ' -- windowWidth: ' + this.windowWidth);
     } else if (this.viewportHeight < 655 && this.windowWidth < 550) {
       //Mobile seguro vertical casi cuadrado, start prllx from init
       this.startParallaxPosition = 50;
-      console.log('case number: ' + '5' + '-- viewportHeight: ' + this.viewportHeight + ' -- windowWidth: ' + this.windowWidth);
+      // console.log('case number: ' + '5' + '-- viewportHeight: ' + this.viewportHeight + ' -- windowWidth: ' + this.windowWidth);
     } else if (this.viewportHeight < 655 && this.windowWidth < 750) {
       //Mobile tablet, empezar animacion a un tercio de init o algo menos
       this.startParallaxPosition = this.viewportHeight/6;
-      console.log('case number: ' + '6' + '-- viewportHeight: ' + this.viewportHeight + ' -- windowWidth: ' + this.windowWidth);
+      // console.log('case number: ' + '6' + '-- viewportHeight: ' + this.viewportHeight + ' -- windowWidth: ' + this.windowWidth);
     } else if (this.viewportHeight < 655 && this.windowWidth < 1000) {
       //Tablet vertical o parecido, espere a 2/3 o algo mas de un medio para animar el parallax !!! Could be refined!!!
       this.startParallaxPosition = this.viewportHeight/2.9;
-      console.log('case number: ' + '7' + '-- viewportHeight: ' + this.viewportHeight + ' -- windowWidth: ' + this.windowWidth);
+      // console.log('case number: ' + '7' + '-- viewportHeight: ' + this.viewportHeight + ' -- windowWidth: ' + this.windowWidth);
     } else if (this.viewportHeight < 655 && this.windowWidth > 1000) {
       //Tablet vertical o parecido, parecido a lo q esta ahora
       this.startParallaxPosition = this.viewportHeight/3.5;
-      console.log('case number: ' + '8' + '-- viewportHeight: ' + this.viewportHeight + ' -- windowWidth: ' + this.windowWidth);
+      // console.log('case number: ' + '8' + '-- viewportHeight: ' + this.viewportHeight + ' -- windowWidth: ' + this.windowWidth);
     } else if (this.viewportHeight > 655 && this.windowWidth < 550) {
       //Mobile seguro vertical casi cuadrado, start prllx from init
       this.startParallaxPosition = 10;
-      console.log('case number: ' + '9' + '-- viewportHeight: ' + this.viewportHeight + ' -- windowWidth: ' + this.windowWidth);
+      // console.log('case number: ' + '9' + '-- viewportHeight: ' + this.viewportHeight + ' -- windowWidth: ' + this.windowWidth);
     } else if (this.viewportHeight > 655 && this.windowWidth < 750) {
       //Tablet larga, empiece prllx desde 1 cuarto o menos.
       this.startParallaxPosition = 10;
-      console.log('case number: ' + '10' + '-- viewportHeight: ' + this.viewportHeight + ' -- windowWidth: ' + this.windowWidth);
+      // console.log('case number: ' + '10' + '-- viewportHeight: ' + this.viewportHeight + ' -- windowWidth: ' + this.windowWidth);
     } else if (this.viewportHeight > 655 && this.windowWidth < 1000) {
       //Tablet casi cuadrada, empiece desde init. // !!! IPAD not working properly !!!
       this.startParallaxPosition = 100;
-      console.log('case number: ' + '11' + '-- viewportHeight: ' + this.viewportHeight + ' -- windowWidth: ' + this.windowWidth);
+      // console.log('case number: ' + '11' + '-- viewportHeight: ' + this.viewportHeight + ' -- windowWidth: ' + this.windowWidth);
     } else if (this.viewportHeight > 655 && this.windowWidth > 1000) {
       //Desktop largo y alto empiece a un tercio o similar. // !!! IPAD PRO not working properly !!!
       // this.startParallaxPosition = this.viewportHeight/8;
       this.startParallaxPosition = 200;
-      console.log('case number: ' + '12' + '-- viewportHeight: ' + this.viewportHeight + ' -- windowWidth: ' + this.windowWidth);
+      // console.log('case number: ' + '12' + '-- viewportHeight: ' + this.viewportHeight + ' -- windowWidth: ' + this.windowWidth);
     }
     // End of New Logic
 
-    console.log('startParallaxPosition: ' + this.startParallaxPosition);
+    // console.log('startParallaxPosition: ' + this.startParallaxPosition);
     window.addEventListener('scroll', this.handleScroll);
   },
   methods: {
@@ -252,12 +252,12 @@ export default {
       // console.log('window scroll ' + window.scrollY);
       // console.log('ID scroll ' + document.getElementById("product-animation").scrollTop);
       // console.log('previous viewportHeight:' + this.viewportHeight);
-      console.log("withoutParallax on scroll: " + this.withoutParallax);
+      // console.log("withoutParallax on scroll: " + this.withoutParallax);
 
       // if (this.windowWidth >= 1200) {
-        console.log('Checking initial scroll position of animation: ' + window.scrollY);
+        // console.log('Checking initial scroll position of animation: ' + window.scrollY);
         if (window.scrollY > 20 && this.prevScrollValue == 0) {
-          console.log('turning all to true animated');
+          // console.log('turning all to true animated');
           this.animateFirstImage = true;
           this.animateSecondImage = true;
           this.animateThirdImage = true;
@@ -266,8 +266,8 @@ export default {
 
       if (this.withoutParallax === false) {
         this.viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-        console.log('Window scroll: ' + window.scrollY);
-        console.log('new viewportHeight:' + this.viewportHeight);
+        // console.log('Window scroll: ' + window.scrollY);
+        // console.log('new viewportHeight:' + this.viewportHeight);
         var productAnimationEl = document.querySelectorAll('#product-animation div.product-page__animation-wrapper');
         productAnimationEl = productAnimationEl[0];
 
@@ -280,7 +280,7 @@ export default {
         var prevAnimationScrollTop = document.getElementById("product-animation").scrollTop;
         var newAnimationScrollTop = document.getElementById("product-animation").scrollTop;
 
-        console.log('document.getElementById("product-animation").scrollTop: ' + document.getElementById("product-animation").scrollTop);
+        // console.log('document.getElementById("product-animation").scrollTop: ' + document.getElementById("product-animation").scrollTop);
 
         // New Code
 
@@ -289,7 +289,7 @@ export default {
         // User is scrolling down
         if (window.scrollY > this.prevScrollValue) {
           this.scrollDirection = 'down';
-          console.log('DOWN DOWN DOWN------------------');
+          // console.log('DOWN DOWN DOWN------------------');
           if (window.scrollY <= (this.viewportHeight + this.startParallaxPosition) && window.scrollY >= this.startParallaxPosition) {
 
             // Esta formula sirve siempre y cuando al menos exista 
@@ -305,7 +305,7 @@ export default {
 
 
 
-            console.log('positionOfAnimationScroll: ' + this.positionOfAnimationScroll);
+            // console.log('positionOfAnimationScroll: ' + this.positionOfAnimationScroll);
             // document.getElementById("product-animation").scrollTop += (this.positionOfAnimationScroll - document.getElementById("product-animation").scrollTop);
             newAnimationScrollTop = document.getElementById("product-animation").scrollTop + (this.positionOfAnimationScroll - document.getElementById("product-animation").scrollTop);
 
@@ -318,7 +318,7 @@ export default {
         // User is scrolling up
         if (window.scrollY < this.prevScrollValue) {
           this.scrollDirection = 'up';
-          console.log('UP UP UP------------------');
+          // console.log('UP UP UP------------------');
           if (window.scrollY <= (this.viewportHeight + this.startParallaxPosition) && window.scrollY >= this.startParallaxPosition) {
             
 
@@ -333,7 +333,7 @@ export default {
               this.positionOfAnimationScroll = (window.scrollY - this.startParallaxPosition)*((productAnimationElHeight + this.startParallaxPosition)/this.availableSpaceToScroll);
             }
 
-            console.log('scrollingUp: ' + this.positionOfAnimationScroll);
+            // console.log('scrollingUp: ' + this.positionOfAnimationScroll);
             document.getElementById("product-animation").scrollTop -= (document.getElementById("product-animation").scrollTop - this.positionOfAnimationScroll);
           }
         }
@@ -346,7 +346,7 @@ export default {
         // Sirve solo para desktops al momento alta controlar screen width correctamente
 
         if (this.windowWidth >= 1200) {
-          console.log('------ ELement scroll top position: ' + document.getElementById("product-animation").scrollTop);
+          // console.log('------ ELement scroll top position: ' + document.getElementById("product-animation").scrollTop);
           if (animationScrollTop >= 10 && animationScrollTop <= 80 && this.animateFirstImage === false) {
             this.animateFirstImage = true;
           }
@@ -362,7 +362,7 @@ export default {
       } else if (this.id === 'brake-shoe') {
         // console.log('!!!!---- Is brake shoe ----!!!!');
         if (this.windowWidth >= 1200) {
-          console.log('------ ELement scroll top position: ' + document.getElementById("product-animation").scrollTop);
+          // console.log('------ ELement scroll top position: ' + document.getElementById("product-animation").scrollTop);
           if (animationScrollTop >= 10 && animationScrollTop <= 80 && this.animateFirstImage === false) {
             this.animateFirstImage = true;
           }
@@ -390,8 +390,8 @@ export default {
       // }
     },
     handleScrollEl (event) {
-      console.log('target ' + event.target.scrollTop);
-      console.log('ID scroll ' + document.getElementById("product-animation").scrollTop);
+      // console.log('target ' + event.target.scrollTop);
+      // console.log('ID scroll ' + document.getElementById("product-animation").scrollTop);
     },
     getWindowWidth(event) {
       this.windowWidth = document.documentElement.clientWidth;
@@ -403,10 +403,10 @@ export default {
         this.animateThirdImage = true;
       }
 
-      console.log('windowWidth: ' + this.windowWidth);
+      // console.log('windowWidth: ' + this.windowWidth);
       if (this.viewportHeight != Math.max(document.documentElement.clientHeight, window.innerHeight || 0)) {
         this.viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-        console.log('!!! New viewportHeight: ' + this.viewportHeight);
+        // console.log('!!! New viewportHeight: ' + this.viewportHeight);
       }
 
       var bodyElement = document.body;
@@ -414,7 +414,7 @@ export default {
 
       this.documentHeight = Math.max( bodyElement.scrollHeight, bodyElement.offsetHeight, htmlElement.clientHeight, htmlElement.scrollHeight, htmlElement.offsetHeight );
       this.availableSpaceToScroll = this.documentHeight - this.viewportHeight;
-      console.log('!!!!! main measurements: viewportHeight: ' + this.viewportHeight + ' windowWidth: ' + this.windowWidth + ' documentHeight: ' + this.documentHeight + ' availableSpaceToScroll: ' + this.availableSpaceToScroll);
+      // console.log('!!!!! main measurements: viewportHeight: ' + this.viewportHeight + ' windowWidth: ' + this.windowWidth + ' documentHeight: ' + this.documentHeight + ' availableSpaceToScroll: ' + this.availableSpaceToScroll);
     },
     getWindowHeight(event) {
       this.windowHeight = document.documentElement.clientHeight;
