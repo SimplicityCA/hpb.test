@@ -19,7 +19,7 @@
                   </div>
                   <div v-bind:class="{ animated: animateSecondImage}">
                     <div class="product-page__animation-item-container">
-                      <div class="product-page__image-text">Shim de aluminio</div>
+                      <div class="product-page__image-text">Shim de tela metálica</div>
                       <div class="product-page__image-wrapper"><div class="product-page__image"></div></div>
                     </div>
                   </div>
@@ -43,7 +43,7 @@
                   </div>
                   <div v-bind:class="{ animated: animateSecondImage}">
                     <div class="product-page__animation-item-container">
-                      <div class="product-page__image-text">Shim de aluminio</div>
+                      <div class="product-page__image-text">Shim de tela metálica</div>
                       <div class="product-page__image-wrapper"><div class="product-page__image"></div></div>
                     </div>
                   </div>

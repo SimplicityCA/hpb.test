@@ -17,7 +17,7 @@ class ProductTableSeeder extends Seeder
       $product1->subtitle = 'HIGH POWER BRAKE PADS CARBON PERFORMANCE';
       $product1->link = 'carbon-performance';
       $product1->description = '<p>Brindando el máximo rendimiento y la experiencia de frenado más segura, nuestras pastillas de freno <i>carbon performance</i> están compuestas de material de fricción de primera calidad, proporcionando una resistencia térmica óptima para todo tipo de condiciones de manejo y clima. Además promueve una mejor transferencia de calor entregando una excelente calidad en el frenado todo el tiempo.</p>';
-      $product1->characteristics = '<ul><li>Entre 20000 y 30000 km de duración.</li><li>Coeficiente de fricción: FF.</li><li>Material 100% libre de asbestos</li><li>Resistencia a altas y bajas temperaturas.</li><li>Excelente desempeño en lluvia.</li><li>Frenado silencioso y sin vibración.</li><li>Material resistente para ciudades montañosas y de gran altitud sobre el nivel del mar.</li><li>Económico y confiable.</li><li>Excelente desempeño de carbono.</li></ul>';
+      $product1->characteristics = '<ul><li>Entre 15000 y 20000 km de duración.</li><li>Coeficiente de fricción: FF.</li><li>Material 100% libre de asbestos</li><li>Resistencia a altas y bajas temperaturas.</li><li>Excelente desempeño en lluvia.</li><li>Frenado silencioso y sin vibración.</li><li>Material resistente para ciudades montañosas y de gran altitud sobre el nivel del mar.</li><li>Económico y confiable.</li><li>Excelente desempeño de carbono.</li></ul>';
       $product1->home_image = 'pastilla_de_freno_1_01.jpg';
       $product1->header_image = 'banner_productos_1_01_1.png';
       $product1->description_image = 'producto_caja_2_01.png';
@@ -28,7 +28,7 @@ class ProductTableSeeder extends Seeder
       $product2->subtitle = 'HIGH POWER BRAKE PADS CERAMIC ORGANIC';
       $product2->link = 'ceramic-organic';
       $product2->description = '<p>Con la mejor tecnología y por la preocupación por los problemas ambientales, disponemos de nuestras pastillas de freno cerámica orgánica serie SS Eco-friendly, compuestas por materiales naturales y orgánicos que son amigables con el ser humado y con nuestro planeta. Debido a la composición de sus materiales su frenado es silencioso y sin vibración.</p>';
-      $product2->characteristics = '<ul><li>Entre 20000 y 30000 km de duración.</li><li>Coeficiente de fricción: FF.</li><li>Material 100% libre de asbestos</li><li>Excelente resistencia al calor.</li><li>Excelente capacidad anti-polvo para ruedas y neumáticos más limpios.</li><li>Este tipo de pastillas de freno son más suaves, lo que ayuda a reducir el ruido significativamente al frenar y sin vibraciones.</li><li>Serie SS compuesta por materiales naturales y orgánicos.</li><li>Eco-friendly / Amigable con el medio ambiente</li><li>Pastilla de freno cerámica-orgánica.</li></ul>';
+      $product2->characteristics = '<ul><li>Entre 15000 y 20000 km de duración.</li><li>Coeficiente de fricción: FF.</li><li>Material 100% libre de asbestos</li><li>Excelente resistencia al calor.</li><li>Excelente capacidad anti-polvo para ruedas y neumáticos más limpios.</li><li>Este tipo de pastillas de freno son más suaves, lo que ayuda a reducir el ruido significativamente al frenar y sin vibraciones.</li><li>Serie SS compuesta por materiales naturales y orgánicos.</li><li>Eco-friendly / Amigable con el medio ambiente</li><li>Pastilla de freno cerámica-orgánica.</li></ul>';
       $product2->home_image = 'pastilla_de_freno_2_01.png';
       $product2->header_image = 'banner_productos_3_01_1.png';
       $product2->description_image = 'producto_caja_5_01.png';
@@ -39,7 +39,7 @@ class ProductTableSeeder extends Seeder
       $product3->subtitle = 'HIGH POWER BRAKE SHOE';
       $product3->link = 'brake-shoe';
       $product3->description = '<p>Las zapatas de freno se fabrican bajo las mejores especificaciones técnicas, asegurando lo último en potencia para el frenado del vehículo y rendimiento duradero. En combinación con materiales de fricción de alta calidad, nuestras zapatas de freno mejorarán las capacidades de frenado de su vehículo y eliminará la vibración.</p>';
-      $product3->characteristics = '<ul><li>De 35000 a 45000 km de duración.</li><li>Coeficiente de fricción: FF.</li><li>Material 100% libre de asbestos</li><li>Resistencia a altas y bajas temperaturas.</li><li>Frenado silencioso y sin vibración.</li><li>Optimiza todo el sistema de frenado.</li></ul>';
+      $product3->characteristics = '<ul><li>De 30000 a 35000 km de duración.</li><li>Coeficiente de fricción: FF.</li><li>Material 100% libre de asbestos</li><li>Resistencia a altas y bajas temperaturas.</li><li>Frenado silencioso y sin vibración.</li><li>Optimiza todo el sistema de frenado.</li></ul>';
       $product3->home_image = 'zapata_de_freno_01.png';
       $product3->header_image = 'banner_productos_2_01_1.png';
       $product3->description_image = 'producto_caja_1_01.png';

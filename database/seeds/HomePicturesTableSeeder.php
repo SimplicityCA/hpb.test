@@ -34,7 +34,7 @@ class HomePicturesTableSeeder extends Seeder
       $banner3->save();
 
       $banner4 = new HomePicture();
-      $banner4->title = 'SE PARTE DE NOSOTROS';
+      $banner4->title = 'SÉ PARTE DE NOSOTROS';
       $banner4->subtitle='HIGH POWER BRAKE';
       $banner4->image='banner_productos_todos.png';
       $banner4->location = 'CLIENTS';

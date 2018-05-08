@@ -6,7 +6,7 @@
               <p class="header-subtitle">{{header.subtitle}}</p>
             </div>
             <img v-if="header.image" v-bind:src="`/img/${header.image}`" />
-            <h2>CONVIÉRTETE EN <strong>DISTRIBUIDOR</strong></h2>
+            <h2>CONVIÉRTETE EN <strong>CLIENTE</strong></h2>
             <div class="col-sm-6 image-container">
               <img v-if="description.image" v-bind:src="`/img/${description.image}`" />
             </div>
