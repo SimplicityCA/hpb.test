@@ -4,34 +4,7 @@
       <div id='maps'>
         <h1 class='outstanding-news-title'>Locales mas cercanos a tu Ubicación !</h1>
             <div id = "search-container">
-              <div class="button-filter-mobile visible-xs"> 
-                <md-button @click="toggle" class="md-icon-button btn-primary md-primary">
-                  <md-icon>{{openerText}}</md-icon>
-                </md-button>
-              </div>
-              <div id="sidebar-search" ref="toolbar" class="zap-slideout col-sm-3" :class="{ isOpen: isOpen }">
-                  <gmap-autocomplete
-                    class="maps-search"
-                    @place_changed="setPlace">
-                  </gmap-autocomplete>
-                  <div v-bind:key="i" v-for="(type,i) in types" class="maps-search">
-                    <input  v-model="types_selected" type="checkbox" class="custom-control-input" :value="type.id">
-                    <label class="custom-control-label" for="customCheck1">{{type.description}}</label>
-                  </div>
-                  <button class="maps-search btn btn-default" v-on:click="setType()">Buscar</button>
-              </div>
-            </div>
-            <div class="hidden-xs col-sm-3">
-              <gmap-autocomplete
-                class="maps-search"
-                @place_changed="setPlace">
-              </gmap-autocomplete>
-              <div v-bind:key="i" v-for="(type,i) in types" class="maps-search">
-                <input  v-model="types_selected" type="checkbox" class="custom-control-input" :value="type.id">
-                <label class="custom-control-label" for="customCheck1">{{type.description}}</label>
-              </div>
-              <button class="maps-search btn btn-default" v-on:click="setType()">Buscar</button>
-            </div>
+
             <div class="col-sm-9">
               <gmap-map
                 :center="center"
@@ -59,6 +32,7 @@
             </gmap-map>
           </div>
       </div>
+      </div>
     </md-card>
     </div>
 </template>
@@ -68,7 +42,7 @@ module.exports = {
   name: 'localize',
   mounted: function () {
       var self = this;
-      axios.post('/localize/center',{ center:this.center}).then(response => {
+      axios.post('/api/localize/center',{ center:this.center}).then(response => {
         if(response.body){
           console.log('primera entrada');
           this.locations=response.body;
@@ -141,7 +115,7 @@ module.exports = {
         this.marker.position.lng = place.geometry.location.lng();
       },
       setType(){
-        axios.post('/localize/center',{ center:this.center, types:this.types_selected}).then(response => {
+        axios.post('/api//localize/center',{ center:this.center, types:this.types_selected}).then(response => {
           if(response.body){
               this.locations=response.body;
             }

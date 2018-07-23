@@ -96198,32 +96198,6 @@ module.exports = Component.exports
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 module.exports = {
   name: 'localize',
@@ -96231,7 +96205,7 @@ module.exports = {
     var _this = this;
 
     var self = this;
-    axios.post('/localize/center', { center: this.center }).then(function (response) {
+    axios.post('/api/localize/center', { center: this.center }).then(function (response) {
       if (response.body) {
         console.log('primera entrada');
         _this.locations = response.body;
@@ -96307,7 +96281,7 @@ module.exports = {
     setType: function setType() {
       var _this3 = this;
 
-      axios.post('/localize/center', { center: this.center, types: this.types_selected }).then(function (response) {
+      axios.post('/api//localize/center', { center: this.center, types: this.types_selected }).then(function (response) {
         if (response.body) {
           _this3.locations = response.body;
         }
@@ -96387,250 +96361,71 @@ var render = function() {
           _c("div", { attrs: { id: "search-container" } }, [
             _c(
               "div",
-              { staticClass: "button-filter-mobile visible-xs" },
+              { staticClass: "col-sm-9" },
               [
                 _c(
-                  "md-button",
+                  "gmap-map",
                   {
-                    staticClass: "md-icon-button btn-primary md-primary",
-                    on: { click: _vm.toggle }
+                    staticStyle: { width: "100%", "min-height": "500px" },
+                    attrs: { center: _vm.center, zoom: 12 }
                   },
-                  [_c("md-icon", [_vm._v(_vm._s(_vm.openerText))])],
-                  1
-                )
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                ref: "toolbar",
-                staticClass: "zap-slideout col-sm-3",
-                class: { isOpen: _vm.isOpen },
-                attrs: { id: "sidebar-search" }
-              },
-              [
-                _c("gmap-autocomplete", {
-                  staticClass: "maps-search",
-                  on: { place_changed: _vm.setPlace }
-                }),
-                _vm._v(" "),
-                _vm._l(_vm.types, function(type, i) {
-                  return _c("div", { key: i, staticClass: "maps-search" }, [
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.types_selected,
-                          expression: "types_selected"
+                  [
+                    _c(
+                      "gmap-info-window",
+                      {
+                        attrs: {
+                          options: _vm.infoOptions,
+                          position: _vm.infoWindowPos,
+                          opened: _vm.infoWinOpen
+                        },
+                        on: {
+                          closeclick: function($event) {
+                            _vm.infoWinOpen = false
+                          }
                         }
-                      ],
-                      staticClass: "custom-control-input",
-                      attrs: { type: "checkbox" },
-                      domProps: {
-                        value: type.id,
-                        checked: Array.isArray(_vm.types_selected)
-                          ? _vm._i(_vm.types_selected, type.id) > -1
-                          : _vm.types_selected
+                      },
+                      [
+                        _c("span", {
+                          domProps: { innerHTML: _vm._s(_vm.infoContent) }
+                        })
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c("gmap-marker", {
+                      attrs: {
+                        position: _vm.marker.position,
+                        clickable: true,
+                        draggable: true
                       },
                       on: {
-                        change: function($event) {
-                          var $$a = _vm.types_selected,
-                            $$el = $event.target,
-                            $$c = $$el.checked ? true : false
-                          if (Array.isArray($$a)) {
-                            var $$v = type.id,
-                              $$i = _vm._i($$a, $$v)
-                            if ($$el.checked) {
-                              $$i < 0 &&
-                                (_vm.types_selected = $$a.concat([$$v]))
-                            } else {
-                              $$i > -1 &&
-                                (_vm.types_selected = $$a
-                                  .slice(0, $$i)
-                                  .concat($$a.slice($$i + 1)))
-                            }
-                          } else {
-                            _vm.types_selected = $$c
-                          }
+                        position_changed: function($event) {
+                          _vm.updateChild(_vm.marker, "position", $event)
                         }
                       }
                     }),
                     _vm._v(" "),
-                    _c(
-                      "label",
-                      {
-                        staticClass: "custom-control-label",
-                        attrs: { for: "customCheck1" }
-                      },
-                      [_vm._v(_vm._s(type.description))]
-                    )
-                  ])
-                }),
-                _vm._v(" "),
-                _c(
-                  "button",
-                  {
-                    staticClass: "maps-search btn btn-default",
-                    on: {
-                      click: function($event) {
-                        _vm.setType()
-                      }
-                    }
-                  },
-                  [_vm._v("Buscar")]
+                    _vm._l(_vm.locations, function(location, i) {
+                      return _c("gmap-marker", {
+                        key: i,
+                        attrs: {
+                          position: location.position,
+                          icon: "/img/local.png",
+                          clickable: true
+                        },
+                        on: {
+                          click: function($event) {
+                            _vm.toggleInfoWindow(location, i)
+                          }
+                        }
+                      })
+                    })
+                  ],
+                  2
                 )
               ],
-              2
+              1
             )
-          ]),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "hidden-xs col-sm-3" },
-            [
-              _c("gmap-autocomplete", {
-                staticClass: "maps-search",
-                on: { place_changed: _vm.setPlace }
-              }),
-              _vm._v(" "),
-              _vm._l(_vm.types, function(type, i) {
-                return _c("div", { key: i, staticClass: "maps-search" }, [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.types_selected,
-                        expression: "types_selected"
-                      }
-                    ],
-                    staticClass: "custom-control-input",
-                    attrs: { type: "checkbox" },
-                    domProps: {
-                      value: type.id,
-                      checked: Array.isArray(_vm.types_selected)
-                        ? _vm._i(_vm.types_selected, type.id) > -1
-                        : _vm.types_selected
-                    },
-                    on: {
-                      change: function($event) {
-                        var $$a = _vm.types_selected,
-                          $$el = $event.target,
-                          $$c = $$el.checked ? true : false
-                        if (Array.isArray($$a)) {
-                          var $$v = type.id,
-                            $$i = _vm._i($$a, $$v)
-                          if ($$el.checked) {
-                            $$i < 0 && (_vm.types_selected = $$a.concat([$$v]))
-                          } else {
-                            $$i > -1 &&
-                              (_vm.types_selected = $$a
-                                .slice(0, $$i)
-                                .concat($$a.slice($$i + 1)))
-                          }
-                        } else {
-                          _vm.types_selected = $$c
-                        }
-                      }
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c(
-                    "label",
-                    {
-                      staticClass: "custom-control-label",
-                      attrs: { for: "customCheck1" }
-                    },
-                    [_vm._v(_vm._s(type.description))]
-                  )
-                ])
-              }),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "maps-search btn btn-default",
-                  on: {
-                    click: function($event) {
-                      _vm.setType()
-                    }
-                  }
-                },
-                [_vm._v("Buscar")]
-              )
-            ],
-            2
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "col-sm-9" },
-            [
-              _c(
-                "gmap-map",
-                {
-                  staticStyle: { width: "100%", "min-height": "500px" },
-                  attrs: { center: _vm.center, zoom: 12 }
-                },
-                [
-                  _c(
-                    "gmap-info-window",
-                    {
-                      attrs: {
-                        options: _vm.infoOptions,
-                        position: _vm.infoWindowPos,
-                        opened: _vm.infoWinOpen
-                      },
-                      on: {
-                        closeclick: function($event) {
-                          _vm.infoWinOpen = false
-                        }
-                      }
-                    },
-                    [
-                      _c("span", {
-                        domProps: { innerHTML: _vm._s(_vm.infoContent) }
-                      })
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c("gmap-marker", {
-                    attrs: {
-                      position: _vm.marker.position,
-                      clickable: true,
-                      draggable: true
-                    },
-                    on: {
-                      position_changed: function($event) {
-                        _vm.updateChild(_vm.marker, "position", $event)
-                      }
-                    }
-                  }),
-                  _vm._v(" "),
-                  _vm._l(_vm.locations, function(location, i) {
-                    return _c("gmap-marker", {
-                      key: i,
-                      attrs: {
-                        position: location.position,
-                        icon: "/img/local.png",
-                        clickable: true
-                      },
-                      on: {
-                        click: function($event) {
-                          _vm.toggleInfoWindow(location, i)
-                        }
-                      }
-                    })
-                  })
-                ],
-                2
-              )
-            ],
-            1
-          )
+          ])
         ])
       ])
     ],
