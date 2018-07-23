@@ -13,6 +13,7 @@ import VueResource from 'vue-resource';
 import VueUploadComponent from 'vue-upload-component';
 import VueMaterial from 'vue-material';
 import PulseLoader from 'vue-spinner/src/PulseLoader.vue';
+import * as VueGoogleMaps from 'vue2-google-maps';
 import 'vue-material/dist/vue-material.min.css';
 // import 'vue-material/dist/theme/default-dark.css';
 import VueCarousel from 'vue-carousel';
@@ -25,6 +26,12 @@ Vue.use(VueMaterial);
 Vue.use(VueResource);
 Vue.use(PulseLoader);
 Vue.use(VueCarousel);
+Vue.use(VueGoogleMaps, {
+  load: {
+    key: 'AIzaSyBsXvXvwEg8CR6JQ5qBHZtKmN61UwjWJZ0',
+    libraries: 'places',
+  }
+});
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -51,6 +58,7 @@ const product = Vue.component('product', require('./routes_components/Product/Pr
 const client = Vue.component('client', require('./routes_components/Client/Client.vue'));
 const downloads = Vue.component('downloads', require('./routes_components/Downloads/Downloads.vue'));
 const tips = Vue.component('tips', require('./routes_components/Tips/Tips.vue'));
+const localize = Vue.component('localize', require('./routes_components/Localize/Localize.vue'));
 
 const routes = [
   {
@@ -79,6 +87,11 @@ const routes = [
     path: '/downloads',
     component: downloads,
     meta: {title: 'High Power Brake - Descargables'},
+  },  
+  {
+    path: '/localize',
+    component: localize,
+    meta: {title: 'High Power Brake - Encuentra el local mas cercano'},
   },
   {
     path: '*',

@@ -1,0 +1,213 @@
+<template>
+    <div>
+      <md-card class="md-card-form" >
+      <div id='maps'>
+        <h1 class='outstanding-news-title'>Locales mas cercanos a tu Ubicación !</h1>
+            <div id = "search-container">
+              <div class="button-filter-mobile visible-xs"> 
+                <md-button @click="toggle" class="md-icon-button btn-primary md-primary">
+                  <md-icon>{{openerText}}</md-icon>
+                </md-button>
+              </div>
+              <div id="sidebar-search" ref="toolbar" class="zap-slideout col-sm-3" :class="{ isOpen: isOpen }">
+                  <gmap-autocomplete
+                    class="maps-search"
+                    @place_changed="setPlace">
+                  </gmap-autocomplete>
+                  <div v-bind:key="i" v-for="(type,i) in types" class="maps-search">
+                    <input  v-model="types_selected" type="checkbox" class="custom-control-input" :value="type.id">
+                    <label class="custom-control-label" for="customCheck1">{{type.description}}</label>
+                  </div>
+                  <button class="maps-search btn btn-default" v-on:click="setType()">Buscar</button>
+              </div>
+            </div>
+            <div class="hidden-xs col-sm-3">
+              <gmap-autocomplete
+                class="maps-search"
+                @place_changed="setPlace">
+              </gmap-autocomplete>
+              <div v-bind:key="i" v-for="(type,i) in types" class="maps-search">
+                <input  v-model="types_selected" type="checkbox" class="custom-control-input" :value="type.id">
+                <label class="custom-control-label" for="customCheck1">{{type.description}}</label>
+              </div>
+              <button class="maps-search btn btn-default" v-on:click="setType()">Buscar</button>
+            </div>
+            <div class="col-sm-9">
+              <gmap-map
+                :center="center"
+                :zoom="12"
+                style="width:100%; min-height:500px"
+              >
+              <gmap-info-window :options="infoOptions" :position="infoWindowPos" :opened="infoWinOpen" @closeclick="infoWinOpen=false">
+              <span v-html="infoContent"></span>
+              </gmap-info-window>
+              <gmap-marker
+                :position="marker.position"
+                :clickable="true"
+                :draggable="true"
+                @position_changed="updateChild(marker, 'position', $event)"
+              ></gmap-marker>
+              <gmap-marker
+                v-bind:key="i"
+                v-for="(location,i) in locations"
+                :position="location.position"
+                icon="/img/local.png"
+                :clickable="true"
+                @click="toggleInfoWindow(location,i)"
+              >
+              </gmap-marker>
+            </gmap-map>
+          </div>
+      </div>
+    </md-card>
+    </div>
+</template>
+
+<script>
+module.exports = {
+  name: 'localize',
+  mounted: function () {
+      var self = this;
+      axios.post('/localize/center',{ center:this.center}).then(response => {
+        if(response.body){
+          console.log('primera entrada');
+          this.locations=response.body;
+        }
+      });
+      axios.get('/types_localize').then(response => {
+        if(response.body){
+          this.types=response.body;
+        }
+      });
+      if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function (position) {
+              let pos = {
+                  lat: position.coords.latitude,
+                  lng: position.coords.longitude
+              };
+              this.center.lat = pos.lat;
+              this.center.lng = pos.lng;
+              this.marker.position.lat = pos.lat;
+              this.marker.position.lng = pos.lng;
+              this.geocodeLatLng(new google.maps.Geocoder, pos, google.maps.InfoWindow);
+              model('/localize/center').post({ center:this.center}).then(response => {
+                if(response.body){
+                  this.locations=response.body;
+                }
+              });
+          }.bind(this));
+      }
+  },
+  data () {
+    var self=this;
+    return {
+      openerText:'search',
+      isOpen: false,
+      center: {lat: -0.180653, lng: -78.467834},
+      marker: {
+        position: {lat: -0.180653, lng: -78.467834}
+      },
+      types:{},
+      types_selected:[],
+      infoContent: '',
+      locations:{
+
+      },
+      infoWinOpen: false,
+      currentMidx: null,
+      infoOptions: {
+        pixelOffset: {
+          width: 0,
+          height: -35
+        }
+      },
+      infoWindowPos: {
+        lat: 0,
+        lng: 0
+      },
+      latLng: {},
+      place: null
+
+    }
+  },
+  methods: {
+      setDescription(description){
+          this.description = description
+      },
+      setPlace(place){
+        this.center.lat = place.geometry.location.lat();
+        this.center.lng = place.geometry.location.lng();
+        this.marker.position.lat = place.geometry.location.lat();
+        this.marker.position.lng = place.geometry.location.lng();
+      },
+      setType(){
+        axios.post('/localize/center',{ center:this.center, types:this.types_selected}).then(response => {
+          if(response.body){
+              this.locations=response.body;
+            }
+        });
+      },
+      getPosition(position){
+        console.log(position);
+      },
+      updateChild(object, field, {lat, lng}) {
+      if (field === 'position') {
+        object.position = {
+          lat: lat(),
+          lng: lng(),
+        };
+      }
+      },
+      geocodeLatLng(geocoder, map, infowindow){
+          geocoder.geocode({'location':this.center}, function(results, status){
+              // console.log(results, status); 
+          });
+      },
+      toggleInfoWindow: function(marker, idx) {
+        address = marker.local.address;
+        this.infoWindowPos = marker.position;
+        this.infoContent =
+        '<div style="width:190px; margin-left:2px;">'
+        +'<p><strong>nombre</strong>:'
+        +marker.local.name+'</p>'+
+        '<p><strong>Dirección</strong>:'
+        +marker.local.address+'</p>'+
+        '<p><strong>Teléfono</strong>: '
+        +marker.local.phone+'</p>'+
+        '<p><strong>Celular</strong>: '
+        +marker.local.cellphone+'</p>'
+        +'<strong><a href="/local/view/'+marker.local.slug+'">Ir al Taller</a></strong><br>'
+        +'<strong><a href="https://google.com/maps/?q='+marker.position.lat+','+marker.position.lng+'">Ver en Google Maps</a></strong>'
+        +'</div>';
+
+        //check if its the same marker that was selected if yes toggle
+        if (this.currentMidx == idx) {
+          this.infoWinOpen = !this.infoWinOpen;
+        }
+        //if different marker set infowindow to open and reset current marker index
+        else {
+          this.infoWinOpen = true;
+          this.currentMidx = idx;
+
+        }
+      },
+    open() {
+      this.openerText = 'close';
+      this.isOpen = true;
+      this.$refs.toolbar.scrollTop = 0;
+    },
+    close() {
+      this.openerText = 'search';
+      this.isOpen = false;
+    },
+    toggle() {
+      if (this.isOpen) {
+        this.close();
+      } else {
+        this.open();
+      }
+    }
+
+  }
+}
+</script>

@@ -18,3 +18,5 @@ Route::get('/{vue_capture?}', function() {
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::any('/localize/center', ['uses' => 'ClientController@getNearlocations']);
