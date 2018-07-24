@@ -91,7 +91,7 @@ const routes = [
   {
     path: '/localize',
     component: localize,
-    meta: {title: 'High Power Brake - Encuentra el local mas cercano'},
+    meta: {title: 'High Power Brake - Encuéntranos'},
   },
   {
     path: '*',

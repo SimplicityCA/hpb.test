@@ -1,39 +1,38 @@
 <template>
-    <div>
-      <md-card class="md-card-form" >
-      <div id='maps'>
-        <h1 class='outstanding-news-title'>Locales mas cercanos a tu Ubicación !</h1>
-            <div id = "search-container">
-
-            <div class="col-sm-9">
-              <gmap-map
-                :center="center"
-                :zoom="12"
-                style="width:100%; min-height:500px"
-              >
-              <gmap-info-window :options="infoOptions" :position="infoWindowPos" :opened="infoWinOpen" @closeclick="infoWinOpen=false">
-              <span v-html="infoContent"></span>
-              </gmap-info-window>
-              <gmap-marker
-                :position="marker.position"
-                :clickable="true"
-                :draggable="true"
-                @position_changed="updateChild(marker, 'position', $event)"
-              ></gmap-marker>
-              <gmap-marker
-                v-bind:key="i"
-                v-for="(location,i) in locations"
-                :position="location.position"
-                icon="/img/local.png"
-                :clickable="true"
-                @click="toggleInfoWindow(location,i)"
-              >
-              </gmap-marker>
-            </gmap-map>
+    <div class="localize-page container-fluid">
+      <div class="row">
+        <div id='maps'>
+          <h2>Encuentra Nuestros Productos en la Tienda de Repuestos Más Cercana</h2>
+            <div id="search-container">
+              <div class="map-container col-sm-offset-1 col-sm-10">
+                <gmap-map
+                  :center="center"
+                  :zoom="12"
+                  style="width:100%; min-height:500px"
+                >
+                  <gmap-info-window :options="infoOptions" :position="infoWindowPos" :opened="infoWinOpen" @closeclick="infoWinOpen=false">
+                  <span v-html="infoContent"></span>
+                  </gmap-info-window>
+                  <gmap-marker
+                    :position="marker.position"
+                    :clickable="true"
+                    :draggable="true"
+                    @position_changed="updateChild(marker, 'position', $event)"
+                  ></gmap-marker>
+                  <gmap-marker
+                    v-bind:key="i"
+                    v-for="(location,i) in locations"
+                    :position="location.position"
+                    icon="/img/local.png"
+                    :clickable="true"
+                    @click="toggleInfoWindow(location,i)"
+                  >
+                  </gmap-marker>
+                </gmap-map>
+            </div>
           </div>
+        </div>
       </div>
-      </div>
-    </md-card>
     </div>
 </template>
 

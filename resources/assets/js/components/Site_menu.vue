@@ -30,6 +30,7 @@
             </ul>
           </li>
           <li><router-link to="/tips">Tips de Instalaci&oacute;n</router-link></li>
+          <li><router-link to="/localize">Encuéntranos</router-link></li>
         </ul>
       </div><!--/.nav-collapse -->
     </div><!--/.container-fluid -->

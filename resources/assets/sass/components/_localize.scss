@@ -1,0 +1,11 @@
+.localize-page{
+	h2 {
+    @include section-name-text;
+    margin-top: 0;
+  }
+
+  .map-container{
+  	margin-top: 15px;
+  	margin-bottom: 15px;
+  }
+}
