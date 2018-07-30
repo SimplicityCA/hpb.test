@@ -63,7 +63,7 @@ module.exports = {
               this.marker.position.lat = pos.lat;
               this.marker.position.lng = pos.lng;
               this.geocodeLatLng(new google.maps.Geocoder, pos, google.maps.InfoWindow);
-              model('/localize/center').post({ center:this.center}).then(response => {
+              axios.post('/localize/center', { center:this.center}).then(response => {
                 if(response.body){
                   this.locations=response.body;
                 }
