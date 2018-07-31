@@ -41,14 +41,14 @@ module.exports = {
   mounted: function () {
       var self = this;
       axios.post('/api/localize/center',{ center:this.center}).then(response => {
-        if(response.body){
+        if(response.data){
           console.log('primera entrada');
-          this.locations=response.body;
+          this.locations=response.data;
         }
       });
       axios.get('/types_localize').then(response => {
-        if(response.body){
-          this.types=response.body;
+        if(response.data){
+          this.types=response.data;
         }
       });
       if (navigator.geolocation) {
@@ -62,8 +62,8 @@ module.exports = {
               self.marker['position'] = {lat: pos.lat, lng: pos.lng};
               self.geocodeLatLng(new google.maps.Geocoder, pos, google.maps.InfoWindow);
               axios.post('/api/localize/center', { center:self.center}).then(response => {
-                if(response.body){
-                  self.locations=response.body;
+                if(response.data){
+                  self.locations=response.data;
                 }
               });
           });
@@ -113,8 +113,8 @@ module.exports = {
       },
       setType(){
         axios.post('/api//localize/center',{ center:this.center, types:this.types_selected}).then(response => {
-          if(response.body){
-              this.locations=response.body;
+          if(response.data){
+              this.locations=response.data;
             }
         });
       },
@@ -147,7 +147,6 @@ module.exports = {
         +marker.local.phone+'</p>'+
         '<p><strong>Celular</strong>: '
         +marker.local.cellphone+'</p>'
-        +'<strong><a href="/local/view/'+marker.local.slug+'">Ir al Taller</a></strong><br>'
         +'<strong><a href="https://google.com/maps/?q='+marker.position.lat+','+marker.position.lng+'">Ver en Google Maps</a></strong>'
         +'</div>';
 
