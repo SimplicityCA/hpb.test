@@ -142,13 +142,17 @@ module.exports = {
         +'<p><strong>nombre</strong>:'
         +marker.local.name+'</p>'+
         '<p><strong>Dirección</strong>:'
-        +marker.local.address+'</p>'+
-        '<p><strong>Teléfono</strong>: '
-        +marker.local.phone+'</p>'+
-        '<p><strong>Celular</strong>: '
-        +marker.local.cellphone+'</p>'
-        +'<strong><a href="https://google.com/maps/?q='+marker.position.lat+','+marker.position.lng+'">Ver en Google Maps</a></strong>'
-        +'</div>';
+        +marker.local.address+'</p>';
+        if(marker.local.phone){
+        this.infoContent+= '<p><strong>Teléfono</strong>: '
+          +marker.local.phone+'</p>'; 
+        }
+        if(marker.local.phone){
+           this.infoContent+= '<p><strong>Celular</strong>: '
+          +marker.local.cellphone+'</p>'; 
+        }
+         this.infoContent+= '<strong><a href="https://google.com/maps/?q='+marker.position.lat+','+marker.position.lng+'">Ver en Google Maps</a></strong>'
+          +'</div>';
 
         //check if its the same marker that was selected if yes toggle
         if (this.currentMidx == idx) {
