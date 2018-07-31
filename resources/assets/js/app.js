@@ -28,7 +28,7 @@ Vue.use(PulseLoader);
 Vue.use(VueCarousel);
 Vue.use(VueGoogleMaps, {
   load: {
-    key: 'AIzaSyBsXvXvwEg8CR6JQ5qBHZtKmN61UwjWJZ0',
+    key: 'AIzaSyAR3F3G2CSp2AyiGLPjCO-Tj0b44XrK2KY',
     libraries: 'places',
   }
 });
