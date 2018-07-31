@@ -15,9 +15,8 @@
                   </gmap-info-window>
                   <gmap-marker
                     :position="marker.position"
-                    :clickable="true"
-                    :draggable="true"
-                    @position_changed="updateChild(marker, 'position', $event)"
+                    :clickable="false"
+                    :draggable="false"
                   ></gmap-marker>
                   <gmap-marker
                     v-bind:key="i"
@@ -58,17 +57,16 @@ module.exports = {
                   lat: position.coords.latitude,
                   lng: position.coords.longitude
               };
-              this.center.lat = pos.lat;
-              this.center.lng = pos.lng;
-              this.marker.position.lat = pos.lat;
-              this.marker.position.lng = pos.lng;
-              this.geocodeLatLng(new google.maps.Geocoder, pos, google.maps.InfoWindow);
-              axios.post('/localize/center', { center:this.center}).then(response => {
+              self.center.lat = pos.lat;
+              self.center.lng = pos.lng;
+              self.marker['position'] = {lat: pos.lat, lng: pos.lng};
+              self.geocodeLatLng(new google.maps.Geocoder, pos, google.maps.InfoWindow);
+              axios.post('/api/localize/center', { center:self.center}).then(response => {
                 if(response.body){
-                  this.locations=response.body;
+                  self.locations=response.body;
                 }
               });
-          }.bind(this));
+          });
       }
   },
   data () {
